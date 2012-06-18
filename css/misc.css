@@ -1,0 +1,169 @@
+/** Assignables **/
+.center {
+    text-align: center;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+/** HTML Element Styling **/
+p {
+  margin-top: 10px
+}
+blockquote {
+	font-style: italic;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+b {
+	font-weight: bold;
+}
+i {
+	font-style: italic;
+}
+li {
+	list-style: none;
+}
+dl {
+	margin: 10px;
+}
+dd {
+	margin-bottom: 10px;
+}
+
+/** Removing the "grippie" from forms. **/
+.grippie {
+	display: none
+}
+
+/** Removing Any Text Shadow from Overlay Bar **/
+#toolbar {
+	text-shadow: none
+}
+
+/** Drupal's Messages **/
+.messages,
+#block-system-help,
+#edit-body-format-guidelines,
+.filter-guidelines {
+  background: #dbba22;
+  border: 4px solid #a78e18;
+  border: 1px solid;
+  margin: 10px 20px 0px 20px;
+  padding: 10px 10px 10px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+.messages .status {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image: url('../images/success.png');
+}
+.messages .warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url('../images/warning.png');
+}
+.messages .error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('../images/error.png');
+}
+#block-system-help,
+#edit-body-format-guidelines,
+.filter-guidelines {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../images/info.png');
+}
+#block-system-help a,
+#edit-body-format-guidelines a {
+    text-decoration: underline
+}
+
+/** Table Styling **/
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	border-bottom: 3px solid #ccc;
+	padding: 5px;
+	text-align: left;
+}
+tbody {
+	border-top: 1px solid #ccc;
+	width: 100%;
+}
+tr {
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+}
+thead tr {
+	background-color: #ccc;
+}
+tr.draggable td.block {
+	line-height: 24px;
+}
+td {
+	padding: 5px
+}
+
+/** Container Styling **/
+.container-inline div, 
+.container-inline label,
+.container-inline input {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px;
+}
+
+/** Views Exposed Filters **/
+.views-exposed-form .views-exposed-widget .form-submit {
+	margin-top: 18px;
+}
+
+/** Drupal Admin **/
+div.admin .right,
+div.admin .left {
+  width: 49%;
+  margin: 0;
+}
+div.admin-panel,
+div.admin-panel .body {
+  padding: 0;
+  clear: left;
+}
+div.admin-panel {
+  margin: 0 0 20px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+}
+div.admin-panel h3 {
+	text-transform: uppercase;
+  margin-bottom: 9px;
+  font-weight: 800;
+}
+#system-themes-page h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.theme-selector h3 {
+  font-weight: normal;
+}
+.theme-default h3 {
+  font-weight: bold;
+}
+.system-themes-list-enabled .theme-selector h3 {
+  margin-top: 0;
+}
+/** Admin List **/
+dl.admin-list dt a,
+dl.node-type-list dt a {
+	font-weight: 800;
+}

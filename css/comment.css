@@ -1,0 +1,42 @@
+#comment-form {
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    margin-top: 0px;
+}
+.comment-form {
+    margin-top: 10px;
+    background: #fff;
+    padding: 10px;
+}
+.submitted {
+    font-size: 10px
+}
+/** Remvoving The Annoying Text Format Choice **/
+#edit-comment-body-und-0-format {
+    display: none
+}
+/** Edit Submit Buttons **/
+.comment-form .form-submit {
+    display: inline-block;
+    margin: 5px;
+}
+/** Styling the comments **/
+#comments {
+    margin-top: 30px
+}
+.comment {
+    background: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+.indented {
+    margin-left: 25px; /* LTR */
+}
+.comment-unpublished {
+    background-color: #fff4f4
+}
+.comment-preview {
+    background-color: #ffffea
+}
