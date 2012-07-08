@@ -12,7 +12,7 @@ stylesheets[screen][] = css/blocks.css
 stylesheets[screen][] = css/menus.css
 stylesheets[screen][] = css/pages.css
 
-scripts[] = js/modernizer.js
+scripts[] = js/modernizr.js
 
 regions[content] = Content
 regions[menu] = Main Menu
