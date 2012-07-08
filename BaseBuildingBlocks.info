@@ -3,14 +3,16 @@ description = A Simple HTML5, 960px wide base theme for Drupal. Developed and Ma
 version = 1.7
 core = 7.x
 
-stylesheets[screen][] = css/regions.css
+stylesheets[screen][] = css/boilerplate.css
+stylesheets[screen][] = css/typography.css
+stylesheets[screen][] = css/drupal.css
+stylesheets[screen][] = css/forms.css
+stylesheets[screen][] = css/layout.css
 stylesheets[screen][] = css/blocks.css
-stylesheets[screen][] = css/formalize.css
-stylesheets[screen][] = css/misc.css
-stylesheets[screen][] = css/pages.css
 stylesheets[screen][] = css/menus.css
-stylesheets[screen][] = css/comment.css
-stylesheets[screen][] = css/text.css
+stylesheets[screen][] = css/pages.css
+
+scripts[] = js/modernizer.js
 
 regions[content] = Content
 regions[menu] = Main Menu
