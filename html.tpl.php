@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
