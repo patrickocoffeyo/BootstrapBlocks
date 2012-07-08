@@ -1,0 +1,168 @@
+/*
+ * This is a style sheet for positioning and styling the regions of your theme,
+ * such as sidebars, main content regions, headers, navigation areas, etc.
+ */
+/** Body Styling **/
+html,
+body {
+  height: 100%;
+  background: #fff;
+}
+/** Wrapper Region Styling **/
+#wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+/** Header Region Styling **/
+#header {
+  width: 920px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding: 20px;
+  background: #eee;
+  margin: 20px auto 0;
+}
+h1.header-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+/** Navigation Region Styling **/
+#navigation {
+  width: 960px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding: 0px;
+  background: #eee;
+  text-align: center;
+  margin: 20px auto 0;
+}
+/** Logo Styling **/
+#header-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 24px;
+}
+/** Main Page Region Styling **/
+#main {
+  width: 960px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  margin: 20px auto 0;
+}
+/** Content Pane Layout Styling **/
+#main-content {
+  width: 680px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  background: #eee;
+  vertical-align: top;
+  margin-bottom: 200px;
+}
+/** Sidebar Layout Styling **/
+#sidebar {
+  width: 180px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  background: #eee;
+  margin-left: 16px;
+}
+/** Footer Region Styling **/
+#footer {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0px !important;
+  height: 80px;
+  background: #eee;
+  text-align: center;
+}
+
+/** Main Menu Styling **/
+#navigation ul li {
+  list-style: none;
+  display: inline-block;
+}
+#navigation ul li a {
+  display: block;
+  line-height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #eee;
+}
+
+/*
+ * Menu Styling 
+ * Styling all of your navigational items below.
+ */
+ 
+/** Drupal's Tabs **/
+ul.primary {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #bababa;
+}
+ul.tabs li {
+	display: inline-block;
+	margin-right: 5px;
+}
+ul.tabs li a {
+	background: #bababa;
+	padding: 0px 15px 0px 15px;
+	line-height: 30px;
+	display: block;
+	border: 1px solid transparent;
+	margin-bottom: -1px; /** Fox for border **/
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+ul.tabs li.active a,
+ul.tabs a:hover {
+	background: #ffffff!important;
+	border: 1px solid #bbbbbb;
+	color: #7a7a7a;
+}
+ul.secondary {
+	border: 0px solid;
+	text-align: right;
+	padding: 0px;
+	margin: 0px;
+}
+ul.secondary li {
+	border: 0px solid;
+	padding: 0px;
+	margin-right: 5px;
+}
+/** Footer Menus **/
+#footer li {
+	display: inline-block;
+	list-style: none;
+	margin-left: 0px;
+}
+#footer li a {
+	padding-right: 15px;
+	padding-left: 15px;
+	border-right: 1px solid;
+}
+#footer li:last-child a {
+	border: 0px solid
+}
+#footer ul {
+	line-height: 80px
+}

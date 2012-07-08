@@ -1,3 +1,54 @@
-/**
-** This is a style sheet the page styling
-*/
+/*
+ * Individual Page Styles. (e.g as a home page box gallery css.)
+ * 
+ * NOTE FROM PATRICK:
+ * Since your layouts, menus, and typography are in different sheets, just put the page-specific styling here.
+ * I suggest making a comment separating the pages so for readability.
+ */
+
+
+/*
+ * Comment Styling
+ */
+#comment-form {
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  padding: 10px;
+  margin-top: 0px;
+}
+.comment-form {
+  margin-top: 10px;
+  background: #fff;
+  padding: 10px;
+}
+.submitted {
+  font-size: 80%
+}
+
+/** Remvoving The Annoying Text Format Choice area **/
+#edit-comment-body-und-0-format {
+  display: none
+}
+
+/** Edit Submit Buttons **/
+.comment-form .form-submit {
+  display: inline-block;
+  margin: 5px;
+}
+
+/** Styling the comments **/
+#comments {
+  margin-top: 30px
+}
+.comment {
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+.comment-unpublished {
+  background-color: #fff4f4
+}
+.comment-preview {
+  background-color: #ffffea
+}

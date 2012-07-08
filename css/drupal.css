@@ -1,0 +1,170 @@
+/*
+ * Default styling for drupal-specific pages and elements.
+ *
+ * NOTE FROM PATRICK:
+ * You'll notice that I hide a few drupal elements in this file, such as the grippie. 
+ *
+ */
+ 
+/** Removing the "grippie" from forms. **/
+.grippie {
+	display: none
+}
+
+/** Removing Any Text Shadow from Overlay Bar **/
+#toolbar {
+	text-shadow: none
+}
+
+/** Drupal's Messages **/
+.messages,
+#block-system-help,
+#edit-body-format-guidelines,
+.filter-guidelines {
+  background: #dbba22;
+  border: 4px solid #a78e18;
+  border: 1px solid;
+  margin: 10px 20px 0px 20px;
+  padding: 10px 10px 10px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+.messages .status {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image: url('../images/success.png');
+}
+.messages .warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url('../images/warning.png');
+}
+.messages .error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('../images/error.png');
+}
+#block-system-help,
+#edit-body-format-guidelines,
+.filter-guidelines {
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url('../images/info.png');
+}
+#block-system-help a,
+#edit-body-format-guidelines a {
+    text-decoration: underline
+}
+
+/** Table Styling **/
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	border-bottom: 3px solid #ccc;
+	padding: 5px;
+	text-align: left;
+}
+tbody {
+	border-top: 1px solid #ccc;
+	width: 100%;
+}
+tr {
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+}
+thead tr {
+	background-color: #ccc;
+}
+tr.draggable td.block {
+	line-height: 24px;
+}
+td {
+	padding: 5px
+}
+
+/** Container Styling **/
+.container-inline div, 
+.container-inline label,
+.container-inline input {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px;
+}
+
+/** Drupal Pagination **/
+.item-list .pager {
+	clear: both;
+	text-align: center;
+}
+.item-list .pager li {
+	background: #e8e8e8;
+	display: inline;
+	list-style-type: none;
+	padding: 3px;
+}
+.pager-current {
+	font-weight: bold
+}
+
+/** Drupal's Inline Links **/
+ul.inline {
+	width: 100%;
+	text-align: right;
+}
+ul.inline li {
+  display: inline-block;
+  margin: 5px;
+}
+
+/** Drupal's Action Links **/
+ul.action-links li a {
+	padding-left: 15px;
+	background: transparent url('../images/add.png') no-repeat 0 center;
+	line-height: 30px;
+	color: #0076be;
+}
+
+/** Drupal Admin **/
+div.admin .right,
+div.admin .left {
+  width: 49%;
+  margin: 0;
+}
+div.admin-panel,
+div.admin-panel .body {
+  padding: 0;
+  clear: left;
+}
+div.admin-panel {
+  margin: 0 0 20px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+}
+div.admin-panel h3 {
+	text-transform: uppercase;
+  margin-bottom: 9px;
+  font-weight: 800;
+}
+#system-themes-page h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.theme-selector h3 {
+  font-weight: normal;
+}
+.theme-default h3 {
+  font-weight: bold;
+}
+.system-themes-list-enabled .theme-selector h3 {
+  margin-top: 0;
+}
+
+/** Admin List **/
+dl.admin-list dt a,
+dl.node-type-list dt a {
+	font-weight: 800;
+}
