@@ -86,6 +86,11 @@ h1.header-title {
   text-align: center;
 }
 
+/*
+ * Menu Styling 
+ * Styling all of your navigational items below.
+ */
+ 
 /** Main Menu Styling **/
 #navigation ul li {
   list-style: none;
@@ -99,11 +104,6 @@ h1.header-title {
   background: #eee;
 }
 
-/*
- * Menu Styling 
- * Styling all of your navigational items below.
- */
- 
 /** Drupal's Tabs **/
 ul.primary {
 	margin-bottom: 20px;
@@ -149,6 +149,7 @@ ul.secondary li {
 	padding: 0px;
 	margin-right: 5px;
 }
+
 /** Footer Menus **/
 #footer li {
 	display: inline-block;

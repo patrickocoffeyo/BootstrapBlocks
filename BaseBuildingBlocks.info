@@ -9,7 +9,6 @@ stylesheets[screen][] = css/drupal.css
 stylesheets[screen][] = css/forms.css
 stylesheets[screen][] = css/layout.css
 stylesheets[screen][] = css/blocks.css
-stylesheets[screen][] = css/menus.css
 stylesheets[screen][] = css/pages.css
 
 scripts[] = js/modernizr.js

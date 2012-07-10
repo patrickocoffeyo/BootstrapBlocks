@@ -32,24 +32,24 @@
 .messages .status {
   color: #4F8A10;
   background-color: #DFF2BF;
-  background-image: url('../images/success.png');
+  background-image: url('../images/icons/success.png');
 }
 .messages .warning {
   color: #9F6000;
   background-color: #FEEFB3;
-  background-image: url('../images/warning.png');
+  background-image: url('../images/icons/warning.png');
 }
 .messages .error {
   color: #D8000C;
   background-color: #FFBABA;
-  background-image: url('../images/error.png');
+  background-image: url('../images/icons/error.png');
 }
 #block-system-help,
 #edit-body-format-guidelines,
 .filter-guidelines {
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('../images/info.png');
+	background-image: url('../images/icons/info.png');
 }
 #block-system-help a,
 #edit-body-format-guidelines a {
@@ -97,16 +97,23 @@ td {
 /** Drupal Pagination **/
 .item-list .pager {
 	clear: both;
-	text-align: center;
+	overflow: hidden;
+	padding: 20px;	
 }
 .item-list .pager li {
-	background: #e8e8e8;
-	display: inline;
-	list-style-type: none;
-	padding: 3px;
+	float: left;
+	display: block;
+	list-style: none;
 }
-.pager-current {
-	font-weight: bold
+.item-list .pager li a {
+	background: #bababa;
+	border: 1px solid #bababa;
+	padding: 10px;
+}
+.item-list .pager li.pager-current,
+.item-list .pager li a:hover {
+	background: #fff;	
+	border: 1px solid #bababa;
 }
 
 /** Drupal's Inline Links **/
@@ -120,11 +127,19 @@ ul.inline li {
 }
 
 /** Drupal's Action Links **/
+ul.action-links li {
+	list-style: none;
+}
 ul.action-links li a {
 	padding-left: 15px;
 	background: transparent url('../images/add.png') no-repeat 0 center;
 	line-height: 30px;
 	color: #0076be;
+}
+
+/** Drupal Operations **/
+#edit-options input.form-submit {
+	margin: 10px 0px 10px 0px;
 }
 
 /** Drupal Admin **/
