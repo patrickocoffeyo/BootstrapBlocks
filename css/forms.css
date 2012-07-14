@@ -69,7 +69,7 @@ input[type="button"] {
 }
 select {
 	padding: 0px 25px 0px 5px;
-	background-image: url('../images/select_arrow.gif');
+	background-image: url('../img/select_arrow.gif');
 	background-repeat: no-repeat;
 	background-position: right center;
 }
@@ -104,12 +104,12 @@ legend,
 
 /** changing Throbber **/
 html.js input.form-autocomplete {
-	background-image: url(../images/throbber.gif)!important;
+	background-image: url(../img/throbber.gif)!important;
   background-position: -40px!important;
   background-repeat: no-repeat!important;
 }
 html.js input.throbbing {
-  background-image: url(../images/throbber.gif)!important;
+  background-image: url(../img/throbber.gif)!important;
   background-position: right center!important;
   background-repeat: no-repeat!important;
 }
