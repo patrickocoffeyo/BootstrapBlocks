@@ -8,34 +8,16 @@ body {
   height: 100%;
   background: #fff;
 }
-/** Wrapper Region Styling **/
+/** Wrapper **/
 #wrapper {
-  position: relative;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
+	margin: 0 auto;
 }
 /** Header Region Styling **/
 #header {
-  width: 920px;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding: 20px;
   background: #eee;
-  margin: 20px auto 0;
-}
-h1.header-title {
-  display: inline-block;
-  vertical-align: middle;
 }
 /** Navigation Region Styling **/
 #navigation {
-  width: 960px;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding: 0px;
   background: #eee;
   text-align: center;
   margin: 20px auto 0;
@@ -48,42 +30,23 @@ h1.header-title {
 }
 /** Main Page Region Styling **/
 #main {
-  width: 960px;
-  overflow: hidden;
-  display: block;
-  position: relative;
   margin: 20px auto 0;
 }
 /** Content Pane Layout Styling **/
 #main-content {
-  width: 680px;
-  overflow: visible;
-  display: inline-block;
-  position: relative;
   padding: 20px;
   background: #eee;
-  vertical-align: top;
-  margin-bottom: 200px;
 }
 /** Sidebar Layout Styling **/
 #sidebar {
-  width: 180px;
-  overflow: visible;
-  display: inline-block;
-  position: relative;
   padding: 20px;
   background: #eee;
-  margin-left: 16px;
 }
 /** Footer Region Styling **/
 #footer {
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: 0px !important;
-  height: 80px;
   background: #eee;
   text-align: center;
+  margin-top: 60px;
 }
 
 /*
@@ -92,9 +55,13 @@ h1.header-title {
  */
  
 /** Main Menu Styling **/
-#navigation ul li {
+#navigation ul.menu li {
   list-style: none;
+  margin: 0px;
   display: inline-block;
+}
+#navigation ul.menu {
+	display: inline;
 }
 #navigation ul li a {
   display: block;
@@ -104,6 +71,14 @@ h1.header-title {
   background: #eee;
 }
 
+/** Submenus **/
+#navigation ul.menu ul {
+	display: none;
+	position: absolute;
+}
+#navigation ul.menu li:hover > ul {
+	display: block;
+}
 /** Drupal's Tabs **/
 ul.primary {
 	margin-bottom: 20px;

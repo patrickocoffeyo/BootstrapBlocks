@@ -132,7 +132,7 @@ ul.action-links li {
 }
 ul.action-links li a {
 	padding-left: 15px;
-	background: transparent url('../img/add.png') no-repeat 0 center;
+	background: transparent url('../img/icons/add.png') no-repeat 0 center;
 	line-height: 30px;
 	color: #0076be;
 }

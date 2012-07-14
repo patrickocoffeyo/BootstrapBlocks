@@ -1,24 +1,31 @@
-<section id="wrapper">
-	<header id="header">
+<section id="wrapper" class="container">
+	<section class="row-fluid" id="header">
 		<?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img id="header-logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-    <?php endif; ?>
-		<?php if ($site_name): ?>
-			<a href="<?php print $front_page; ?>"><h1 class="header-title"><?php print $site_name; ?></h1></a>
+			<div class="span3">
+			  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+			    <img id="header-logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+			  </a>
+			</div>
 		<?php endif; ?>
-		<?php if ($site_slogan): ?>
-			<h2 class="header_slogan"><?php print $site_slogan; ?></h2>
-		<?php endif; ?>
-	</header>
+		
+		<div class="span9">
+			<?php if ($site_name): ?>
+				<a href="<?php print $front_page; ?>"><h1 class="header-title"><?php print $site_name; ?></h1></a>
+			<?php endif; ?>
+			<?php if ($site_slogan): ?>
+				<h2 class="header-slogan"><?php print $site_slogan; ?></h2>
+			<?php endif; ?>
+		</div>
+	</section>
+	
 	<?php if ($page['menu']): ?>
-		<nav id="navigation">
+		<nav class="row-fluid" id="navigation">
 			<?php print render($page['menu']); ?>
 		</nav>
 	<?php endif; ?>
-	<section id="main">
-		<article id="main-content">
+	
+	<section class="row-fluid" id="main">
+		<article class="span8" id="main-content">
 			<?php if ($tabs): ?>
 				<?php print render($tabs); ?>
 			<?php endif; ?>
@@ -31,15 +38,20 @@
 			<?php endif; ?>
 			<?php print render($page['content']); ?>
 		</article>	
+		
 		<?php if ($page['sidebar']): ?>
-			<div id="sidebar">
+			<aside class="span4" id="sidebar">
 				<?php print render($page['sidebar']); ?>
-			</div>
+			</aside>
 		<?php endif; ?>
 	</section>
+	
 	<?php if ($page['footer']): ?>
-		<footer id="footer">
-			<?php print render($page['footer']); ?>
-		</footer>
+		<div class="row-fluid">
+			<section class="span12" id="footer">
+				<?php print render($page['footer']); ?>
+			</section>
+		</div>
 	<?php endif; ?>
+	
 </section>
