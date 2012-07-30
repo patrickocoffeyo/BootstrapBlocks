@@ -1,6 +1,17 @@
 <?php
 
 /*
+ * Making use of hook_provess_page
+ * Allows you to use node-type based page templates.
+ */
+function BaseBuildingBlocks_process_page(&$variables) {	
+	if (!empty($variables['node'])) {
+		$variables['theme_hook_suggestions'][] = 'page__'. $variables['node']->type;	
+	}
+}
+
+
+/*
  * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {

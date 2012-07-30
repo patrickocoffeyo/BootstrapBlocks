@@ -11,6 +11,17 @@ stylesheets[screen][] = css/blocks.css
 stylesheets[screen][] = css/pages.css
 
 scripts[] = js/modernizr.js
+#scripts[] = js/bootstrap-alert.js
+#scripts[] = js/bootstrap-button.js
+#scripts[] = js/bootstrap-carousel.js
+#scripts[] = js/bootstrap-collapse.js
+#scripts[] = js/bootstrap-dropdown.js
+#scripts[] = js/bootstrap-modal.js
+#scripts[] = js/bootstrap-popover.js
+#scripts[] = js/mbootstrap-scrollspy.js
+#scripts[] = js/mbootstrap-tab.js
+#scripts[] = js/mbootstrap-tooltip.js
+#scripts[] = js/mbootstrap-transition.js
 
 regions[content] = Content
 regions[menu] = Main Menu
