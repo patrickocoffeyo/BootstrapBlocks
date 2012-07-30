@@ -1,4 +1,4 @@
-<section id="wrapper" class="container">
+	<section id="wrapper" class="container">
 	<section class="row-fluid" id="header">
 		<?php if ($logo): ?>
 			<div class="span3">
@@ -53,5 +53,4 @@
 			</section>
 		</div>
 	<?php endif; ?>
-	
 </section>
