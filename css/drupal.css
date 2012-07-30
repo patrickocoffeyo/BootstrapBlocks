@@ -8,44 +8,44 @@
  
 /** Removing the "grippie" from forms. **/
 .grippie {
-	display: none
+  display: none
 }
 
 /** Container Styling **/
 .container-inline div, 
 .container-inline label,
 .container-inline input {
-	display: inline-block;
-	vertical-align: top;
-	margin: 0px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
 }
 
 /** Drupal Pagination **/
 .item-list .pager {
-	clear: both;
-	overflow: hidden;
-	padding: 20px;	
+  clear: both;
+  overflow: hidden;
+  padding: 20px;	
 }
 .item-list .pager li {
-	float: left;
-	display: block;
-	list-style: none;
+  float: left;
+  display: block;
+  list-style: none;
 }
 .item-list .pager li a {
-	background: #bababa;
-	border: 1px solid #bababa;
-	padding: 10px;
+  background: #bababa;
+  border: 1px solid #bababa;
+  padding: 10px;
 }
 .item-list .pager li.pager-current,
 .item-list .pager li a:hover {
-	background: #fff;	
-	border: 1px solid #bababa;
+  background: #fff;	
+  border: 1px solid #bababa;
 }
 
 /** Drupal's Inline Links **/
 ul.inline {
-	width: 100%;
-	text-align: right;
+  width: 100%;
+  text-align: right;
 }
 ul.inline li {
   display: inline-block;
@@ -54,18 +54,18 @@ ul.inline li {
 
 /** Drupal's Action Links **/
 ul.action-links li {
-	list-style: none;
+  list-style: none;
 }
 ul.action-links li a {
-	padding-left: 15px;
-	background: transparent url('../img/icons/add.png') no-repeat 0 center;
-	line-height: 30px;
-	color: #0076be;
+  padding-left: 15px;
+  background: transparent url('../img/icons/add.png') no-repeat 0 center;
+  line-height: 30px;
+  color: #0076be;
 }
 
 /** Drupal Operations **/
 #edit-options input.form-submit {
-	margin: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
 }
 
 /** Drupal Admin **/
@@ -86,7 +86,7 @@ div.admin-panel {
   border: 1px solid #ccc;
 }
 div.admin-panel h3 {
-	text-transform: uppercase;
+  text-transform: uppercase;
   margin-bottom: 9px;
   font-weight: 800;
 }
@@ -107,7 +107,7 @@ div.admin-panel h3 {
 /** Admin List **/
 dl.admin-list dt a,
 dl.node-type-list dt a {
-	font-weight: 800;
+  font-weight: 800;
 }
 
 /** Drupals Tabs **/
@@ -116,14 +116,14 @@ ul.primary li.active a,
 ul.primary li a,
 ul.primary li a:hover,
 ul.secondary a.active {
-	background-color: transparent;
-	border: none;
-	border-bottom: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: none;
 }
 
 /** Drupal's Autocomplete Field **/
 html.js input.form-autocomplete {
-	background-image: url(../img/throbber.gif)!important;
+  background-image: url(../img/throbber.gif)!important;
   background-position: -40px!important;
   background-repeat: no-repeat!important;
 }
@@ -133,20 +133,20 @@ html.js input.throbbing {
   background-repeat: no-repeat!important;
 }
 #autocomplete {
-	z-index: 9999;
-	background-color: #fff;
-	border: 1px solid #333333;
-	border-top: 0px solid;
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #333333;
+  border-top: 0px solid;
 }
 .reference-autocomplete {
    padding: 4px;
 }
 #autocomplete li {
-	margin-left: 0px;
-	padding-left: 20px;	
+  margin-left: 0px;
+  padding-left: 20px;	
 }
 #autocomplete li:hover {
-	background: #333333;
-	color: #fff;
-	cursor: pointer;
+  background: #333333;
+  color: #fff;
+  cursor: pointer;
 }
