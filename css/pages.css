@@ -11,16 +11,8 @@
  * Comment Styling
  */
 #comment-form {
-  overflow: hidden;
-  position: relative;
-  background: #fff;
   padding: 10px;
-  margin-top: 0px;
-}
-.comment-form {
   margin-top: 10px;
-  background: #fff;
-  padding: 10px;
 }
 .submitted {
   font-size: 80%
@@ -34,6 +26,8 @@
 /** Edit Submit Buttons **/
 .comment-form .form-submit {
   display: inline-block;
+  *display: inline;
+  zoom: 1;
   margin: 5px;
 }
 
