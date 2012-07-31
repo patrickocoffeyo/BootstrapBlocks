@@ -18,10 +18,10 @@ scripts[] = js/vendor/modernizr-2.6.1.min.js
 #scripts[] = js/bootstrap-dropdown.js
 #scripts[] = js/bootstrap-modal.js
 #scripts[] = js/bootstrap-popover.js
-#scripts[] = js/mbootstrap-scrollspy.js
-#scripts[] = js/mbootstrap-tab.js
-#scripts[] = js/mbootstrap-tooltip.js
-#scripts[] = js/mbootstrap-transition.js
+#scripts[] = js/bootstrap-scrollspy.js
+#scripts[] = js/bootstrap-tab.js
+#scripts[] = js/bootstrap-tooltip.js
+#scripts[] = js/bootstrap-transition.js
 
 regions[content] = Content
 regions[menu] = Main Menu
