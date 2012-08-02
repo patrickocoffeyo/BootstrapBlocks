@@ -1,17 +1,45 @@
 <?php
 
-/*
- * Making use of hook_provess_page
+/**
+ * Implimenting hook_provess_page
  * Allows you to use node-type based page templates.
  */
-function BaseBuildingBlocks_process_page(&$variables) {	
-	if (!empty($variables['node'])) {
-		$variables['theme_hook_suggestions'][] = 'page__'. $variables['node']->type;	
+function BaseBuildingBlocks_process_page(&$vars) {	
+	if (!empty($vars['node'])) {
+		$vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
 	}
 }
 
+/**
+ * Implimenting hook_css_alter
+ * Turning off some system.css files
+ */
+function BaseBuildingBlocks_css_alter(&$css) {
+  // Turn off some styles from the system module
+  unset($css[drupal_get_path('module', 'system') . '/system.messages.css']);
+  unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
+}
 
-/*
+/**
+ * Implimenting hook_html_head_alter
+ * Changing to html5 characterset, removing generator meta tag
+ */
+function BaseBuildingBlocks_html_head_alter(&$vars) {
+  $vars['system_meta_content_type']['#attributes'] = array(
+    'charset' => 'utf-8'
+  );
+  
+  unset($vars['system_meta_generator']);
+}
+
+/**
+ * Bootstrapping Main Menu
+ */
+function BaseBuildingBlocks_menu_tree__main_menu($vars) {
+  return '<ul class="nav nav-pills">' . $vars['tree'] . '</ul>';
+}
+
+/**
  * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
@@ -51,14 +79,14 @@ function BaseBuildingBlocks_preprocess_button(&$vars) {
   }
 }
 
-/*
+/**
  * Bootstrapping Image Button
  */
 function BaseBuildingBlocks_preprocess_image_button(&$vars) {
   $vars['element']['#attributes']['class'][] = 'btn';
 }
 
-/*
+/**
  * Bootstrapping Tabs 
  */
 function BaseBuildingBlocks_menu_local_task($variables) {
@@ -107,7 +135,7 @@ function BaseBuildingBlocks_get_status($status) {
 	return NULL;
 }
 
-/*
+/**
  * Bootstrapping the messages
  */
 function BaseBuildingBlocks_status_messages($variables) {
