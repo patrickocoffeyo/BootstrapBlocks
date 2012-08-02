@@ -139,3 +139,8 @@ html.js input.throbbing {
   color: #fff;
   cursor: pointer;
 }
+
+/** Drupal's Tables **/
+table.table td.checkbox input[type="checkbox"] {
+	margin-left: 0px;
+}

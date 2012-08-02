@@ -41,6 +41,17 @@ function BaseBuildingBlocks_menu_tree($vars) {
 }
 
 /**
+ * Implimenting hook_preprocess_table
+ * Bootstrapping Tables
+ */
+function BaseBuildingBlocks_preprocess_table(&$variables) {	
+  $variables['attributes']['class'][] = 'table';
+  $variables['attributes']['class'][] = 'table-striped';
+  $variables['attributes']['class'][] = 'table-bordered';
+  return;
+}
+
+/**
  * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
