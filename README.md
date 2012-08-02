@@ -10,12 +10,8 @@ I have organized my CSS by Blocks, Pages, and Layouts, since that's kind of the 
 * **layout.css** - Main layout styling. Positioning of sitewide regions, containers, headers, logos, etc.
 * **pages.css** - Page specific styling for page-type fields, and views.
 * **drupal.css** - A little clean up work and a few styles for drupal-generated elements. 
-* **bootstrap-responsive.css**
-  - Responsive aspects of Twitter Bootstrap
-  - http://twitter.github.com/bootstrap/scaffolding.html#responsive
-* **bootstrap.css** 
-  - Twitter Bootstrap. 
-  - http://twitter.github.com/bootstrap/
+* **bootstrap-responsive.css** - <a href="http://twitter.github.com/bootstrap/scaffolding.html#responsive">Responsive aspects of Twitter Bootstrap</a>
+* **bootstrap.css** - <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap.</a>
 
 ##LESS##
 The .less files in /css/less are the less files that come with Twitter Bootstrap. When you make edits to these files (like variables.less) you'll need to re-compile the following files:
