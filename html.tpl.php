@@ -8,6 +8,11 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <?php global $theme_path; ?>
+  <link rel="apple-touch-icon-precomposed" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-iphone.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-ipad.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-iphone4.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-ipad3.png" />
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>

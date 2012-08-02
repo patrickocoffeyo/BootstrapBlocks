@@ -1,14 +1,14 @@
 	<section id="wrapper" class="container">
 	<section class="row-fluid" id="header">
 		<?php if ($logo): ?>
-			<div class="span3">
+			<div class="span1 header-logo">
 			  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
 			    <img id="header-logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
 			  </a>
 			</div>
 		<?php endif; ?>
 		
-		<div class="span9">
+		<div class="span11 header-text">
 			<?php if ($site_name): ?>
 				<a href="<?php print $front_page; ?>"><h1 class="header-title"><?php print $site_name; ?></h1></a>
 			<?php endif; ?>

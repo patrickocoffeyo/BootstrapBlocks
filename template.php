@@ -33,9 +33,10 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
 }
 
 /**
+ * Implimenting hook_menu_tree
  * Bootstrapping Main Menu
  */
-function BaseBuildingBlocks_menu_tree__main_menu($vars) {
+function BaseBuildingBlocks_menu_tree($vars) {
   return '<ul class="nav nav-pills">' . $vars['tree'] . '</ul>';
 }
 

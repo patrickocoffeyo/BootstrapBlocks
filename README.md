@@ -31,10 +31,10 @@ I use <A href="http://incident57.com/codekit/">CodeKit</a> to do this, it's a pr
      - #scripts[] = js/bootstrap-dropdown.js
      - #scripts[] = js/bootstrap-modal.js
      - #scripts[] = js/bootstrap-popover.js
-     - #scripts[] = js/mbootstrap-scrollspy.js
-     - #scripts[] = js/mbootstrap-tab.js
-     - #scripts[] = js/mbootstrap-tooltip.js
-     - #scripts[] = js/mbootstrap-transition.js
+     - #scripts[] = js/bootstrap-scrollspy.js
+     - #scripts[] = js/bootstrap-tab.js
+     - #scripts[] = js/bootstrap-tooltip.js
+     - #scripts[] = js/bootstrap-transition.js
 
 * **Modernizr**
   - http://modernizr.com
