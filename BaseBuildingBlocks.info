@@ -11,6 +11,7 @@ stylesheets[screen][] = css/blocks.css
 stylesheets[screen][] = css/pages.css
 
 scripts[] = js/vendor/modernizr-2.6.1.min.js
+scripts[] = js/main.js
 #scripts[] = js/bootstrap-alert.js
 #scripts[] = js/bootstrap-button.js
 #scripts[] = js/bootstrap-carousel.js
