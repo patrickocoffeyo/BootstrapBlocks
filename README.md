@@ -19,7 +19,7 @@ The .less files in /css/less are the less files that come with Twitter Bootstrap
 * /css/less/responsive.less **to** /css/responsive.css 
 * /css/less/bootstrap.less **to** /css/bootstrap.css
 
-I use <A href="http://incident57.com/codekit/">CodeKit</a> to do this, it's a pretty chill app.
+I use <a href="http://incident57.com/codekit/">CodeKit</a> to do this, it's a pretty chill app.
 
 ##Javascript##
 * **Twitter Bootstrap**

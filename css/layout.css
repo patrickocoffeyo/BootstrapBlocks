@@ -1,0 +1,14 @@
+/**
+ * Layout Styling
+ * I suggest making a comment separating the different layout sections to increase readability.
+ */
+ 
+ /** Header **/
+#header {
+  margin-top: 20px;
+}
+ 
+ /** Main Menu **/
+#navigation {
+  margin-top: 20px;
+}

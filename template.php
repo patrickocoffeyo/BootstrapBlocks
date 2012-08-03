@@ -101,55 +101,39 @@ function BaseBuildingBlocks_preprocess_image_button(&$vars) {
 /**
  * Bootstrapping Tabs 
  */
-function BaseBuildingBlocks_menu_local_task($variables) {
+function BaseBuildingBlocks_menu_local_tasks(&$vars) {
+  $output = '';
 
-  $link = $variables['element']['#link'];
-  $link_text = $link['title'];
-  $classes = array('btn');
-
-  if (!empty($variables['element']['#active'])) {
-    // Add text to indicate active tab for non-visual users.
-    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
-
-    // If the link does not contain HTML already, check_plain() it now.
-    // After we set 'html'=TRUE the link will not be sanitized by l().
-    if (empty($link['localized_options']['html'])) {
-      $link['title'] = check_plain($link['title']);
-    }
-    $link['localized_options']['html'] = TRUE;
-    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
-
-    $classes[] = 'active';
+  if (!empty($vars['primary'])) {
+    $vars['primary']['#prefix'] = '<ul class="nav nav-tabs">';
+    $vars['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($vars['primary']);
   }
 
-  // Render child tasks if available.
-  $children = '';
-  if (element_children($variables['element'])) {
-    $link['localized_options']['attributes']['class'][] = 'dropdown-toggle';
-    $classes[] = 'dropdown';
-
-    $children = drupal_render_children($variables['element']);
-    $children = '<ul class="secondary-tabs dropdown-menu">' . $children . "</ul>";
+  if (!empty($vars['secondary'])) {
+    $vars['secondary']['#prefix'] = '<ul class="nav nav-pills">';
+    $vars['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($vars['secondary']);
   }
 
-  return '<li class="' . implode(' ', $classes) . '">' . l($link_text, $link['href'], $link['localized_options']) . $children . "</li>\n";
+  return $output;
 }
 
-function BaseBuildingBlocks_get_status($status) {
-	if ($status == 'status') {
-		return 'alert-success';
-	} elseif ($status == 'warning') {
-		return 'alert-block';
-	} elseif ($status == 'error') {
-		return 'alert-error';
-	}
-	
-	return NULL;
-}
 
 /**
  * Bootstrapping the messages
  */
+ function BaseBuildingBlocks_get_status($status) {
+  if ($status == 'status') {
+    return 'alert-success';
+  } elseif ($status == 'warning') {
+    return 'alert-block';
+  } elseif ($status == 'error') {
+    return 'alert-error';
+  }
+  
+  return NULL;
+}
 function BaseBuildingBlocks_status_messages($variables) {
   $display = $variables['display'];
   $output = '';
