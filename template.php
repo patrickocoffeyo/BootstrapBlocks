@@ -5,9 +5,9 @@
  * Allows you to use node-type based page templates.
  */
 function BaseBuildingBlocks_process_page(&$vars) {	
-	if (!empty($vars['node'])) {
-		$vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
-	}
+  if (!empty($vars['node'])) {
+    $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
+  }
 }
 
 /**
