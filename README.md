@@ -1,4 +1,6 @@
 <div class="row-fluid">
+<h1>Base Building Blocks</h1>
+<p>Base Building Blocks is an awesome HTML5 base theme for Drupal 7.x. It allows you to quickly and efficiently rip out excellent custom themes, making use of the best front-end technologies today has to offer.</p>
   <div class="span6">
 		<h2>CSS Sweetness</h2>
 		<p>Since Drupal has this awesome thing called "CSS and JS aggregation", it's ok to use multiple CSS files in your themes, which is great for organization, especially when writing a theme for a large web application.</p>
