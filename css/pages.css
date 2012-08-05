@@ -1,45 +1,4 @@
 /**
  * Individual Page Styles. (e.g as a home page box gallery css.)
- * I suggest making a comment separating the pages for readability.
+ * I suggest making comments that label/seperate your pages to increase readability. :)
  */
-
-
-/**
- * Comment Styling
- */
-#comment-form {
-  padding: 10px;
-  margin-top: 10px;
-}
-.submitted {
-  font-size: 80%
-}
-
-/** Remvoving The Annoying Text Format Choice area **/
-#edit-comment-body-und-0-format {
-  display: none
-}
-
-/** Edit Submit Buttons **/
-.comment-form .form-submit {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  margin: 5px;
-}
-
-/** Styling the comments **/
-#comments {
-  margin-top: 30px
-}
-.comment {
-  background: #fff;
-  padding: 10px;
-  margin-top: 10px;
-}
-.comment-unpublished {
-  background-color: #fff4f4
-}
-.comment-preview {
-  background-color: #ffffea
-}

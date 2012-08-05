@@ -2,7 +2,9 @@
  * Default styling for drupal-specific pages and elements.
  *
  * NOTE FROM PATRICK:
- * You'll notice that I hide a few drupal elements in this file, such as the grippie. 
+ * You'll notice that I hide a few drupal elements in this file, such as the grippie.
+ * If this annoys you, please let me know. It allways annoys me, so I removed it, but this
+ * theme is geared towards being a solution for a larger group. :)
  *
  */
  
@@ -53,6 +55,9 @@ ul.inline li {
 }
 
 /** Drupal's Action Links **/
+ul.action-links {
+  margin: 0px;
+}
 ul.action-links li {
   list-style: none;
 }
@@ -143,4 +148,37 @@ html.js input.throbbing {
 /** Drupal's Tables **/
 table.table td.checkbox input[type="checkbox"] {
 	margin-left: 0px;
+}
+
+/* Drupal's Comment System **/
+#comment-form {
+  padding: 10px;
+  margin-top: 10px;
+}
+.submitted {
+  font-size: 80%
+}
+/** Remvoving The Annoying Text Format Choice area. Let me know if this annoys you. **/
+#edit-comment-body-und-0-format {
+  display: none
+}
+.comment-form .form-submit {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin: 5px;
+}
+#comments {
+  margin-top: 30px
+}
+.comment {
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+.comment-unpublished {
+  background-color: #fff4f4
+}
+.comment-preview {
+  background-color: #ffffea
 }

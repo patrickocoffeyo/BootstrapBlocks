@@ -1,7 +1,9 @@
 /**
  * This is a style sheet for positioning and styling all of your blocks.
+ * I suggest making comments that label/seperate your blocks to increase readability. :)
  */
 
+/** All Blocks **/
 #sidebar .block {
   margin-top: 20px;
 }
