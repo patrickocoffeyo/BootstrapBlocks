@@ -1,6 +1,5 @@
 name = Base Building Blocks
 description = A simple html5 theme that includes Twitter Bootstrap, Modernizr, and other great tools. http://basethe.me
-version = 1.8
 core = 7.x
 
 stylesheets[screen][] = css/bootstrap.css
@@ -28,3 +27,5 @@ regions[content] = Content
 regions[menu] = Main Menu
 regions[sidebar] = Sidebar
 regions[footer] = Footer
+
+settings[chrome_frame_on_off] = 1

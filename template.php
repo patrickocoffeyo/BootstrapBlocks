@@ -10,6 +10,7 @@ function BaseBuildingBlocks_process_page(&$vars) {
   }
 }
 
+
 /**
  * Implimenting hook_js_alter
  * Adds Jquery 1.7 instead of Drupal Default.
@@ -17,6 +18,7 @@ function BaseBuildingBlocks_process_page(&$vars) {
 function BaseBuildingBlocks_js_alter(&$javascript) {
   $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.7.2.min.js';
 }
+
 
 /**
  * Implimenting hook_css_alter
@@ -28,17 +30,42 @@ function BaseBuildingBlocks_css_alter(&$css) {
   unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
 }
 
+
 /**
  * Implimenting hook_html_head_alter
- * Changing to html5 characterset, removing generator meta tag
  */
 function BaseBuildingBlocks_html_head_alter(&$vars) {
+  //Change the meta content type to HTML5 content type
   $vars['system_meta_content_type']['#attributes'] = array(
     'charset' => 'utf-8'
   );
   
+  //Unsetting the content generator. (Why keep it?)
   unset($vars['system_meta_generator']);
+  
+  //Adding the mobile viewport
+	$vars['viewport'] = array(
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => array(
+			'name' => 'viewport',
+			'content' => 'width=device-width',
+		)
+	);
+	
+	//If in IE, and chrome frame is available, and theme option says you can use it, USE IT!
+	$vars['chrome_frame_compatability'] = array(
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => array(
+			'http-equiv' => 'X-UA-Compatible',
+			'content' => 'IE=edge,chrome=1',
+		),
+		'#access' => theme_get_setting('chrome_frame_on_off'),
+	);
+
 }
+
 
 /**
  * Implimenting hook_menu_tree
@@ -47,6 +74,41 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
 function BaseBuildingBlocks_menu_tree($vars) {
   return '<ul class="nav nav-pills">' . $vars['tree'] . '</ul>';
 }
+
+
+/**
+ * Implimenting hook_menu_tree
+ * Adding active class to active LIs
+ */
+function BaseBuildingBlocks_preprocess_menu_link(&$variables) {
+  if ($variables['element']['#href'] == $_GET['q'] || (drupal_is_front_page() && $variables['element']['#href'] === '<front>')) {
+    $variables['element']['#attributes']['class'][] = 'active';
+  }
+}
+
+
+/**
+ * Implimenting hook_menu_local_tasks
+ * Bootstrapping Tabs 
+ */
+function BaseBuildingBlocks_menu_local_tasks(&$vars) {
+  $output = '';
+
+  if (!empty($vars['primary'])) {
+    $vars['primary']['#prefix'] = '<ul class="nav nav-tabs">';
+    $vars['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($vars['primary']);
+  }
+
+  if (!empty($vars['secondary'])) {
+    $vars['secondary']['#prefix'] = '<ul class="nav nav-pills">';
+    $vars['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($vars['secondary']);
+  }
+
+  return $output;
+}
+
 
 /**
  * Implimenting hook_preprocess_table
@@ -59,7 +121,9 @@ function BaseBuildingBlocks_preprocess_table(&$variables) {
   return;
 }
 
+
 /**
+ * Implimenting hook_preprocess_button
  * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
@@ -99,32 +163,13 @@ function BaseBuildingBlocks_preprocess_button(&$vars) {
   }
 }
 
+
 /**
+ * Implimenting hook_preprocess_image_button
  * Bootstrapping Image Button
  */
 function BaseBuildingBlocks_preprocess_image_button(&$vars) {
   $vars['element']['#attributes']['class'][] = 'btn';
-}
-
-/**
- * Bootstrapping Tabs 
- */
-function BaseBuildingBlocks_menu_local_tasks(&$vars) {
-  $output = '';
-
-  if (!empty($vars['primary'])) {
-    $vars['primary']['#prefix'] = '<ul class="nav nav-tabs">';
-    $vars['primary']['#suffix'] = '</ul>';
-    $output .= drupal_render($vars['primary']);
-  }
-
-  if (!empty($vars['secondary'])) {
-    $vars['secondary']['#prefix'] = '<ul class="nav nav-pills">';
-    $vars['secondary']['#suffix'] = '</ul>';
-    $output .= drupal_render($vars['secondary']);
-  }
-
-  return $output;
 }
 
 
@@ -142,6 +187,11 @@ function BaseBuildingBlocks_menu_local_tasks(&$vars) {
   
   return NULL;
 }
+
+
+/**
+ * Implimenting hook_status_messages()
+ */
 function BaseBuildingBlocks_status_messages($variables) {
   $display = $variables['display'];
   $output = '';

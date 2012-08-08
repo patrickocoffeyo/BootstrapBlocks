@@ -145,6 +145,11 @@ html.js input.throbbing {
   cursor: pointer;
 }
 
+/** Drupal's Fieldsets **/
+html.js fieldset.collapsed {
+	height: auto;
+}
+
 /** Drupal's Tables **/
 table.table td.checkbox input[type="checkbox"] {
 	margin-left: 0px;
