@@ -28,6 +28,7 @@ function BaseBuildingBlocks_css_alter(&$css) {
   // Turn off some styles from the system module
   unset($css[drupal_get_path('module', 'system') . '/system.messages.css']);
   unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
+
 }
 
 
@@ -123,46 +124,46 @@ function BaseBuildingBlocks_preprocess_table(&$variables) {
 
 
 /**
- * Implimenting hook_preprocess_button
  * Bootstrapping Buttons
  */
-function BaseBuildingBlocks_preprocess_button(&$vars) {
-  $vars['element']['#attributes']['class'][] = 'btn';
-
-  if (isset($vars['element']['#value'])) {
-    $classes = array(
-      //specifics
-      t('Save and add') => 'info',
-      t('Add another item') => 'info',
-      t('Add effect') => 'primary',
-      t('Add and configure') => 'primary',
-      t('Update style') => 'primary',
-      t('Download feature') => 'primary',
-
-      //generals
-      t('Save') => 'primary',
-      t('Apply') => 'primary',
-      t('Create') => 'primary',
-      t('Confirm') => 'primary',
-      t('Submit') => 'primary',
-      t('Export') => 'primary',
-      t('Import') => 'primary',
-      t('Restore') => 'primary',
-      t('Rebuild') => 'primary',
-      t('Add') => 'info',
-      t('Update') => 'info',
-      t('Delete') => 'danger',
-      t('Remove') => 'danger',
-    );
-    foreach ($classes as $search => $class) {
-      if (strpos($vars['element']['#value'], $search) !== FALSE) {
-        $vars['element']['#attributes']['class'][] = $class;
-        break;
-      }
-    }
-  }
+function BaseBuildingBlocks_button_class($text) {
+	switch ($text) {
+		case 'Save':
+			return 'btn-primary';
+		case 'Create':
+			return 'btn-primary';
+		case 'Submit':
+			return 'btn-primary';
+		case 'Export':
+			return 'btn-primary';
+		case 'Import': 
+			return 'btn-primary';
+		case 'Rebuild': 
+			return 'btn-primary';
+		case 'Add':
+			return 'btn-info';
+		case 'Update':
+			return 'btn-info';
+		case 'Restore':
+			return 'btn-success';
+		case 'Confirm':
+			return 'btn-success';
+		case 'Submit':
+			return 'btn-success';
+		case 'Delete':
+			return 'btn-danger';
+		case 'Remove':
+			return 'btn-danger';
+		case 'Filter':
+			return 'btn-inverse';
+	}
 }
-
+/**
+ * Implimenting hook_preprocess_button
+ */
+function BaseBuildingBlocks_preprocess_button(&$vars) {
+  $vars['element']['#attributes']['class'][] = 'btn '.BaseBuildingBlocks_button_class($vars['element']['#value']);
+}	
 
 /**
  * Implimenting hook_preprocess_image_button
@@ -208,4 +209,153 @@ function BaseBuildingBlocks_status_messages($variables) {
 
   return $output;
 }
+
+
+/**
+ * Implimenting hook_form_alter()
+ */
+function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
+  // Id's of forms that should be ignored
+  // Make this configurable?
+  $form_ids = array(
+    'node_form',
+    'system_site_information_settings',
+    'user_profile_form',
+  );
+  
+  // Only wrap in container for certain form
+  if(isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form']))
+    $form['actions']['#theme_wrappers'] = array();
+}  
+
+
+/**
+ * Implimenting hook_form_element()
+ */
+function BaseBuildingBlocks_form_element(&$variables) {
+  $element = &$variables['element'];
+  // This is also used in the installer, pre-database setup.
+  $t = get_t();
+
+  // This function is invoked as theme wrapper, but the rendered form element
+  // may not necessarily have been processed by form_builder().
+  $element += array(
+    '#title_display' => 'before',
+  );
+
+  // Add element #id for #type 'item'.
+  if (isset($element['#markup']) && !empty($element['#id'])) {
+    $attributes['id'] = $element['#id'];
+  }
+
+  // Add bootstrap class
+  $attributes['class'] = array('control-group');
+
+  // Check for errors and set correct error class
+  if (isset($element['#parents']) && form_get_error($element)) {
+    $attributes['class'][] = 'error';
+  }
+
+  if (!empty($element['#type'])) {
+    $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
+  }
+  if (!empty($element['#name'])) {
+    $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
+  }
+  // Add a class for disabled elements to facilitate cross-browser styling.
+  if (!empty($element['#attributes']['disabled'])) {
+    $attributes['class'][] = 'form-disabled';
+  }
+  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+
+  // If #title is not set, we don't display any label or required marker.
+  if (!isset($element['#title'])) {
+    $element['#title_display'] = 'none';
+  }
+  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
+  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+
+  switch ($element['#title_display']) {
+    case 'before':
+    case 'invisible':
+      $output .= ' ' . theme('form_element_label', $variables);
+      $output .= '<div class="controls">';
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+
+    case 'after':
+      $output .= '<div class="controls">';
+      $variables['#children'] = ' ' . $prefix . $element['#children'] . $suffix;
+      $output .= ' ' . theme('form_element_label', $variables) . "\n";
+      break;
+
+    case 'none':
+    case 'attribute':
+      // Output no label and no required marker, only the children.
+      $output .= '<div class="controls">';
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+  }
+
+  if ( !empty($element['#description']) ) {
+    $output .= '<p class="help-block">' . $element['#description'] . "</p>\n";
+  }
+
+  $output .= "</div></div>\n";
+
+  return $output;
+}
+
+
+/**
+ * Implimenting hook_form_element_label()
+ */
+function BaseBuildingBlocks_form_element_label(&$variables) {
+  $element = $variables['element'];
+  // This is also used in the installer, pre-database setup.
+  $t = get_t();
+
+  // If title and required marker are both empty, output no label.
+  if ((!isset($element['#title']) || $element['#title'] === '') && empty($element['#required'])) {
+    return '';
+  }
+
+  // If the element is required, a required marker is appended to the label.
+  $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
+
+  $title = filter_xss_admin($element['#title']);
+
+  $attributes = array();
+  // Style the label as class option to display inline with the element.
+  if ($element['#title_display'] == 'after') {
+    $attributes['class'][] = 'option';
+    $attributes['class'][] = $element['#type'];
+  }
+  // Show label only to screen readers to avoid disruption in visual flows.
+  elseif ($element['#title_display'] == 'invisible') {
+    $attributes['class'][] = 'element-invisible';
+  }
+
+  if (!empty($element['#id'])) {
+    $attributes['for'] = $element['#id'];
+  }
+
+  // @Bootstrap: Add Bootstrap control-label class.
+  $attributes['class'][] = 'control-label';
+
+  // @Bootstrap: Insert radio and checkboxes inside label elements.
+  $output = '';
+  if ( isset($variables['#children']) ) {
+    $output .= $variables['#children'];
+  }
+
+  // @Bootstrap: Append label
+  $output .= $t('!title !required', array('!title' => $title, '!required' => $required));
+
+  // The leading whitespace helps visually separate fields from inline labels.
+  return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
+}
+
+
+
 

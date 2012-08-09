@@ -22,36 +22,15 @@
   margin: 0px;
 }
 
-/** Drupal Pagination **/
-.item-list .pager {
-  clear: both;
-  overflow: hidden;
-  padding: 20px;	
-}
-.item-list .pager li {
-  float: left;
-  display: block;
-  list-style: none;
-}
-.item-list .pager li a {
-  background: #bababa;
-  border: 1px solid #bababa;
-  padding: 10px;
-}
-.item-list .pager li.pager-current,
-.item-list .pager li a:hover {
-  background: #fff;	
-  border: 1px solid #bababa;
-}
-
 /** Drupal's Inline Links **/
-ul.inline {
-  width: 100%;
-  text-align: right;
-}
 ul.inline li {
   display: inline-block;
   margin: 5px;
+}
+
+/** Drupal's Pager **/
+.item-list ul li {
+	margin: 0px;
 }
 
 /** Drupal's Action Links **/
@@ -68,11 +47,6 @@ ul.action-links li a {
   color: #0076be;
 }
 
-/** Drupal Operations **/
-#edit-options input.form-submit {
-  margin: 10px 0px 10px 0px;
-}
-
 /** Drupal Admin **/
 div.admin .right,
 div.admin .left {
@@ -83,12 +57,6 @@ div.admin-panel,
 div.admin-panel .body {
   padding: 0;
   clear: left;
-}
-div.admin-panel {
-  margin: 0 0 20px;
-  padding: 8px;
-  background: #ffffff;
-  border: 1px solid #ccc;
 }
 div.admin-panel h3 {
   text-transform: uppercase;
@@ -108,6 +76,13 @@ div.admin-panel h3 {
 .system-themes-list-enabled .theme-selector h3 {
   margin-top: 0;
 }
+div.admin-panel {
+  margin: 0 0 20px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+}
+
 
 /** Admin List **/
 dl.admin-list dt a,
