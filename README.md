@@ -1,77 +1,51 @@
-<div class="row-fluid">
-<h1>Base Building Blocks</h1>
-<p>Base Building Blocks is an awesome HTML5 base theme for Drupal 7.x. It allows you to quickly and efficiently rip out excellent custom themes, making use of the best front-end technologies today has to offer.</p>
-  <div class="span6">
-		<h2>CSS Sweetness</h2>
-		<p>Since Drupal has this awesome thing called "CSS and JS aggregation", it's ok to use multiple CSS files in your themes, which is great for organization, especially when writing a theme for a large web application.</p>
+<div class="row">
+	<div class="span6">
+		<h2>Organized. Modern. Fast.</h2>
+		<p>Base Building Blocks makes use of Drupal's <code>.css</code> and <code>.js</code> aggregation, and organizes it's files intuitively so that large, hard-to-manage Drupal application themes become easy to wrangle, and DRY code becomes easily manageable. At the end of the day, you can aggregate those files so your application stays lean and mean. :)</p>
 		
-		<p>Base Building Blocks makes use of that and organizes the CSS by Blocks, Pages, and Layouts. This makes it super easy to manage the css of larger Drupal websites.</p>
-		
-		<ul>
-			<li><code>blocks.css</code> - Styles for sitewide blocks (Such as the search form block, login block, etc).</li>
-			<li><code>layout.css</code> - Main layout styling. Positioning of sitewide regions, containers, headers, logos, etc.</li>
-			<li><code>pages.css</code> - Page specific styling for page-type fields, and views.</li>
-			<li><code>drupal.css</code> - A little clean up work and a few styles for drupal-generated elements. </li>
-			<li><code>bootstrap-responsive.css</code> - <a href="http://twitter.github.com/bootstrap/scaffolding.html#responsive">Responsive aspects of Twitter Bootstrap</a></li>
-			<li><code>bootstrap.css</code> - <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap.</a></li>
-		</ul>
+		<p>Powerful code libraries such as <a target="_blank" href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and <a target="_blank" href="http://modernizr.com/">Modernizr</a> are included in Base Buidling Blocks, making it easy for you to build up-to-date, compliment demanding themes for your Drupal websites! Extra steps have been taken to make sure that default Drupal elements make use of these libraries properly.</p>
 	</div>
 	
 	<div class="span6">
-		<h2>LESSness</h2>
-		<p>The .less files in /css/less are the less files that come with Twitter Bootstrap. When you make edits to these files (like variables.less) you'll need to re-compile the following files:</p>
-		<code>responsive.less</code> to <code>responsive.css</code>
-		<code>/css/less/bootstrap.less</code> to <code>/css/bootstrap.css</code>
-                <p>You can also turn on/off certain parts of the Twitter Bootstrap library by commenting/uncommenting items in the <code>bootstrap.less</code> file. So, for instance, if have no need to the Bootstrap navbar, just comment out the <code>import "navbar.less";</code> line in <code>bootstrap.less</code>
-		<p>Of course, every time you change a less file, you'll need to recompile. I use <a href="http://incident57.com/codekit/">CodeKit</a> to compile my less, it's a pretty chill app. :)</p>
-
-		
+		<h2>HTML5 Awesomeness.</h2>
+		<p>Everybody should be using HTML5. That's why Base Building Blocks, from the doctype to the meta charset tag, forces Drupal to be HTML5.</p>
+		<p>Proper DOM structure in a site is rare. In Base Building Blocks, DOM structure is a big deal, and kosher html markup is the name of the game. You won't find any crazily over-done section tags or any out-of-control asides. Everything is perfect. If it's not, <a target="_blank" href="https://github.com/patrickocoffeyo/BaseBuildingBlocks">fork and edit!</a></p>
 	</div>
 </div>
 
-<div class="row-fluid">
+<div class="row">
 	<div class="span6">
-		<h2>Mobileness</h2>
-		<p>Base Building Blocks makes use of <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, which means that right off the griddle your site will be responsive-able. It also includes Apple Touch Icons for iPhone, iPod Touch, and iPad (retina and non-retina).</p>
+		<h2>Features. Packages. Pure Shnazzz.</h2>
+		<p>Modals, menus, buttons, forms, tables, code, icons. What more could you ask for? Each aspect of Drupal has been Bootstrap-ized. All these features are right at your fingertips... but wait, too much you say?</p>
+		
+		<p>Each JS and LESS aspect of Bootstrap has been put in it's individual file, so you can turn it on or off as you please. It's as simple as commenting out less files or scripts in the <code>BaseBuildingBlocks.info</code> or <code>bootstrap.less</code> files.</p>
+	</div>
+	<div class="span6">
+		<h2>Administration Amazingness.</h2>
+		<p>If you are using Drupal to build Applications, having an intuitive, beautiful administration interface for your client or user base is essential. Base Building Blocks makes it simple to accomplish this. The administration interface has been styled to a basic level (Autocompletes, throbber, and admin layouts). It's ready for your pizazzification.</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span6">
+		<h2>Mobileness. Responsiveness.</h2>
+		<p>Base Building Blocks makes use of Twitter Bootstrap, which means that right off the griddle your site will be responsive-able, making it a friend of all mobile users. The IOS orientation overflow fix is also included, so you no longer need to worry about crazy stuff happening for IOS users switching from portrait to landscape. More small features such as Apple Touch Icons for iPhone, iPod Touch, and iPad (retina and non-retina) and a simple structure for your @media queries are incorporated as well, so making your site completely mobile-happy is easy.</p>
 	</div>
 	<div class="span6">
 		<h2>Backwards Compatableness</h2>
-		<p>Supporting old browsers may be a serious pain, but it's important! Base Building Blocks detects the old crotchety browsers, and adds IE7, IE8, and IE9 classes to the html tag so you can write your css to accomodate those old prunes.
+		<p>Supporting old browsers may be a serious pain, but it's important! Base Building Blocks detects the old crotchety browsers, and adds IE7, IE8, and IE9 classes to the html tag so you can write your css to accomodate those old prunes.</p>
+		<p>Another thing I've added is the IE Edge and Chrome Frame meta tag. :) Of course, for development and IE testing that's not always a good thing, so there's a setting in the theme to turn that off.</p>
+
 	</div>
 </div>
 
-<div class="row-fluid">
+<div class="row">
 	<div class="span6">
-		<h2>Javascript</h2>
-		<ul>
-			<li>
-				<h3>Twitter Bootstrap</h3>
-				<p>Uncomment or comment the following lines in the <code>BaseBuildingBlocks.info</code> to turn on/off different parts of Twitter Bootstrap javascript library. By including only the js you need, you make your app lean and mean. :)</p>
-				<ul>
-					<li><code>scripts[] = js/bootstrap-alert.js</code></li>
-					<li><code>scripts[] = js/bootstrap-button.js</code></li>
-					<li><code>scripts[] = js/bootstrap-carousel.js</code></li>
-					<li><code>scripts[] = js/bootstrap-collapse.js</code></li>
-					<li><code>scripts[] = js/bootstrap-dropdown.js</code></li>
-					<li><code>scripts[] = js/bootstrap-modal.js</code></li>
-					<li><code>scripts[] = js/bootstrap-popover.js</code></li>
-					<li><code>scripts[] = js/bootstrap-scrollspy.js</code></li>
-					<li><code>scripts[] = js/bootstrap-tab.js</code></li>
-					<li><code>scripts[] = js/bootstrap-tooltip.js</code></li>
-					<li><code>scripts[] = js/bootstrap-transition.js</code></li>
-				</ul>
-			</li>
-			<li>
-				<h3>Modernizr</h3>
-				<p><a href="http://modernizr.com/">Modernizr</a> runs quickly on page load to detect features; it then creates a JavaScript object with the results, and adds classes to the html element for you to key your CSS on. </p>
-			</li>
-		</ul>
+		<h2>Accessible Alchemy.</h2>
+		<p>Everybody loves the web, and everybody uses it, including the visually impaired. That's why Base Building Blocks, out of the box, includes important Aria role attributes so that impaired users can easily navigate your content and enjoy your Drupal applications and websites.</p>
 	</div>
-	
 	<div class="span6">
-		<h2>Template.php</h2>
-		<p>Base Building Blocks adds a function to the template.php theme file that allows you to use node-type based page templates, like <code>page--node-type.tpl.php</code>. Drupal doesn't normally allow you to do this, but when theming a large application, this can be VERY usefull.</p>
-		<p>The temple.php also includes a large collection of functions to bootstrap-ize drupal elements, such as menus, pagers, messages, tabs, tables, and many more. It may seem like a small feature, but it makes Base Building Blocks into an AWESOME administration theme.</p>
-		</ul>
+		<h2>Icon Incredibleness.</h2>
+		<p>Buttons need icons. It's that simple. Base Building Blocks comes with <a target="_blank" href="http://fortawesome.github.com/Font-Awesome/">Icon Awesome.</a> What?!?! yep. By adding simple classes to an element, you can icon-ize all your buttons, and sections. It even includes Social Media icons! All at the tip of your fingers...</p>
 	</div>
 </div>
