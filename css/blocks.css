@@ -1,15 +1,17 @@
 /**
-** This is a style sheet for positioning and styling all of your blocks.
-*/
+ * This is a style sheet for positioning and styling all of your blocks.
+ * I suggest making comments that label/seperate your blocks to increase readability. :)
+ */
 
+/** All Blocks **/
 #sidebar .block {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 /** Search Form Block **/
 #search-block-form input {
-	display: inline-block;
+  display: inline-block;
 }
 #search-block-form input.form-text {
-	width: 110px;
+  width: 110px;
 }

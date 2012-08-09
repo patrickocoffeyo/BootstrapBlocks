@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php print $language->language; ?>"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="<?php print $language->language; ?>"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?php print $language->language; ?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php print $language->language; ?>"> <!--<![endif]-->
 <head>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <?php global $theme_path; ?>
+  <link rel="apple-touch-icon-precomposed" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-iphone4.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-ipad3.png" />
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>
