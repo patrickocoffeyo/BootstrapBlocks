@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implimenting hook_provess_page
+ * Implimenting hook_process_page
  * Allows you to use node-type based page templates.
  */
 function BaseBuildingBlocks_process_page(&$vars) {	
