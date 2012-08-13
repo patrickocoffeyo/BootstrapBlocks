@@ -46,6 +46,6 @@
 	</div>
 	<div class="span6">
 		<h2>Icon Incredibleness.</h2>
-		<p>Buttons need icons. It's that simple. Base Building Blocks comes with <a target="_blank" href="http://fortawesome.github.com/Font-Awesome/">Icon Awesome.</a> What?!?! yep. By adding simple classes to an element, you can icon-ize all your buttons, and sections. It even includes Social Media icons! All at the tip of your fingers...</p>
+		<p>Buttons need icons. It's that simple. Base Building Blocks comes with <a target="_blank" href="http://fortawesome.github.com/Font-Awesome/">Fort Awesome.</a> What?!?! yep. By adding simple classes to an element, you can icon-ize all your buttons, and sections. It even includes Social Media icons! All at the tip of your fingers...</p>
 	</div>
 </div>
