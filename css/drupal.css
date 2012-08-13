@@ -120,6 +120,19 @@ html.js input.throbbing {
   cursor: pointer;
 }
 
+/** Drupal's Exposed Filters **/
+.page-admin-content .exposed-filters .filters {
+	padding: 20px;
+}
+
+/** Drupal's Forms **/
+.form-actions input.btn {
+	margin: 5px;
+}
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+	margin-left: 0px;
+}
+
 /** Drupal's Fieldsets **/
 html.js fieldset.collapsed {
 	height: auto;
