@@ -49,3 +49,15 @@
 		<p>Buttons need icons. It's that simple. Base Building Blocks comes with <a target="_blank" href="http://fortawesome.github.com/Font-Awesome/">Fort Awesome.</a> What?!?! yep. By adding simple classes to an element, you can icon-ize all your buttons, and sections. It even includes Social Media icons! All at the tip of your fingers...</p>
 	</div>
 </div>
+
+<div class="row">
+	<div class="span6">
+		<h2>Licenses</h2>
+		<ul>
+			<li>Modernizr: MIT/BSD license</li>
+			<li>jQuery: MIT/GPL license</li>
+			<li>Normalize.css: Public Domain</li>
+			<li>Bootstrap: Apache 2.0 license</li>
+		</ul>
+</div>
+</div>
