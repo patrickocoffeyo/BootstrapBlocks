@@ -3,6 +3,7 @@
 /**
  * Implimenting hook_process_page
  * Allows you to use node-type based page templates.
+ * Adds admininstration menu 
  */
 function BaseBuildingBlocks_process_page(&$vars) {	
   if (!empty($vars['node'])) {
@@ -13,10 +14,11 @@ function BaseBuildingBlocks_process_page(&$vars) {
 
 /**
  * Implimenting hook_js_alter
- * Adds Jquery 1.7 instead of Drupal Default.
+ * Adds Jquery 1.8 instead of Drupal Default.
  */
 function BaseBuildingBlocks_js_alter(&$javascript) {
-  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js';
+	//If the current page is not the views admin page, update to jQuery 1.8.
+	$javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js';	
 }
 
 
@@ -81,9 +83,9 @@ function BaseBuildingBlocks_menu_tree($vars) {
  * Implimenting hook_menu_tree
  * Adding active class to active LIs
  */
-function BaseBuildingBlocks_preprocess_menu_link(&$variables) {
-  if ($variables['element']['#href'] == $_GET['q'] || (drupal_is_front_page() && $variables['element']['#href'] === '<front>')) {
-    $variables['element']['#attributes']['class'][] = 'active';
+function BaseBuildingBlocks_preprocess_menu_link(&$vars) {
+  if ($vars['element']['#href'] == $_GET['q'] || (drupal_is_front_page() && $vars['element']['#href'] === '<front>')) {
+    $vars['element']['#attributes']['class'][] = 'active';
   }
 }
 
@@ -355,7 +357,3 @@ function BaseBuildingBlocks_form_element_label(&$variables) {
   // The leading whitespace helps visually separate fields from inline labels.
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
-
-
-
-

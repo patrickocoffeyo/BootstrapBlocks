@@ -1,22 +1,35 @@
 /**
- * Layout Styling
- * I suggest making a comment separating the different layout sections to increase readability.
+ * Header
  */
- 
- /** Header **/
 #header {
   margin-top: 20px;
 }
  
- /** Main Menu **/
+/**
+ * Main Menu
+ */
 #navigation {
   margin-top: 20px;
 }
 
 /**
+ * Main Content Area
+ */
+#main {
+	margin-top: 20px;
+}
+
+#main-content { }
+
+/**
+ * Sidebars and other regions 
+ */
+#sidebar { }
+
+
+/**
  * Media Queries for standard devices
  */
- 
 /** Smartphones (portrait and landscape mode) **/
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { }
 
@@ -37,7 +50,7 @@
 
 /** Computers **/
 @media only screen and (min-width: 1224px) { }
-
+c
 /** Big 'ol screens **/
 @media only screen and (min-width: 1824px) { }
 

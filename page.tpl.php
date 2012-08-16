@@ -1,3 +1,4 @@
+<?php include 'includes/page-admin-menu.php'; ?>
 <section id="wrapper" class="container">
   <?php include 'includes/page-header.php'; ?>
   <?php include 'includes/page-menu-main.php'; ?>
