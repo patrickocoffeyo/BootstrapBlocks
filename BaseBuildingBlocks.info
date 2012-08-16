@@ -30,3 +30,4 @@ regions[footer] = Footer
 
 settings[chrome_frame_on_off] = 1
 settings[admin_menu_on_off] = 1
+settings[new_jquery_on_off] = 1

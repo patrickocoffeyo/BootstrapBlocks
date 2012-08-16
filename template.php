@@ -5,7 +5,8 @@ include 'includes/functions/template-functions.php';
  * Allows you to use node-type based page templates.
  * Adds admininstration menu 
  */
-function BaseBuildingBlocks_process_page(&$vars) {	
+function BaseBuildingBlocks_process_page(&$vars) {
+  //Allows you to use node-type base page templates
   if (!empty($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
   }
@@ -28,6 +29,9 @@ function BaseBuildingBlocks_process_page(&$vars) {
   }
   
   $vars['admin_menu_expanded'] = $output;
+  
+  //If you don't have Jquery Update installed, this message will appear to admins.
+  
 }
 
 
@@ -36,8 +40,10 @@ function BaseBuildingBlocks_process_page(&$vars) {
  * Adds Jquery 1.8 instead of Drupal Default.
  */
 function BaseBuildingBlocks_js_alter(&$javascript) {
-	//If the current page is not the views admin page, update to jQuery 1.8.
-	$javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js';	
+	//If allowed, update to jQuery 1.8.
+	if (theme_get_setting('new_jquery_on_off') == 1) {
+		$javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js';
+	}	
 }
 
 

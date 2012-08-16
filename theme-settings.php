@@ -20,16 +20,30 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
   
   $form['admin'] = array( 
 		'#type' => 'fieldset',
-		'#title' => 'Administration',
+		'#title' => 'Management Menu',
 		'#collapsible' => TRUE,
 		'#required' => TRUE,
 		'#weight' => -20,
 	);
   $form['admin']['admin_menu_on_off'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Adnimistration Menu'),
-    '#description' => t('Enables a nice administration menu for admins.'),
+    '#title' => t('Management Menu'),
+    '#description' => t('Enables a nice administration menu for admins. You can always edit the items in this menu by going to the menu  administration page and editing the "Management" menu.'),
     '#default_value' => theme_get_setting('admin_menu_on_off'),
+  );
+  
+  $form['jquery'] = array( 
+		'#type' => 'fieldset',
+		'#title' => 'Jquery Settings',
+		'#description' => t('<i class="icon-exclamation-sign"></i> You must have the latest version of jQuery to use Twitter Bootstrap. However, some items in popular contrib modules such as Views have issues with later versions of jQuery. This is an issue Im currently working on. Untill this issue is resolve, I will leave this on/off switch for my jQuery update.'),
+		'#collapsible' => TRUE,
+		'#required' => TRUE,
+		'#weight' => -20,
+	);
+  $form['jquery']['new_jquery_on_off'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Turn on Base Building Blocks jQuery Update'),
+    '#default_value' => theme_get_setting('new_jquery_on_off'),
   );
   
   return $form;
