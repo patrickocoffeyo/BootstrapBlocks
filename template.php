@@ -1,5 +1,5 @@
 <?php
-
+include 'includes/functions/template-functions.php';
 /**
  * Implimenting hook_process_page
  * Allows you to use node-type based page templates.
@@ -9,6 +9,25 @@ function BaseBuildingBlocks_process_page(&$vars) {
   if (!empty($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
   }
+  
+  //Construct the Management Menu
+  $items = BaseBuildingBlocks_get_management_menu();
+  $output = '';
+  foreach($items as $item) {
+  	if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
+	  	
+  	} elseif ($item->has_children == 1) {
+	  	$output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
+    	foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
+	    	$output .= '<li><a href="' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+    	}
+			$output .= '</ul></li>';
+	  } else {
+		  $output .= '<li><a href="' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
+	  }
+  }
+  
+  $vars['admin_menu_expanded'] = $output;
 }
 
 
@@ -126,42 +145,8 @@ function BaseBuildingBlocks_preprocess_table(&$variables) {
 
 
 /**
- * Bootstrapping Buttons
- */
-function BaseBuildingBlocks_button_class($text) {
-	switch ($text) {
-		case 'Save':
-			return 'btn-primary';
-		case 'Create':
-			return 'btn-primary';
-		case 'Submit':
-			return 'btn-primary';
-		case 'Export':
-			return 'btn-primary';
-		case 'Import': 
-			return 'btn-primary';
-		case 'Rebuild': 
-			return 'btn-primary';
-		case 'Add':
-			return 'btn-info';
-		case 'Update':
-			return 'btn-info';
-		case 'Restore':
-			return 'btn-success';
-		case 'Confirm':
-			return 'btn-success';
-		case 'Submit':
-			return 'btn-success';
-		case 'Delete':
-			return 'btn-danger';
-		case 'Remove':
-			return 'btn-danger';
-		case 'Filter':
-			return 'btn-inverse';
-	}
-}
-/**
  * Implimenting hook_preprocess_button
+ * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
   $vars['element']['#attributes']['class'][] = 'btn '.BaseBuildingBlocks_button_class($vars['element']['#value']);
