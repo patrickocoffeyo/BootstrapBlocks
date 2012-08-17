@@ -89,6 +89,9 @@ dl.admin-list dt a,
 dl.node-type-list dt a {
   font-weight: 800;
 }
+.admin-list dd {
+	margin-bottom: 10px;
+}
 
 /** Drupal's Autocomplete Field **/
 html.js input.form-autocomplete {
@@ -131,6 +134,13 @@ html.js input.throbbing {
 }
 .radio input[type="radio"], .checkbox input[type="checkbox"] {
 	margin-left: 0px;
+}
+.field-formatter-settings-edit {
+	width: auto;
+}
+.description,
+.help-block {
+	font-size: 80%;
 }
 
 /** Drupal's Fieldsets **/

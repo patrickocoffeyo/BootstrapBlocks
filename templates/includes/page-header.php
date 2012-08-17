@@ -1,9 +1,7 @@
 <header class="row-fluid clearfix" id="header" role="banner">
   <?php if ($logo): ?>
     <div class="span1 header-logo">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img id="header-logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" role="img"/>
-      </a>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"></a>
     </div>
   <?php endif; ?>
   

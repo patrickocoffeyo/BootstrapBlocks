@@ -1,5 +1,5 @@
 <?php
-include 'includes/functions/template-functions.php';
+include 'functions/template-functions.php';
 /**
  * Implimenting hook_process_page
  * Allows you to use node-type based page templates.
@@ -142,10 +142,10 @@ function BaseBuildingBlocks_menu_local_tasks(&$vars) {
  * Implimenting hook_preprocess_table
  * Bootstrapping Tables
  */
-function BaseBuildingBlocks_preprocess_table(&$variables) {	
-  $variables['attributes']['class'][] = 'table';
-  $variables['attributes']['class'][] = 'table-striped';
-  $variables['attributes']['class'][] = 'table-bordered';
+function BaseBuildingBlocks_preprocess_table(&$vars) {	
+  $vars['attributes']['class'][] = 'table';
+  $vars['attributes']['class'][] = 'table-striped';
+  $vars['attributes']['class'][] = 'table-bordered';
   return;
 }
 
@@ -189,7 +189,7 @@ function BaseBuildingBlocks_preprocess_image_button(&$vars) {
 function BaseBuildingBlocks_status_messages($variables) {
   $display = $variables['display'];
   $output = '';
-
+  
   foreach (drupal_get_messages($display) as $type => $messages) { 	
     $output .= '<div class="messages alert '.BaseBuildingBlocks_get_status($type).'" data-alert="alert">';
     

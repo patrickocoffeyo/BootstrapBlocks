@@ -1,4 +1,4 @@
-<?php if ($admin_menu_expanded): ?>
+<?php if (isset($admin_menu_expanded)): ?>
 	<?php global $user; ?>
 	<?php if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))): ?>
 		<div class="navbar">

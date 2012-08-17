@@ -4,6 +4,13 @@
 #header {
   margin-top: 20px;
 }
+#logo {
+	height: 90px;
+	width: 80px;
+	background-image: url('../img/logo.png');
+	background-size: 80px 90px;
+	display: block;
+}
  
 /**
  * Main Menu
@@ -31,28 +38,51 @@
  * Media Queries for standard devices
  */
 /** Smartphones (portrait and landscape mode) **/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) { }
+@media only screen and (min-device-width: 320px) 
+and (max-device-width: 480px) { }
 
 /** Smartphones (landscape mode) **/
-@media only screen and (min-width: 321px) { }
+@media only screen 
+and (min-width: 321px) { }
 
 /** Smartphones (portrait mode) **/
-@media only screen and (max-width: 320px) { }
+@media only screen 
+and (max-width: 320px) { }
 
 /** iPads (portrait and landscape mode) **/
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) { }
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) { }
 
 /** iPads (landscape mode) **/
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { }
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) { }
 
 /** iPads (portrait mode) **/
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { }
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) { }
 
-/** Computers **/
-@media only screen and (min-width: 1224px) { }
-c
-/** Big 'ol screens **/
-@media only screen and (min-width: 1824px) { }
+/** Standard Computers **/
+@media only screen 
+and (min-width: 1224px) { }
+
+/** Large Computer Screens **/
+@media only screen 
+and (min-width: 1824px) { }
+
+/** Retina Macs **/
+@media only screen and (min--moz-device-pixel-ratio: 2), 
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+	#logo {
+		background-image: url('../img/hd/logo@2x.png');
+}
 
 /** iPhone 4 (portrait and landscape mode) **/
-@mediaonly screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min-device-pixel-ratio: 1.5) { }
