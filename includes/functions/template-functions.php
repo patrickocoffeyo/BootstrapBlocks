@@ -110,6 +110,8 @@ function BaseBuildingBlocks_link_to_icon($text) {
 			return 'icon-search';
 		case 'Fields used in views':
 			return 'icon-list-alt';
+		case 'Menus':
+			return 'icon-book';
 			
 	}
 	return 'icon-group';
