@@ -6,31 +6,32 @@ include 'includes/functions/template-functions.php';
  * Adds admininstration menu 
  */
 function BaseBuildingBlocks_process_page(&$vars) {
+	global $user;
   //Allows you to use node-type base page templates
   if (!empty($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
   }
   
   //Construct the Management Menu
-  $items = BaseBuildingBlocks_get_management_menu();
-  $output = '';
-  foreach($items as $item) {
-  	if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
-	  	
-  	} elseif ($item->has_children == 1) {
-	  	$output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
-    	foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
-	    	$output .= '<li><a href="/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
-    	}
-			$output .= '</ul></li>';
-	  } else {
-		  $output .= '<li><a href="/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
+  if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
+	  $items = BaseBuildingBlocks_get_management_menu();
+	  $output = '';
+	  foreach($items as $item) {
+	  	if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
+		  	
+	  	} elseif ($item->has_children == 1) {
+		  	$output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
+	    	foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
+		    	$output .= '<li><a href="/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+	    	}
+				$output .= '</ul></li>';
+		  } else {
+			  $output .= '<li><a href="/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
+		  }
 	  }
-  }
-  
-  $vars['admin_menu_expanded'] = $output;
- 
-  
+	  
+	  $vars['admin_menu_expanded'] = $output;
+  }  
 }
 
 
