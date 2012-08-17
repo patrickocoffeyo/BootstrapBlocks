@@ -66,6 +66,12 @@ and (min-device-width: 768px)
 and (max-device-width: 1024px) 
 and (orientation: portrait) { }
 
+/** Retina iPads (portrait and landscape mode) **/
+@media only screen 
+and (min-device-width: 1536px)
+and (max-device-width: 2048px)
+and (-webkit-min-device-pixel-ratio: 2) { }
+
 /** Standard Computers **/
 @media only screen 
 and (min-width: 1224px) { }
