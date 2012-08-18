@@ -40,10 +40,10 @@ function BaseBuildingBlocks_process_page(&$vars) {
  * Adds Jquery 1.8 instead of Drupal Default.
  */
 function BaseBuildingBlocks_js_alter(&$javascript) {
-	//If allowed, update to jQuery 1.8.
-	if (theme_get_setting('new_jquery_on_off') == 1) {
-		$javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js';
-	}	
+  if (theme_get_setting('new_jquery_on_off') == 1) {
+    drupal_add_js('var $, jQuery = jQuery.noConflict(true);', 'inline');
+    drupal_add_js(drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js');
+  }
 }
 
 
@@ -70,6 +70,7 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
   
   //Unsetting the content generator. (Why keep it?)
   unset($vars['system_meta_generator']);
+  
   
   //Adding the mobile viewport
 	$vars['viewport'] = array(

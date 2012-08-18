@@ -3,14 +3,14 @@
  * Implements hook_form_FORM_ID_alter().
  */
 function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state) {
-	
-	$form['chrome_frame'] = array( 
-		'#type' => 'fieldset',
-		'#title' => 'IE Compatability',
-		'#collapsible' => TRUE,
-		'#required' => TRUE,
-		'#weight' => -20,
-	);
+  
+  $form['chrome_frame'] = array( 
+    '#type' => 'fieldset',
+    '#title' => 'IE Compatability',
+    '#collapsible' => TRUE,
+    '#required' => TRUE,
+    '#weight' => -20,
+  );
   $form['chrome_frame']['chrome_frame_on_off'] = array(
     '#type' => 'checkbox',
     '#title' => t('Edge and Chrome Frame Meta Tag'),
@@ -19,12 +19,12 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
   );
   
   $form['admin'] = array( 
-		'#type' => 'fieldset',
-		'#title' => 'Management Menu',
-		'#collapsible' => TRUE,
-		'#required' => TRUE,
-		'#weight' => -20,
-	);
+    '#type' => 'fieldset',
+    '#title' => 'Management Menu',
+    '#collapsible' => TRUE,
+    '#required' => TRUE,
+    '#weight' => -20,
+  );
   $form['admin']['admin_menu_on_off'] = array(
     '#type' => 'checkbox',
     '#title' => t('Management Menu'),
@@ -33,13 +33,13 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
   );
   
   $form['jquery'] = array( 
-		'#type' => 'fieldset',
-		'#title' => 'Jquery Settings',
-		'#description' => t('<i class="icon-exclamation-sign"></i> You must have the latest version of jQuery to use Twitter Bootstrap. However, some items in popular contrib modules such as Views have issues with later versions of jQuery. This is an issue Im currently working on. Untill this issue is resolve, I will leave this on/off switch for my jQuery update.'),
-		'#collapsible' => TRUE,
-		'#required' => TRUE,
-		'#weight' => -20,
-	);
+    '#type' => 'fieldset',
+    '#title' => 'Jquery Settings',
+    '#description' => t('<i class="icon-exclamation-sign"></i> You must have the latest version of jQuery to use Twitter Bootstrap. However, some items in popular contrib modules such as Views have issues with later versions of jQuery. Enabling this will add jQuery 1.8 and put jQuery 1.4 in noConflict() mode.'),
+    '#collapsible' => TRUE,
+    '#required' => TRUE,
+    '#weight' => -20,
+  );
   $form['jquery']['new_jquery_on_off'] = array(
     '#type' => 'checkbox',
     '#title' => t('Turn on Base Building Blocks jQuery Update'),
