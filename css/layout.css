@@ -5,11 +5,11 @@
   margin-top: 20px;
 }
 #logo {
-	height: 90px;
-	width: 80px;
-	background-image: url('../img/logo.png');
-	background-size: 80px 90px;
-	display: block;
+  height: 90px;
+  width: 80px;
+  background-image: url('../img/logo.png');
+  background-size: 80px 90px;
+  display: block;
 }
  
 /**
@@ -23,7 +23,7 @@
  * Main Content Area
  */
 #main {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #main-content { }
@@ -85,8 +85,8 @@ and (min-width: 1824px) { }
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2) {
-	#logo {
-		background-image: url('../img/hd/logo@2x.png');
+  #logo {
+    background-image: url('../img/hd/logo@2x.png');
 }
 
 /** iPhone 4 (portrait and landscape mode) **/

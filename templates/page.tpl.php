@@ -8,7 +8,7 @@
       <?php include 'includes/page-title.php'; ?>
       <?php include 'includes/page-action-links.php'; ?>
       <?php print render($page['content']); ?>
-    </article>	
+    </article>
     <?php include 'includes/page-sidebar-left.php'; ?>
   </section>
   <?php include 'includes/page-footer.php'; ?>

@@ -30,7 +30,7 @@ ul.inline li {
 
 /** Drupal's Pager **/
 .item-list ul li {
-	margin: 0px;
+  margin: 0px;
 }
 
 /** Drupal's Action Links **/
@@ -90,7 +90,7 @@ dl.node-type-list dt a {
   font-weight: 800;
 }
 .admin-list dd {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /** Drupal's Autocomplete Field **/
@@ -115,7 +115,7 @@ html.js input.throbbing {
 }
 #autocomplete li {
   margin-left: 0px;
-  padding-left: 20px;	
+  padding-left: 20px;  
 }
 #autocomplete li:hover {
   background: #333333;
@@ -125,32 +125,32 @@ html.js input.throbbing {
 
 /** Drupal's Exposed Filters **/
 .page-admin-content .exposed-filters .filters {
-	padding: 20px;
+  padding: 20px;
 }
 
 /** Drupal's Forms **/
 .form-actions input.btn {
-	margin: 5px;
+  margin: 5px;
 }
 .radio input[type="radio"], .checkbox input[type="checkbox"] {
-	margin-left: 0px;
+  margin-left: 0px;
 }
 .field-formatter-settings-edit {
-	width: auto;
+  width: auto;
 }
 .description,
 .help-block {
-	font-size: 80%;
+  font-size: 80%;
 }
 
 /** Drupal's Fieldsets **/
 html.js fieldset.collapsed {
-	height: auto;
+  height: auto;
 }
 
 /** Drupal's Tables **/
 table.table td.checkbox input[type="checkbox"] {
-	margin-left: 0px;
+  margin-left: 0px;
 }
 
 /* Drupal's Comment System **/
