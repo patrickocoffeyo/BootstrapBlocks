@@ -20,7 +20,8 @@
 
 
 !function ($) {
-
+  $ = jq8;
+  
   "use strict"; // jshint ;_;
 
 

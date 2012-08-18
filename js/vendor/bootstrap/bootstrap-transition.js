@@ -19,7 +19,8 @@
 
 
 !function ($) {
-
+  $ = jq8;
+  
   $(function () {
 
     "use strict"; // jshint ;_;

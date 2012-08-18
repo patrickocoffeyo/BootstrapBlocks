@@ -7,6 +7,10 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php global $theme_path; global $base_url; ?>
+  <script type="text/javascript" src="<?php print $base_url . '/' . $theme_path; ?>/js/vendor/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript">
+    var jq8 = jQuery.noConflict();
+  </script>
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <link rel="apple-touch-icon-precomposed" href="<?php print $theme_path; ?>/img/icons/mobile/touch-icon-iphone.png" />

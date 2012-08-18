@@ -12,12 +12,6 @@ function BaseBuildingBlocks_process_page(&$vars) {
     $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
   }
   
-  //Adding jQuery 1.8 in noConflict mode
-  if (theme_get_setting('new_jquery_on_off') == 1) {
-    drupal_add_js('var $, jQuery = jQuery.noConflict(true);', 'inline');
-    drupal_add_js(drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js');
-  }
-  
   //Construct the Management Menu
   if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
   $items = BaseBuildingBlocks_get_management_menu();

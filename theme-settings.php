@@ -32,19 +32,5 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
     '#default_value' => theme_get_setting('admin_menu_on_off'),
   );
   
-  $form['jquery'] = array( 
-    '#type' => 'fieldset',
-    '#title' => 'Jquery Settings',
-    '#description' => t('<i class="icon-exclamation-sign"></i> You must have the latest version of jQuery to use Twitter Bootstrap. However, some items in popular contrib modules such as Views have issues with later versions of jQuery. Enabling this will add jQuery 1.8 and put jQuery 1.4 in noConflict() mode.'),
-    '#collapsible' => TRUE,
-    '#required' => TRUE,
-    '#weight' => -20,
-  );
-  $form['jquery']['new_jquery_on_off'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Turn on Base Building Blocks jQuery Update'),
-    '#default_value' => theme_get_setting('new_jquery_on_off'),
-  );
-  
   return $form;
 }
