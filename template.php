@@ -6,43 +6,37 @@ include 'functions/template-functions.php';
  * Adds admininstration menu 
  */
 function BaseBuildingBlocks_process_page(&$vars) {
-	global $user;
+  global $user;
   //Allows you to use node-type base page templates
   if (!empty($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
   }
   
-  //Construct the Management Menu
-  if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
-	  $items = BaseBuildingBlocks_get_management_menu();
-	  $output = '';
-	  foreach($items as $item) {
-	  	if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
-		  	
-	  	} elseif ($item->has_children == 1) {
-		  	$output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
-	    	foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
-		    	$output .= '<li><a href="/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
-	    	}
-				$output .= '</ul></li>';
-		  } else {
-			  $output .= '<li><a href="/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
-		  }
-	  }
-	  
-	  $vars['admin_menu_expanded'] = $output;
-  }  
-}
-
-
-/**
- * Implimenting hook_js_alter
- * Adds Jquery 1.8 instead of Drupal Default.
- */
-function BaseBuildingBlocks_js_alter(&$javascript) {
+  //Adding jQuery 1.8 in noConflict mode
   if (theme_get_setting('new_jquery_on_off') == 1) {
     drupal_add_js('var $, jQuery = jQuery.noConflict(true);', 'inline');
     drupal_add_js(drupal_get_path('theme', 'BaseBuildingBlocks') . '/js/vendor/jquery-1.8.0.min.js');
+  }
+  
+  //Construct the Management Menu
+  if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
+  $items = BaseBuildingBlocks_get_management_menu();
+  $output = '';
+  foreach($items as $item) {
+    if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
+    
+    } elseif ($item->has_children == 1) {
+      $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
+      foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
+        $output .= '<li><a href="/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+      }
+      $output .= '</ul></li>';
+      } else {
+        $output .= '<li><a href="/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
+    }
+  }
+  $vars['admin_menu_expanded'] = $output;
+  
   }
 }
 
@@ -73,25 +67,25 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
   
   
   //Adding the mobile viewport
-	$vars['viewport'] = array(
-		'#type' => 'html_tag',
-		'#tag' => 'meta',
-		'#attributes' => array(
-			'name' => 'viewport',
-			'content' => 'width=device-width',
-		)
-	);
-	
-	//If in IE, and chrome frame is available, and theme option says you can use it, USE IT!
-	$vars['chrome_frame_compatability'] = array(
-		'#type' => 'html_tag',
-		'#tag' => 'meta',
-		'#attributes' => array(
-			'http-equiv' => 'X-UA-Compatible',
-			'content' => 'IE=edge,chrome=1',
-		),
-		'#access' => theme_get_setting('chrome_frame_on_off'),
-	);
+  $vars['viewport'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width',
+    )
+  );
+  
+  //If in IE, and chrome frame is available, and theme option says you can use it, USE IT!
+  $vars['chrome_frame_compatability'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'http-equiv' => 'X-UA-Compatible',
+      'content' => 'IE=edge,chrome=1',
+    ),
+    '#access' => theme_get_setting('chrome_frame_on_off'),
+  );
 
 }
 
@@ -157,7 +151,7 @@ function BaseBuildingBlocks_preprocess_table(&$vars) {
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
   $vars['element']['#attributes']['class'][] = 'btn '.BaseBuildingBlocks_button_class($vars['element']['#value']);
-}	
+}
 
 /**
  * Implimenting hook_preprocess_image_button
@@ -195,7 +189,7 @@ function BaseBuildingBlocks_status_messages($variables) {
     $output .= '<div class="messages alert '.BaseBuildingBlocks_get_status($type).'" data-alert="alert">';
     
     foreach ($messages as $message) {
-	    $output .= $message.'<br>';
+      $output .= $message.'<br>';
     }
 
     $output .= '</div>';   
