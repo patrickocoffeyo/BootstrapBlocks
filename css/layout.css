@@ -87,6 +87,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2) {
   #logo {
     background-image: url('../img/hd/logo@2x.png');
+  }
 }
 
 /** iPhone 4 (portrait and landscape mode) **/
