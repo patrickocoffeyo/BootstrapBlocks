@@ -11,6 +11,7 @@ stylesheets[screen][] = css/pages.css
 
 scripts[] = js/vendor/modernizr-2.6.1.min.js
 scripts[] = js/main.js
+#scripts[] = js/vendor/bootstrap/bootstrap-affix.js
 #scripts[] = js/vendor/bootstrap/bootstrap-alert.js
 #scripts[] = js/vendor/bootstrap/bootstrap-button.js
 #scripts[] = js/vendor/bootstrap/bootstrap-carousel.js
@@ -22,6 +23,7 @@ scripts[] = js/vendor/bootstrap/bootstrap-dropdown.js
 scripts[] = js/vendor/bootstrap/bootstrap-tab.js
 #scripts[] = js/vendor/bootstrap/bootstrap-tooltip.js
 #scripts[] = js/vendor/bootstrap/bootstrap-transition.js
+#scripts[] = js/vendor/bootstrap/bootstrap-typeahead.js
 
 regions[content] = Content
 regions[menu] = Main Menu
