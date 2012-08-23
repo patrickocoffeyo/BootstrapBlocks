@@ -1,5 +1,8 @@
+//Setting $ to be jQuery 1.8.
+var $ = jq8;
+
 // iOS orientation change fix  if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
-jQuery(document).ready(function() {
+$(document).ready(function() {
   var viewportmeta = document.querySelector('meta[name="viewport"]');
   if (viewportmeta) {
     viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0';
