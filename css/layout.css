@@ -5,10 +5,11 @@
   margin-top: 20px;
 }
 #logo {
+  width: 70px;
   height: 90px;
-  width: 80px;
   background-image: url('../img/logo.png');
-  background-size: 80px 90px;
+  background-repeat: no-repeat;
+  background-size: 100%;
   display: block;
 }
  
