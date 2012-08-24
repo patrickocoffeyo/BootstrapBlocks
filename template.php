@@ -5,11 +5,14 @@ include 'functions/template-functions.php';
  * Allows you to use node-type based page templates.
  * Adds admininstration menu 
  */
-function BaseBuildingBlocks_process_page(&$vars) {
+function BaseBuildingBlocks_preprocess_page(&$vars) {
   global $user;
   //Allows you to use node-type base page templates
+  //Adds custom 404 error page template
   if (!empty($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;	
+  } elseif (drupal_get_http_header("status")) {
+    $vars['theme_hook_suggestions'][] = 'page__404';
   }
   
   //Construct the Management Menu
