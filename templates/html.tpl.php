@@ -7,8 +7,8 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php global $theme_path; global $base_url; ?>
-  <script type="text/javascript" src="<?php print $base_url . '/' . $theme_path; ?>/js/vendor/jquery-1.8.0.min.js"></script>
-  <script type="text/javascript">
+  <script src="<?php print $base_url . '/' . $theme_path; ?>/js/vendor/jquery-1.8.0.min.js"></script>
+  <script>
     var jq8 = jQuery.noConflict();
   </script>
   <?php print $styles; ?>
