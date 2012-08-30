@@ -9,7 +9,7 @@
       <?php include 'includes/page-action-links.php'; ?>
       <?php print render($page['content']); ?>
     </article>
-    <?php include 'includes/page-sidebar-left.php'; ?>
+    <?php include 'includes/page-sidebar-right.php'; ?>
   </section>
   <?php include 'includes/page-footer.php'; ?>
 </section>

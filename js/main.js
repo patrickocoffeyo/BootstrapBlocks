@@ -1,5 +1,6 @@
 //Setting $ to be jQuery 1.8.
 var $ = jq8;
+window.jQuery = jq8
 
 // iOS orientation change fix  if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
 $(document).ready(function() {
