@@ -10,9 +10,10 @@ function BaseBuildingBlocks_preprocess_page(&$vars) {
   //Allows you to use node-type, and node ID base page templates
   //Adds custom 404 error page template
   if (!empty($vars['node'])) {
-    $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;
-    $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->vid;
-  } elseif (drupal_get_http_header("status")) {
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->vid;
+  } 
+  elseif (drupal_get_http_header("status")) {
     $vars['theme_hook_suggestions'][] = 'page__404';
   }
   
@@ -20,16 +21,18 @@ function BaseBuildingBlocks_preprocess_page(&$vars) {
   if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
   $items = BaseBuildingBlocks_get_management_menu();
   $output = '';
-  foreach($items as $item) {
+  foreach ($items as $item) {
     if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
     
-    } elseif ($item->has_children == 1) {
+    } 
+    elseif ($item->has_children == 1) {
       $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
       foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
         $output .= '<li><a href="/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
       }
       $output .= '</ul></li>';
-      } else {
+      } 
+      else {
         $output .= '<li><a href="/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
     }
   }
@@ -135,7 +138,7 @@ function BaseBuildingBlocks_menu_local_tasks(&$vars) {
  * Implimenting hook_preprocess_table
  * Bootstrapping Tables
  */
-function BaseBuildingBlocks_preprocess_table(&$vars) {	
+function BaseBuildingBlocks_preprocess_table(&$vars) {  
   $vars['attributes']['class'][] = 'table';
   $vars['attributes']['class'][] = 'table-striped';
   $vars['attributes']['class'][] = 'table-bordered';
@@ -148,7 +151,7 @@ function BaseBuildingBlocks_preprocess_table(&$vars) {
  * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
-  $vars['element']['#attributes']['class'][] = 'btn '.BaseBuildingBlocks_button_class($vars['element']['#value']);
+  $vars['element']['#attributes']['class'][] = 'btn ' . BaseBuildingBlocks_button_class($vars['element']['#value']);
 }
 
 /**
@@ -166,9 +169,11 @@ function BaseBuildingBlocks_preprocess_image_button(&$vars) {
  function BaseBuildingBlocks_get_status($status) {
   if ($status == 'status') {
     return 'alert-success';
-  } elseif ($status == 'warning') {
+  } 
+  elseif ($status == 'warning') {
     return 'alert-block';
-  } elseif ($status == 'error') {
+  } 
+  elseif ($status == 'error') {
     return 'alert-error';
   }
   
@@ -183,11 +188,11 @@ function BaseBuildingBlocks_status_messages($variables) {
   $display = $variables['display'];
   $output = '';
   
-  foreach (drupal_get_messages($display) as $type => $messages) { 	
-    $output .= '<div class="messages alert '.BaseBuildingBlocks_get_status($type).'" data-alert="alert">';
+  foreach (drupal_get_messages($display) as $type => $messages) {   
+    $output .= '<div class="messages alert ' . BaseBuildingBlocks_get_status($type) . '" data-alert="alert">';
     
     foreach ($messages as $message) {
-      $output .= $message.'<br>';
+      $output .= $message . '<br>';
     }
 
     $output .= '</div>';   
@@ -210,7 +215,7 @@ function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
   );
   
   // Only wrap in container for certain form
-  if(isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form']))
+  if (isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form']))
     $form['actions']['#theme_wrappers'] = array();
 }  
 
