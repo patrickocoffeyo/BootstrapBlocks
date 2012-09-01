@@ -3,7 +3,7 @@
   <?php include 'includes/page-header.php'; ?>
   <section class="row-fluid" id="main" role="document">
     <article class="span9" id="main-content" role="article">
-      <h1>Oops! Looks like a 404. :(</h1>
+      <h1><?php print t("Oops! Looks like a 404. :("); ?></h1>
       <?php print render($page['content']); ?>
     </article>
   </section>
