@@ -88,4 +88,4 @@
     $('body').on('click.alert.data-api', dismiss, Alert.prototype.close)
   })
 
-}(window.jQuery);
+}(jq8);

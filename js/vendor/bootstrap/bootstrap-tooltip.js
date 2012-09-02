@@ -273,4 +273,4 @@
   , html: true
   }
 
-}(window.jQuery);
+}(jq8);

@@ -102,4 +102,4 @@
   })
 
 
-}(window.jQuery);
+}(jq8);

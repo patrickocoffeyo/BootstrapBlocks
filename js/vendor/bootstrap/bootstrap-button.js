@@ -94,4 +94,4 @@
     })
   })
 
-}(window.jQuery);
+}(jq8);
