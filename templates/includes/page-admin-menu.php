@@ -1,5 +1,8 @@
 <?php if (isset($admin_menu_expanded)): ?>
-  <?php global $user; ?>
+  <?php 
+    global $user;
+    global $base_url;
+   ?>
   <div class="navbar">
     <div class="navbar-inner">
       <div class="container">
@@ -18,9 +21,9 @@
             <a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown">
               <?php print t("Welcome,") . " " . $user->name . "!"; ?><b class="caret"></b></a>
             <ul class="content-dropdown dropdown-menu">
-              <li><a href="?q=user"><i class="icon-user"></i> <?php print t("My Account"); ?></a></li>
-              <li><a href="?q=user/logout"><i class="icon-off"></i> <?php print t("Logout"); ?></a></li>
-              <li><a href="?q=user/<?php print $user->uid; ?>/edit"><i class="icon-wrench"></i> <?php print t("Edit"); ?></a></li>
+              <li><a href="<?php echo $base_url; ?>/user"><i class="icon-user"></i> <?php print t("My Account"); ?></a></li>
+              <li><a href="<?php echo $base_url; ?>/user/logout"><i class="icon-off"></i> <?php print t("Logout"); ?></a></li>
+              <li><a href="<?php echo $base_url; ?>/user/<?php print $user->uid; ?>/edit"><i class="icon-wrench"></i> <?php print t("Edit"); ?></a></li>
             </ul>
           </li>
         </ul>
