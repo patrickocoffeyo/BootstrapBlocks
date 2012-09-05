@@ -124,7 +124,7 @@ html.js input.throbbing {
 }
 
 /** Drupal's Exposed Filters **/
-.page-admin-content .exposed-filters .filters {
+.exposed-filters .filters {
   padding: 20px;
 }
 
