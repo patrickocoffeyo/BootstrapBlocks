@@ -9,7 +9,7 @@ stylesheets[screen][] = css/layout.css
 stylesheets[screen][] = css/blocks.css
 stylesheets[screen][] = css/pages.css
 
-scripts[] = js/vendor/modernizr-2.6.1.min.js
+scripts[] = js/vendor/modernizr-2.6.2.min.js
 #scripts[] = js/vendor/bootstrap/bootstrap-affix.js
 #scripts[] = js/vendor/bootstrap/bootstrap-alert.js
 #scripts[] = js/vendor/bootstrap/bootstrap-button.js
