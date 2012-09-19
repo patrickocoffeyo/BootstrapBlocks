@@ -74,7 +74,7 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
     '#tag' => 'meta',
     '#attributes' => array(
       'name' => 'viewport',
-      'content' => 'width=device-width',
+      'content' => 'width=device-width, initial-scale=1.0',
     )
   );
   
