@@ -14,12 +14,16 @@
 }
  
 /**
- * Main Menu
+ * Menus
  */
 #navigation {
   margin-top: 20px;
 }
 
+/** Administration Menu **/
+.navbar .nav > li > a {
+	padding: 10px 8px 10px!important;
+}
 /**
  * Main Content Area
  */

@@ -3,11 +3,11 @@
     global $user;
     global $base_url;
    ?>
-  <div class="navbar">
+  <div class="navbar navbar-top">
     <div class="navbar-inner">
       <div class="container">
         <?php if ($site_name): ?>
-          <a class="brand" href="/"><i class="icon-home"></i> <?php print $site_name; ?></a>
+          <a class="brand" href="/"><i class="icon-home"></i> <?php echo $site_name; ?></a>
         <?php endif; ?>
         
         <ul class="nav">
