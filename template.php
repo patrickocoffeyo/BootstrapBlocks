@@ -140,9 +140,7 @@ function BaseBuildingBlocks_menu_local_tasks(&$vars) {
  * Bootstrapping Tables
  */
 function BaseBuildingBlocks_preprocess_table(&$vars) {  
-  if(isset($vars['attributes']['class'][])) && !is_array($vars['attributes']['class'])){
-  	$vars['attributes']['class'] = array();
-  }
+  $vars['attributes']['class'] = array();
   $vars['attributes']['class'][] = 'table';
   $vars['attributes']['class'][] = 'table-striped';
   $vars['attributes']['class'][] = 'table-bordered';
