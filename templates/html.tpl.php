@@ -10,10 +10,12 @@
   <?php print BaseBuildingBlocks_scripts(); ?>
   <?php print $scripts; ?>
   <?php print BaseBuildingBlocks_touch_icons(); ?>
+  <?php print BaseBuildingBlocks_author(); ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+  <?php print BaseBuildingBlocks_footer_scripts(); ?>
 </body>
 </html>

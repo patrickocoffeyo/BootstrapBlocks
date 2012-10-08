@@ -118,13 +118,13 @@ function BaseBuildingBlocks_link_to_icon($text) {
 }
 
 /**
- * Returns the top level Management Menu
+ * Return the top level Management Menu
  */
 function BaseBuildingBlocks_get_management_menu() {
   return db_query('SELECT link_title, link_path, has_children, weight, mlid FROM {menu_links} WHERE plid = 1 ORDER BY weight')->fetchAll();
 }
 /**
- * Returns children of a menu item
+ * Return children of a menu item
  */
 function BaseBuildingBlocks_get_children($plid) {
   $items = db_query('SELECT link_title, link_path, has_children, mlid FROM {menu_links} WHERE plid = :plid', array(':plid' => $plid))->fetchAll();
@@ -133,10 +133,9 @@ function BaseBuildingBlocks_get_children($plid) {
 }
 
 /*
+ * Return Header Scripts
  * Add jquery version 1.8.0
- * Used for easily printing in html.tpl.php
- * 
-*/
+ */
 function BaseBuildingBlocks_scripts() {
   global $base_url, $theme_path; 
   $path = $base_url . '/' . $theme_path;
@@ -146,10 +145,18 @@ function BaseBuildingBlocks_scripts() {
 }
 
 /*
- * Add touch icons
- * Used for easily printing in html.tpl.php
- * 
-*/
+ * Return Footer Scripts
+ */
+function BaseBuildingBlocks_footer_scripts() {
+  if (theme_get_setting('footer_scripts')) {
+    return '<script>'. theme_get_setting('footer_scripts') . '</script>';
+  }
+  return NULL;
+}
+
+/*
+ * Return touch icons
+ */
 function BaseBuildingBlocks_touch_icons() {
   global $base_url, $theme_path; 
   $path = $base_url . '/' . $theme_path . "/img/icons/mobile/";
@@ -161,3 +168,12 @@ function BaseBuildingBlocks_touch_icons() {
   return $output;
 }
 
+/*
+ * Return Author Link
+ */
+function BaseBuildingBlocks_author() {
+  if (theme_get_setting('author_id')) {
+    return '<link rel="author" href="https://plus.google.com/'.theme_get_setting('author_id').'">';
+  }
+  return NULL;
+}

@@ -1,4 +1,5 @@
 <?php
+
 include 'functions/template-functions.php';
 /**
  * Implimenting hook_process_page
@@ -14,18 +15,20 @@ function BaseBuildingBlocks_preprocess_page(&$vars) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->vid;
   } 
-  elseif (drupal_get_http_header("status")) {
+  elseif (drupal_get_http_header('status')) {
     $vars['theme_hook_suggestions'][] = 'page__404';
   }
   
   //Construct the Management Menu
   if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
+  
+  //Get the management menu from the drupal menu system, construct menu
   $items = BaseBuildingBlocks_get_management_menu();
   $output = '';
   foreach ($items as $item) {
-    if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {
     
-    } 
+    //If the current links are help or task links, skip them.
+    if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {}
     elseif ($item->has_children == 1) {
       $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
       foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
@@ -67,7 +70,6 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
   //Unsetting the content generator. (Why keep it?)
   unset($vars['system_meta_generator']);
   
-  
   //Adding the mobile viewport
   $vars['viewport'] = array(
     '#type' => 'html_tag',
@@ -88,7 +90,6 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
     ),
     '#access' => theme_get_setting('chrome_frame_on_off'),
   );
-
 }
 
 
@@ -178,7 +179,6 @@ function BaseBuildingBlocks_preprocess_image_button(&$vars) {
   elseif ($status == 'error') {
     return 'alert-error';
   }
-  
   return NULL;
 }
 
@@ -196,10 +196,8 @@ function BaseBuildingBlocks_status_messages($variables) {
     foreach ($messages as $message) {
       $output .= $message . '<br>';
     }
-
     $output .= '</div>';   
   }
-
   return $output;
 }
 
@@ -217,9 +215,10 @@ function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
   );
   
   // Only wrap in container for certain form
-  if (isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form']))
+  if (isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form'])) {
     $form['actions']['#theme_wrappers'] = array();
-}  
+  }
+}
 
 
 /**
@@ -227,24 +226,24 @@ function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
  */
 function BaseBuildingBlocks_form_element(&$variables) {
   $element = &$variables['element'];
-  // This is also used in the installer, pre-database setup.
+  //This is also used in the installer, pre-database setup.
   $t = get_t();
 
-  // This function is invoked as theme wrapper, but the rendered form element
-  // may not necessarily have been processed by form_builder().
+  //This function is invoked as theme wrapper, but the rendered form element
+  //may not necessarily have been processed by form_builder().
   $element += array(
     '#title_display' => 'before',
   );
 
-  // Add element #id for #type 'item'.
+  //Add element #id for #type 'item'.
   if (isset($element['#markup']) && !empty($element['#id'])) {
     $attributes['id'] = $element['#id'];
   }
 
-  // Add bootstrap class
+  //Add bootstrap class
   $attributes['class'] = array('control-group');
 
-  // Check for errors and set correct error class
+  //Check for errors and set correct error class
   if (isset($element['#parents']) && form_get_error($element)) {
     $attributes['class'][] = 'error';
   }
@@ -255,16 +254,17 @@ function BaseBuildingBlocks_form_element(&$variables) {
   if (!empty($element['#name'])) {
     $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
   }
-  // Add a class for disabled elements to facilitate cross-browser styling.
+  //Add a class for disabled elements to facilitate cross-browser styling.
   if (!empty($element['#attributes']['disabled'])) {
     $attributes['class'][] = 'form-disabled';
   }
   $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
 
-  // If #title is not set, we don't display any label or required marker.
+  //If #title is not set, we don't display any label or required marker.
   if (!isset($element['#title'])) {
     $element['#title_display'] = 'none';
   }
+  
   $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
   $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
 
@@ -284,7 +284,7 @@ function BaseBuildingBlocks_form_element(&$variables) {
 
     case 'none':
     case 'attribute':
-      // Output no label and no required marker, only the children.
+      //Output no label and no required marker, only the children.
       $output .= '<div class="controls">';
       $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
       break;
@@ -305,26 +305,26 @@ function BaseBuildingBlocks_form_element(&$variables) {
  */
 function BaseBuildingBlocks_form_element_label(&$variables) {
   $element = $variables['element'];
-  // This is also used in the installer, pre-database setup.
+  //This is also used in the installer, pre-database setup.
   $t = get_t();
 
-  // If title and required marker are both empty, output no label.
+  //If title and required marker are both empty, output no label.
   if ((!isset($element['#title']) || $element['#title'] === '') && empty($element['#required'])) {
     return '';
   }
 
-  // If the element is required, a required marker is appended to the label.
+  //If the element is required, a required marker is appended to the label.
   $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
 
   $title = filter_xss_admin($element['#title']);
 
   $attributes = array();
-  // Style the label as class option to display inline with the element.
+  //Style the label as class option to display inline with the element.
   if ($element['#title_display'] == 'after') {
     $attributes['class'][] = 'option';
     $attributes['class'][] = $element['#type'];
   }
-  // Show label only to screen readers to avoid disruption in visual flows.
+  //Show label only to screen readers to avoid disruption in flows.
   elseif ($element['#title_display'] == 'invisible') {
     $attributes['class'][] = 'element-invisible';
   }
@@ -333,18 +333,15 @@ function BaseBuildingBlocks_form_element_label(&$variables) {
     $attributes['for'] = $element['#id'];
   }
 
-  // @Bootstrap: Add Bootstrap control-label class.
   $attributes['class'][] = 'control-label';
 
-  // @Bootstrap: Insert radio and checkboxes inside label elements.
   $output = '';
   if ( isset($variables['#children']) ) {
     $output .= $variables['#children'];
   }
 
-  // @Bootstrap: Append label
   $output .= $t('!title !required', array('!title' => $title, '!required' => $required));
 
-  // The leading whitespace helps visually separate fields from inline labels.
+  //The leading whitespace helps visually separate fields from inline labels.
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
