@@ -1,6 +1,12 @@
 <?php
 /**
  * Button to bootstrap
+ * @param
+ *   Button text
+ * @return
+ *   The the btn-class to add the appropriate Bootstrap color
+ * @todo
+ *   Add theme settings so users can add custom button names and classes
  */
 function BaseBuildingBlocks_button_class($text) {
   switch ($text) {
@@ -37,6 +43,12 @@ function BaseBuildingBlocks_button_class($text) {
 
 /**
  * Menu Item to Icon
+ * @param
+ *   Menu link text
+ * @return
+ *   The icon-class of the appropriate Font Awesome icon from the text passed in
+ * @todo
+ *   Add theme settings so users can add custom icons
  */
 function BaseBuildingBlocks_link_to_icon($text) {
   switch ($text) {
@@ -119,22 +131,70 @@ function BaseBuildingBlocks_link_to_icon($text) {
 
 /**
  * Return the top level Management Menu
+ * @param $menu_name
+ *   The name of the menu structure you would like to return
+ * @return
+ *   An array of top-level menu links that belong to the passed in $menu_name
  */
-function BaseBuildingBlocks_get_management_menu() {
-  return db_query('SELECT link_title, link_path, has_children, weight, mlid FROM {menu_links} WHERE plid = 1 ORDER BY weight')->fetchAll();
+function BaseBuildingBlocks_get_menu($menu_name) {
+  if ($menu_name) {
+    return db_query('SELECT link_title, link_path, has_children, weight, mlid FROM {menu_links} WHERE menu_name = :name AND depth = 2 ORDER BY weight', array(':name' => $menu_name))->fetchAll();
+  }
+  return NULL;
 }
 /**
  * Return children of a menu item
+ * @param $plid
+ *   The parent's link ID.
+ * @return
+ *   An array of menu links that are children of the passed in $plid
  */
 function BaseBuildingBlocks_get_children($plid) {
-  $items = db_query('SELECT link_title, link_path, has_children, mlid FROM {menu_links} WHERE plid = :plid', array(':plid' => $plid))->fetchAll();
+  if ($plid) {
+    return db_query('SELECT link_title, link_path, has_children, mlid FROM {menu_links} WHERE plid = :plid', array(':plid' => $plid))->fetchAll();
+  }
+  return NULL;
+}
+
+/**
+ * Builds a navbar for any passed in menu
+ * @param $menu_name
+ *   The name of the menu you would like to build a navbar from
+ * @return
+ *   The dom structure for a navbar from the passed in menu name
+ **/
+function BaseBuildingBlocks_build_navbar($menu_name) {
+  if ($menu_name) {
+    global $user;
+    global $base_url;
   
-  return $items;
+    $items = BaseBuildingBlocks_get_menu($menu_name);
+    
+    $output = '';
+    foreach ($items as $item) {
+      if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {}
+      elseif ($item->has_children == 1) {
+        $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
+        foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
+          $output .= '<li><a href="'.$base_url.'/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+        }
+        $output .= '</ul></li>';
+        } 
+        else {
+          $output .= '<li><a href="'.$base_url.'/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
+      }
+    }
+  }
+  else {
+    $output = NULL;
+  }
+  return $output;
 }
 
 /*
  * Return Header Scripts
- * Add jquery version 1.8.0
+ * @return
+ *   Dom for scripts added. By default, adds jQuery 1.8 in no conflict mode
  */
 function BaseBuildingBlocks_scripts() {
   global $base_url, $theme_path; 
@@ -146,6 +206,8 @@ function BaseBuildingBlocks_scripts() {
 
 /*
  * Return Footer Scripts
+ * @return
+ *   Scripts added in the theme setting footer_scripts
  */
 function BaseBuildingBlocks_footer_scripts() {
   if (theme_get_setting('footer_scripts')) {
@@ -156,6 +218,8 @@ function BaseBuildingBlocks_footer_scripts() {
 
 /*
  * Return touch icons
+ * @return
+ *   Apple Touch Icons in all the right sizes.
  */
 function BaseBuildingBlocks_touch_icons() {
   global $base_url, $theme_path; 
@@ -170,6 +234,8 @@ function BaseBuildingBlocks_touch_icons() {
 
 /*
  * Return Author Link
+ * @return
+ *   Link tag for the Google+ author that owns the site
  */
 function BaseBuildingBlocks_author() {
   if (theme_get_setting('author_id')) {
