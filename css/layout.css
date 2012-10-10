@@ -21,6 +21,9 @@
 }
 
 /** Administration Menu **/
+body.fixed-navbar {
+  padding-top: 40px;
+}
 .navbar .nav > li > a {
 	padding: 10px 8px 10px!important;
 }

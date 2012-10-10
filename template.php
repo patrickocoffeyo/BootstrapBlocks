@@ -21,30 +21,39 @@ function BaseBuildingBlocks_preprocess_page(&$vars) {
   
   //Construct the Management Menu
   if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
-  
-  //Get the management menu from the drupal menu system, construct menu
-  $items = BaseBuildingBlocks_get_management_menu();
-  $output = '';
-  foreach ($items as $item) {
-    
-    //If the current links are help or task links, skip them.
-    if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {}
-    elseif ($item->has_children == 1) {
-      $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
-      foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
-        $output .= '<li><a href="'.$base_url.'/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+    //Get the management menu from the drupal menu system, construct menu
+    $items = BaseBuildingBlocks_get_management_menu();
+    $output = '';
+    foreach ($items as $item) {
+      
+      //If the current links are help or task links, skip them.
+      if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {}
+      elseif ($item->has_children == 1) {
+        $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
+        foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
+          $output .= '<li><a href="'.$base_url.'/' . $child->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($child->link_title) . '"></i> ' . $child->link_title . '</a></li>';
+        }
+        $output .= '</ul></li>';
+        } 
+        else {
+          $output .= '<li><a href="'.$base_url.'/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
       }
-      $output .= '</ul></li>';
-      } 
-      else {
-        $output .= '<li><a href="'.$base_url.'/' . $item->link_path . '"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i> ' . $item->link_title . '</a></li>';
     }
+    $vars['admin_menu_expanded'] = $output;
   }
-  $vars['admin_menu_expanded'] = $output;
   
-  }
 }
 
+/**
+ * Implimenting hook_preprocess_html
+ * Adds body class for navbar-fixed-top
+ */
+function BaseBuildingBlocks_preprocess_html(&$vars) {
+  global $user;
+  if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
+    $vars['classes_array'][] = 'fixed-navbar';
+  }
+}
 
 /**
  * Implimenting hook_css_alter
