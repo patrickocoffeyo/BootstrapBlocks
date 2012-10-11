@@ -21,11 +21,11 @@
 }
 
 /** Administration Menu **/
-body.fixed-navbar {
-  padding-top: 40px;
+.fixed-navbar #wrapper {
+  margin-top: 40px;
 }
 .navbar .nav > li > a {
-	padding: 10px 8px 10px!important;
+  padding: 10px 8px 10px!important;
 }
 /**
  * Main Content Area

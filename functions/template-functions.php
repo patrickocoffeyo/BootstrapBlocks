@@ -172,7 +172,7 @@ function BaseBuildingBlocks_build_navbar($menu_name) {
     
     $output = '';
     foreach ($items as $item) {
-      if ($item->link_title == 'Help' || $item->link_title == 'Tasks') {}
+      if ($item->link_title == 'Help' || $item->link_title == 'Tasks' || $item->link_title == 'Dashboard') {}
       elseif ($item->has_children == 1) {
         $output .= '<li class="dropdown"><a href="#content-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="' . BaseBuildingBlocks_link_to_icon($item->link_title) . '"></i>' . $item->link_title . '<b class="caret"></b></a><ul class="content-dropdown dropdown-menu">';
         foreach (BaseBuildingBlocks_get_children($item->mlid) as $child) {
