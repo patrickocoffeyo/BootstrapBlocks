@@ -9186,6 +9186,17 @@ table.table td.checkbox input[type="checkbox"] {
 /* =============================================================================
    Header
    ========================================================================== */
+#header {
+  margin-top: 20px;
+}
+#logo {
+  width: 70px;
+  height: 90px;
+  background-image: url('../img/logo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: block;
+}
 /** Menu System **/
 #navigation {
   margin-top: 20px;
