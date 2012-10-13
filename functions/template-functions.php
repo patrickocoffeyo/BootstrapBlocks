@@ -199,7 +199,7 @@ function BaseBuildingBlocks_build_navbar($menu_name) {
 function BaseBuildingBlocks_scripts() {
   global $base_url, $theme_path; 
   $path = $base_url . '/' . $theme_path;
-  $js = '<script type="text/javascript" src="' . $path . '/js/vendor/jquery-1.8.0.min.js"></script>' . "\n";
+  $js = '<script type="text/javascript" src="' . $path . '/js/vendor/jquery-1.8.2.min.js"></script>' . "\n";
   $js .= '<script>var jq8 = jQuery.noConflict();</script>' . "\n";
   return $js;
 }
