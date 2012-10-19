@@ -8,7 +8,6 @@ include 'functions/template-functions.php';
  */
 function BaseBuildingBlocks_preprocess_page(&$vars) {
   global $user;
-  global $base_url;
   //Allows you to use node-type, and node ID base page templates
   //Adds custom 404 error page template
   if (!empty($vars['node'])) {
