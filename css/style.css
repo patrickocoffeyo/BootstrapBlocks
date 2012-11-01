@@ -9613,7 +9613,7 @@ table.table td.checkbox input[type="checkbox"] {
 #logo {
   width: 70px;
   height: 90px;
-  background-image: url('../img/logo.png');
+  background-image: url('../logo.png');
   background-repeat: no-repeat;
   background-size: 100%;
   display: block;
