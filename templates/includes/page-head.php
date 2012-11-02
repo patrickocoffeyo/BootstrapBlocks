@@ -1,4 +1,4 @@
-<header class="row-fluid clearfix" id="header" role="banner">
+<header class="row" id="header" role="banner">
   <?php if ($logo): ?>
     <div class="span1 header-logo">
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"></a>
