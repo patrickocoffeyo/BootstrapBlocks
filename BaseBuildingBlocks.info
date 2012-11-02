@@ -28,4 +28,3 @@ regions[footer] = Footer
 
 settings[chrome_frame_on_off] = 1
 settings[admin_menu_on_off] = 1
-settings[default_logo] = img/logo.png
