@@ -28,3 +28,54 @@ regions[footer] = Footer
 
 settings[chrome_frame_on_off] = 1
 settings[admin_menu_on_off] = 1
+settings[menu_icons] = "Content|icon-file
+Content types|icon-paste
+Comments|icon-comments
+Structure|icon-sitemap
+Blocks|icon-th-large
+Content Types|icon-paste
+Taxonomy|icon-tag
+Views|icon-table
+Appearance|icon-eye-open
+Add user|icon-plus
+Permissions|icon-legal
+People|icon-group
+Configuration|icon-cog
+Content authoring|icon-copy
+Development|icon-wrench
+Media|icon-picture
+Regional and language|icon-globe
+Search and metadata|icon-search
+System|icon-cogs
+User interface|icon-columns
+Web services|icon-list-alt
+Workflow|icon-check-empty
+Dashboard|icon-dashboard
+Help|icon-question-sign
+Index|icon-list-ul
+Modules|icon-th-large
+Reports|icon-bar-chart
+Field list|icon-list-alt
+Recent log messages|icon-list-alt
+Status report|icon-bar-chart
+Top 'access denied' errors|icon-remove-sign
+Top 'page not found' errors|icon-paste
+Details|icon-eye-open
+Top search phrases|icon-search
+Fields used in views|icon-list-alt
+Menus|icon-book"
+
+settings[button_classes] = "Save|btn-primary
+Create|btn-primary
+Submit|btn-primary
+Export|btn-primary
+Import|btn-primary
+Rebuild|btn-primary
+Add|btn-info
+Update|btn-info
+Restore|btn-success
+Confirm|btn-success
+Submit|btn-success
+Delete|btn-danger
+Remove|btn-danger
+Filter|btn-inverse"

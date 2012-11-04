@@ -3,7 +3,6 @@
  * Implements hook_form_FORM_ID_alter().
  */
 function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state) {
-  
   $form['chrome_frame'] = array( 
     '#type' => 'fieldset',
     '#title' => 'IE Compatability',
@@ -19,21 +18,39 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
     '#default_value' => theme_get_setting('chrome_frame_on_off'),
   );
   
-  $form['admin'] = array( 
+  $form['menu'] = array( 
     '#type' => 'fieldset',
-    '#title' => 'Administration Settings',
+    '#title' => 'Menu Settings',
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#required' => TRUE,
-    '#weight' => -20,
+    '#weight' => -30,
   );
-  $form['admin']['admin_menu_on_off'] = array(
+  $form['menu']['admin_menu_on_off'] = array(
     '#type' => 'checkbox',
     '#title' => t('Management Menu'),
     '#description' => t('Enables a nice administration menu for admins. You can always edit the items in this menu by going to the menu  administration page and editing the "Management" menu.'),
     '#default_value' => theme_get_setting('admin_menu_on_off'),
   );
-  
+  $form['menu']['menu_icons'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Menu Icons'),
+    '#description' => t('Determines what <a href="http://fortawesome.github.com/Font-Awesome/"> Font Awesome</a> icon should be printed before each menu item in the Base Building Blocks menu functions based off of the menu items title. (For example: My Menu Link Title | icon-font-awesome-preset)'),
+    '#default_value' => theme_get_setting('menu_icons'),
+  );
+  $form['buttons'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Button Settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#weight' => -40,
+  );
+  $form['buttons']['buttons_classes'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Button Classes'),
+    '#description' => t('Determines what bootstrap classes should be added to buttons based off of the button title. (For example: Button Title | btn-class)'),
+    '#default_value' => theme_get_setting('button_classes'),
+  );
   $form['seo'] = array( 
     '#type' => 'fieldset',
     '#title' => 'SEO and Social Settings',

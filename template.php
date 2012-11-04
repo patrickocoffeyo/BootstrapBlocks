@@ -1,6 +1,6 @@
 <?php
 
-include 'functions/template-functions.php';
+include('functions/template-functions.php');
 /**
  * Implimenting hook_process_page
  * Allows you to use node-type based page templates.
@@ -137,23 +137,6 @@ function BaseBuildingBlocks_preprocess_table(&$vars) {
   $vars['attributes']['class'][] = 'table-striped';
   $vars['attributes']['class'][] = 'table-bordered';
   return;
-}
-
-
-/**
- * Implimenting hook_preprocess_button
- * Bootstrapping Buttons
- */
-function BaseBuildingBlocks_preprocess_button(&$vars) {
-  $vars['element']['#attributes']['class'][] = 'btn ' . BaseBuildingBlocks_button_class($vars['element']['#value']);
-}
-
-/**
- * Implimenting hook_preprocess_image_button
- * Bootstrapping Image Button
- */
-function BaseBuildingBlocks_preprocess_image_button(&$vars) {
-  $vars['element']['#attributes']['class'][] = 'btn';
 }
 
 
