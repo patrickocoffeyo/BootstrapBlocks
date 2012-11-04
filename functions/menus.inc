@@ -6,11 +6,22 @@
  * @return
  *   An array of top-level menu links that belong to the passed in $menu_name
  */
-function BaseBuildingBlocks_get_menu($menu_name) {
-  if ($menu_name) {
-    return db_query('SELECT link_title, link_path, has_children, weight, mlid FROM {menu_links} WHERE menu_name = :name AND depth = 2 ORDER BY weight', array(':name' => $menu_name))->fetchAll();
+function BaseBuildingBlocks_get_menu($menu_name, $depth = 1) {
+  if (isset($menu_name)) {
+    $query = db_select('menu_links', 'links');
+    $query->addField('links', 'link_title', 'link_title');
+    $query->addField('links', 'link_path', 'link_path');
+    $query->addField('links', 'has_children', 'has_children');
+    $query->addField('links', 'mlid', 'mlid');
+    $query->condition('links.menu_name', $menu_name);
+    $query->condition('links.depth', $depth);
+    $query->orderBy('links.weight', 'ASC');
+    $results = $query->execute()->fetchAll();
   }
-  return NULL;
+  else {
+    $results = NULL;
+  }
+  return $results;
 }
 /**
  * Return children of a menu item
@@ -38,7 +49,7 @@ function BaseBuildingBlocks_build_navbar($menu_name) {
     global $user;
     global $base_url;
   
-    $items = BaseBuildingBlocks_get_menu($menu_name);
+    $items = BaseBuildingBlocks_get_menu($menu_name, 2);
     
     $output = '';
     foreach ($items as $item) {
