@@ -23,8 +23,17 @@ scripts[] = js/main.js
 
 regions[content] = Content
 regions[menu] = Main Menu
-regions[sidebar] = Sidebar
+regions[sidebar_right] = Right Sidebar
 regions[footer] = Footer
+
+features[] = logo
+features[] = name
+;features[] = slogan
+;features[] = mission
+features[] = node_user_picture
+features[] = comment_user_picture
+;features[] = search
+features[] = favicon
 
 settings[chrome_frame_on_off] = 1
 settings[admin_menu_on_off] = 1
