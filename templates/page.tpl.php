@@ -1,14 +1,21 @@
-<?php include 'includes/page-admin-menu.php'; ?>
+<?php echo render($admin_navbar); ?>
 <section id="wrapper" class="container">
-  <?php include 'includes/page-head.php'; ?>
-  <?php include 'includes/page-menu-main.php'; ?>
+  <?php include('includes/page-head.php'); ?>
+  <?php if ($page['menu']): ?>
+    <?php echo render($page['menu']); ?>
+    <?php echo render($mobile_select_menu); ?>
+  <?php endif; ?>
   <section class="row-fluid" id="main" role="document">
     <article class="span9" id="main-content" role="article">
-      <?php include 'includes/page-title.php'; ?>
-      <?php include 'includes/page-utility.php'; ?>
-      <?php print render($page['content']); ?>
+      <?php include('includes/page-title.php'); ?>
+      <?php include('includes/page-utility.php'); ?>
+      <?php echo render($page['content']); ?>
     </article>
-    <?php include 'includes/page-sidebar-right.php'; ?>
+    <?php if ($page['sidebar_right']): ?>
+        <?php echo render($page['sidebar_right']); ?>
+    <?php endif; ?>
   </section>
-  <?php include 'includes/page-footer.php'; ?>
+  <?php if ($page['footer']): ?>
+    <?php echo render($page['footer']); ?>
+  <?php endif; ?>
 </section>
