@@ -90,7 +90,7 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
     '#type' => 'textfield',
     '#title' => t('Twitter Link'),
     '#description' => t('Full URL to Twitter account belonging to site.'),
-    '#default_value' => theme_get_setting('twitter_handle'),
+    '#default_value' => theme_get_setting('twitter_link'),
   );
   $form['seo']['social']['facebook_link'] = array(
     '#type' => 'textfield',
@@ -98,19 +98,19 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
     '#description' => t('Full URL to Fabebook account belonging to site.'),
     '#default_value' => theme_get_setting('facebook_link'),
   );
-  $form['seo']['social']['youtube'] = array(
+  $form['seo']['social']['youtube_link'] = array(
     '#type' => 'textfield',
     '#title' => t('Youtube Link'),
     '#description' => t('Full URL to Youtube account belonging to site.'),
     '#default_value' => theme_get_setting('youtube_link'),
   );
-  $form['seo']['social']['linkedin'] = array(
+  $form['seo']['social']['linkedin_link'] = array(
     '#type' => 'textfield',
     '#title' => t('LinkedIn Link'),
     '#description' => t('Full URL to LinkedIn account belonging to site.'),
     '#default_value' => theme_get_setting('linkedin_link'),
   );
-  $form['seo']['social']['google+'] = array(
+  $form['seo']['social']['google+_link'] = array(
     '#type' => 'textfield',
     '#title' => t('Google+ Link'),
     '#description' => t('Full URL to Google+ account belonging to site.'),
