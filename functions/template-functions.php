@@ -1,6 +1,10 @@
 <?php
 include('menus.inc');
 include('buttons.inc');
+include('pagers.inc');
+include('forms.inc');
+include('messages.inc');
+include('tables.inc');
 
 /*
  * Return Header Scripts

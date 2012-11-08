@@ -5,7 +5,7 @@
  */
  
 /**
- * Implimenting hook_preprocess_button
+ * Implimenting hook_preprocess_button()
  * Bootstrapping Buttons
  */
 function BaseBuildingBlocks_preprocess_button(&$vars) {
@@ -16,7 +16,7 @@ function BaseBuildingBlocks_preprocess_button(&$vars) {
 }
 
 /**
- * Implimenting hook_preprocess_image_button
+ * Implimenting hook_preprocess_image_button()
  * Bootstrapping Image Button
  */
 function BaseBuildingBlocks_preprocess_image_button(&$vars) {
@@ -27,7 +27,7 @@ function BaseBuildingBlocks_preprocess_image_button(&$vars) {
 }
  
 /**
- * Returns a class from template settings from button title
+ * Returns a class from template settings from button title()
  * @param $button_title
  *   Title of the button to grab the class for
  * @return
