@@ -58,7 +58,7 @@ function BaseBuildingBlocks_get_menu($menu_name, $depth = 1, $sort = FALSE) {
     $query->condition('links.depth', $depth);
     
     //If $sort = true, sort by weight
-    if (isset($sort)) {
+    if ($sort == TRUE) {
       $query->orderBy('links.weight', 'ASC');
     }
     
@@ -77,7 +77,7 @@ function BaseBuildingBlocks_get_menu($menu_name, $depth = 1, $sort = FALSE) {
  *   An array of menu links that are children of the passed in $plid
  */
 function BaseBuildingBlocks_get_children($plid) {
-  if ($plid) {
+  if (isset($plid)) {
     $query = db_select('menu_links', 'links');
     $query->addField('links', 'link_title', 'link_title');
     $query->addField('links', 'link_path', 'link_path');
@@ -183,7 +183,6 @@ function BaseBuildingBlocks_select_menu_form($form, &$form_state, $menu) {
  *   The dom structure for a menu from the passed in menu name
  **/
 function BaseBuildingBlocks_build_menu($menu_name, $depth = 1, $exclude = array(), $sort = FALSE) {
-  
   if (isset($menu_name)) {
   
   //Load the menu
