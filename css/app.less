@@ -33,13 +33,6 @@ body { }
 .navbar .nav > li > a {
   padding: 10px 8px 10px!important;
 }
-//Hide the mobile menus by default, and show the normal one
-.mobile-select-menu {
-  display: none;
-}
-.block-menu {
-  display: block;
-}
 /* ==========================================================================
    Content
    ========================================================================== */
@@ -84,15 +77,7 @@ body { }
    ========================================================================== */
 /** Smartphones (portrait and landscape mode) **/
 @media only screen and (min-width: 320px) 
-and (max-width: 480px) {
-  //Show the mobile menus by default, and hide the normal one
-  .mobile-select-menu {
-    display: block;
-  }
-  .block-menu {
-    display: none;
-  }
-}
+and (max-width: 480px) { }
 
 /** Smartphones (landscape mode) **/
 @media only screen 
@@ -115,7 +100,7 @@ and (-webkit-min-device-pixel-ratio: 2) { }
 
 /** Standard Computers **/
 @media only screen 
-and (min-width: 1224px) {}
+and (min-width: 1224px) { }
 
 /** Large Computer Screens **/
 @media only screen 

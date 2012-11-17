@@ -17,33 +17,6 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
     '#description' => t('Forces Edge and Chrome Frame on IE if enabled.'),
     '#default_value' => theme_get_setting('chrome_frame_on_off'),
   );
-  
-  $form['menu'] = array( 
-    '#type' => 'fieldset',
-    '#title' => 'Menu Settings',
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-    '#required' => TRUE,
-    '#weight' => -30,
-  );
-  $form['menu']['admin_menu_on_off'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Management Menu'),
-    '#description' => t('Enables a nice administration menu for admins. You can always edit the items in this menu by going to the menu  administration page and editing the "Management" menu.'),
-    '#default_value' => theme_get_setting('admin_menu_on_off'),
-  );
-  $form['menu']['mobile_menu_on_off'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Mobile Menu'),
-    '#description' => t('Base Building Blocks includes a collection of functions that allow you to print menus easily. One of the menus you can print out is a select list for mobile devices. By default Base Building Blocks includes a function in the template.php/preprocess function that adds a mobile select menu for the main menu. You can easily add any menu you want but just adding your own custom variable in template.php like so: <code>$vars["mobile_select_menu"] = BaseBuildingBlocks_build_select_menu("main-menu");</code>'),
-    '#default_value' => theme_get_setting('mobile_menu_on_off'),
-  );
-  $form['menu']['menu_icons'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Menu Icons'),
-    '#description' => t('Determines what <a href="http://fortawesome.github.com/Font-Awesome/"> Font Awesome</a> icon should be printed before each menu item in the Base Building Blocks menu functions based off of the menu items title. (For example: My Menu Link Title | icon-font-awesome-preset)'),
-    '#default_value' => theme_get_setting('menu_icons'),
-  );
   $form['buttons'] = array(
     '#type' => 'fieldset',
     '#title' => t('Button Settings'),

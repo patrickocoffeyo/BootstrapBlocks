@@ -16,18 +16,6 @@ function BaseBuildingBlocks_preprocess_page(&$vars) {
   elseif (drupal_get_http_header('status')) {
     $vars['theme_hook_suggestions'][] = 'page__404';
   }
-  
-  //Here you can add all of your custom elements, like mobile menus.
-  
-  //Add the mobile menu if it's enabled
-  if (theme_get_setting('mobile_menu_on_off') == 1) {
-    $vars['mobile_select_menu'] = BaseBuildingBlocks_build_select_menu('main-menu');
-  }
-  
-  //Add the administration menu if it's enabled and if the current user is an administrator
-  if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
-    $vars['admin_navbar'] = BaseBuildingBlocks_build_admin_navbar();
-  }
 }
 
 /**
