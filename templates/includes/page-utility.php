@@ -1,7 +1,3 @@
-<?php if ($page['help']): ?>
-  <?php print render($page['help']); ?>
-<?php endif; ?>
-
 <?php if ($tabs): ?>
   <?php print render($tabs); ?>
 <?php endif; ?>
