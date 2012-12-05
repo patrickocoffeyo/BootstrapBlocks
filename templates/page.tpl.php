@@ -5,7 +5,6 @@
   <?php include('includes/page-head.php'); ?>
   <?php if ($page['menu']): ?>
     <?php echo render($page['menu']); ?>
-    <?php echo render($mobile_select_menu); ?>
   <?php endif; ?>
   <section class="row-fluid" id="main" role="document">
     <article class="span9" id="main-content" role="article">
