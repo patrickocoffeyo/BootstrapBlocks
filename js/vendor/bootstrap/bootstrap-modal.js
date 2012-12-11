@@ -1,5 +1,5 @@
 /* =========================================================
- * bootstrap-modal.js v2.2.1
+ * bootstrap-modal.js v2.2.2
  * http://twitter.github.com/bootstrap/javascript.html#modals
  * =========================================================
  * Copyright 2012 Twitter, Inc.
@@ -19,7 +19,7 @@
 
 
 !function ($) {
-$ = jq8;
+
   "use strict"; // jshint ;_;
 
 
@@ -193,6 +193,8 @@ $ = jq8;
  /* MODAL PLUGIN DEFINITION
   * ======================= */
 
+  var old = $.fn.modal
+
   $.fn.modal = function (option) {
     return this.each(function () {
       var $this = $(this)
@@ -213,6 +215,15 @@ $ = jq8;
   $.fn.modal.Constructor = Modal
 
 
+ /* MODAL NO CONFLICT
+  * ================= */
+
+  $.fn.modal.noConflict = function () {
+    $.fn.modal = old
+    return this
+  }
+
+
  /* MODAL DATA-API
   * ============== */
 
@@ -231,4 +242,4 @@ $ = jq8;
       })
   })
 
-}(jq8);
+}(window.jQuery);

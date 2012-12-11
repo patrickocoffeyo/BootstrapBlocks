@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-affix.js v2.2.1
+ * bootstrap-affix.js v2.2.2
  * http://twitter.github.com/bootstrap/javascript.html#affix
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
@@ -19,7 +19,7 @@
 
 
 !function ($) {
-$ = jq8;
+
   "use strict"; // jshint ;_;
 
 
@@ -68,6 +68,8 @@ $ = jq8;
  /* AFFIX PLUGIN DEFINITION
   * ======================= */
 
+  var old = $.fn.affix
+
   $.fn.affix = function (option) {
     return this.each(function () {
       var $this = $(this)
@@ -82,6 +84,15 @@ $ = jq8;
 
   $.fn.affix.defaults = {
     offset: 0
+  }
+
+
+ /* AFFIX NO CONFLICT
+  * ================= */
+
+  $.fn.affix.noConflict = function () {
+    $.fn.affix = old
+    return this
   }
 
 
@@ -103,4 +114,4 @@ $ = jq8;
   })
 
 
-}(jq8);
+}(window.jQuery);

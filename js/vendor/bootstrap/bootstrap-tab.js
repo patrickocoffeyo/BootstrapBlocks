@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-tab.js v2.2.1
+ * bootstrap-tab.js v2.2.2
  * http://twitter.github.com/bootstrap/javascript.html#tabs
  * ========================================================
  * Copyright 2012 Twitter, Inc.
@@ -19,7 +19,7 @@
 
 
 !function ($) {
-$ = jq8;
+
   "use strict"; // jshint ;_;
 
 
@@ -110,6 +110,8 @@ $ = jq8;
  /* TAB PLUGIN DEFINITION
   * ===================== */
 
+  var old = $.fn.tab
+
   $.fn.tab = function ( option ) {
     return this.each(function () {
       var $this = $(this)
@@ -122,6 +124,15 @@ $ = jq8;
   $.fn.tab.Constructor = Tab
 
 
+ /* TAB NO CONFLICT
+  * =============== */
+
+  $.fn.tab.noConflict = function () {
+    $.fn.tab = old
+    return this
+  }
+
+
  /* TAB DATA-API
   * ============ */
 
@@ -130,4 +141,4 @@ $ = jq8;
     $(this).tab('show')
   })
 
-}(jq8);
+}(window.jQuery);
