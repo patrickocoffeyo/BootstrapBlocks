@@ -3,7 +3,10 @@
 Base Building Blocks is an HTML5 base theme for Drupal 7.x. It has lots of goodies in it, including Twitter Bootstrap, Font Awesome, Modernizr, and HTML5 Boilerplate. It also has a large collection of useful features such as content-type templates, an amazing administration toolbar, default @medias, Apple Touch Icons, and retina-friendly design.
 
 ###Note
-[Base Building Blocks Module](https://github.com/patrickocoffeyo/BaseBuildingBlocksModule) is now available for use, please check it out, use it, and contribute!
+[Base Building Blocks Module](https://github.com/patrickocoffeyo/BaseBuildingBlocksModule) is now a repo!
+
+###ALSO NOTE
+The Administration Menu and other cool stuff is now in the [Base Building Blocks Module](https://github.com/patrickocoffeyo/BaseBuildingBlocksModule) as submodules. Putting this stuff in a module allows me to do more cool stuff.
 
 For more information and documentation, checkout [the project homepage](http://basethe.me)
 
