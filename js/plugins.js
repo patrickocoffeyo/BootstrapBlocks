@@ -1,3 +1,5 @@
-//Setting $ to be jQuery 1.8.
-var $ = jq8;
-var jQuery = jq8;
+(function ($) {
+
+  //Put your plugin scripts here
+
+}) (window.jQuery2);
