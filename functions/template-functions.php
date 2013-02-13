@@ -9,13 +9,13 @@ include('tables.inc');
 /*
  * Return Header Scripts
  * @return
- *   Dom for scripts added. By default, adds jQuery 1.8 in no conflict mode
+ *   Dom for scripts added. By default, adds jQuery jQuery 1.9.1 in no conflict mode
  */
 function BaseBuildingBlocks_scripts() {
   global $base_url, $theme_path; 
   $path = $base_url . '/' . $theme_path;
-  $js = '<script type="text/javascript" src="' . $path . '/js/vendor/jquery-1.8.2.min.js"></script>' . "\n";
-  $js .= '<script>var jq8 = jQuery.noConflict();</script>' . "\n";
+  $js = '<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>' . "\n";
+  $js .= '<script>window.jQuery2 = jQuery.noConflict();</script>' . "\n";
   return $js;
 }
 
