@@ -17,6 +17,7 @@ Base Building Blocks is an HTML5 base theme for Drupal 7.x. It has lots of goodi
 
 ## Installation
 Pretty easy stuff:
+
 1. **Get the Files** - Download or clone the repository into Drupal's <code>sites/all/themes</code> directory.
 2. **Install Grunt Requirements** - <code>cd</code> to the theme root and run <code>npm install</code>. This will install all the npm packages that Grunt needs to properly run.
 3. **Enable and Set Default** - There are a couple ways to enable themes in Drupal:
