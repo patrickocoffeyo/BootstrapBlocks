@@ -22,6 +22,7 @@ module.exports = function(grunt) {
           'assets/css/style.min.css': [
             'assets/css/bootstrap/bootstrap.less',
             'assets/css/bootstrap/responsive.less',
+            'assets/css/drupal.less',
             'assets/css/app.less',
             'assets//css/icons.css'
           ]
