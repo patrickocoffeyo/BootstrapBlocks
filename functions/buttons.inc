@@ -39,12 +39,10 @@ function BaseBuildingBlocks_preprocess_image_button(&$vars) {
 function BaseBuildingBlocks_get_button_class($button_title) {
   $button_classes = theme_get_setting('button_classes');
   $array = list_extract_allowed_values($button_classes, 'list_text', FALSE);
-  
+
+  $class = '';
   if (isset($array[$button_title])) {
     $class = $array[$button_title];
-  } 
-  else {
-    $class = '';
   }
 
   return $class;

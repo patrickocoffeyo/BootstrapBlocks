@@ -3,9 +3,23 @@
  * Implements hook_form_FORM_ID_alter().
  */
 function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state) {
+  $form['forms'] = array( 
+    '#type' => 'fieldset',
+    '#title' => t('Forms'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#required' => TRUE,
+    '#weight' => -20,
+  );
+  $form['forms']['ignore_element_ids'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Ignore Forms Elements'),
+    '#description' => t('Some form elements do not jive well with being bootstrap-ized. List all form IDs that should not be modified, separated by |. A default list is provided.'),
+    '#default_value' => theme_get_setting('ignore_element_ids'),
+  );
   $form['chrome_frame'] = array( 
     '#type' => 'fieldset',
-    '#title' => 'IE Compatability',
+    '#title' => t('IE Compatability'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#required' => TRUE,

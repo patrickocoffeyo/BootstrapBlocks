@@ -24,7 +24,8 @@ features[] = favicon
 settings[chrome_frame_on_off] = 1
 settings[admin_menu_on_off] = 1
 
-settings[button_classes] = "Save|btn-primary
+settings[button_classes] = "
+Save|btn-primary
 Create|btn-primary
 Submit|btn-primary
 Export|btn-primary
@@ -38,3 +39,6 @@ Submit|btn-success
 Delete|btn-danger
 Remove|btn-danger
 Filter|btn-inverse"
+
+
+settings[ignore_element_ids] = ""

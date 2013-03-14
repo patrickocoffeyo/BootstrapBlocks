@@ -1,10 +1,10 @@
 <?php
 /**
  * Implimenting hook_form_alter()
+ * Remove the wrapper from the form actions
  */
 function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
   // Id's of forms that should be ignored
-  // Make this configurable?
   $form_ids = array(
     'node_form',
     'system_site_information_settings',
@@ -22,78 +22,83 @@ function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
  * Implimenting hook_form_element()
  */
 function BaseBuildingBlocks_form_element(&$variables) {
-  $element = &$variables['element'];
-  //This is also used in the installer, pre-database setup.
-  $t = get_t();
+  $ignore_ids = theme_get_setting('ignore_element_ids');
+  $ignore_array = list_extract_allowed_values($ignore_ids, 'list_text', FALSE);
 
-  //This function is invoked as theme wrapper, but the rendered form element
-  //may not necessarily have been processed by form_builder().
-  $element += array(
-    '#title_display' => 'before',
-  );
+  if (!in_array($variables['element']['#name'], $ignore_array)) {
+    $element = &$variables['element'];
+    //This is also used in the installer, pre-database setup.
+    $t = get_t();
 
-  //Add element #id for #type 'item'.
-  if (isset($element['#markup']) && !empty($element['#id'])) {
-    $attributes['id'] = $element['#id'];
+    //This function is invoked as theme wrapper, but the rendered form element
+    //may not necessarily have been processed by form_builder().
+    $element += array(
+      '#title_display' => 'before',
+    );
+
+    //Add element #id for #type 'item'.
+    if (isset($element['#markup']) && !empty($element['#id'])) {
+      $attributes['id'] = $element['#id'];
+    }
+
+    //Add bootstrap class
+    $attributes['class'] = array('control-group');
+
+    //Check for errors and set correct error class
+    if (isset($element['#parents']) && form_get_error($element)) {
+      $attributes['class'][] = 'error';
+    }
+
+    if (!empty($element['#type'])) {
+      $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
+    }
+    if (!empty($element['#name'])) {
+      $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
+    }
+    //Add a class for disabled elements to facilitate cross-browser styling.
+    if (!empty($element['#attributes']['disabled'])) {
+      $attributes['class'][] = 'form-disabled';
+    }
+    $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+
+    //If #title is not set, we don't display any label or required marker.
+    if (!isset($element['#title'])) {
+      $element['#title_display'] = 'none';
+    }
+    
+    $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
+    $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+
+    switch ($element['#title_display']) {
+      case 'before':
+      case 'invisible':
+        $output .= ' ' . theme('form_element_label', $variables);
+        $output .= '<div class="controls">';
+        $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+        break;
+
+      case 'after':
+        $output .= '<div class="controls">';
+        $variables['#children'] = ' ' . $prefix . $element['#children'] . $suffix;
+        $output .= ' ' . theme('form_element_label', $variables) . "\n";
+        break;
+
+      case 'none':
+      case 'attribute':
+        //Output no label and no required marker, only the children.
+        $output .= '<div class="controls">';
+        $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+        break;
+    }
+
+    if ( !empty($element['#description']) ) {
+      $output .= '<p class="help-block">' . $element['#description'] . "</p>\n";
+    }
+
+    $output .= "</div></div>\n";
+
+    return $output;
   }
-
-  //Add bootstrap class
-  $attributes['class'] = array('control-group');
-
-  //Check for errors and set correct error class
-  if (isset($element['#parents']) && form_get_error($element)) {
-    $attributes['class'][] = 'error';
-  }
-
-  if (!empty($element['#type'])) {
-    $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
-  }
-  if (!empty($element['#name'])) {
-    $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
-  }
-  //Add a class for disabled elements to facilitate cross-browser styling.
-  if (!empty($element['#attributes']['disabled'])) {
-    $attributes['class'][] = 'form-disabled';
-  }
-  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
-
-  //If #title is not set, we don't display any label or required marker.
-  if (!isset($element['#title'])) {
-    $element['#title_display'] = 'none';
-  }
-  
-  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
-  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
-
-  switch ($element['#title_display']) {
-    case 'before':
-    case 'invisible':
-      $output .= ' ' . theme('form_element_label', $variables);
-      $output .= '<div class="controls">';
-      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-      break;
-
-    case 'after':
-      $output .= '<div class="controls">';
-      $variables['#children'] = ' ' . $prefix . $element['#children'] . $suffix;
-      $output .= ' ' . theme('form_element_label', $variables) . "\n";
-      break;
-
-    case 'none':
-    case 'attribute':
-      //Output no label and no required marker, only the children.
-      $output .= '<div class="controls">';
-      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-      break;
-  }
-
-  if ( !empty($element['#description']) ) {
-    $output .= '<p class="help-block">' . $element['#description'] . "</p>\n";
-  }
-
-  $output .= "</div></div>\n";
-
-  return $output;
 }
 
 
