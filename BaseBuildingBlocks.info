@@ -1,25 +1,10 @@
 name = Base Building Blocks
-description = A simple html5 theme that includes Twitter Bootstrap, Modernizr, and other great tools. http://basethe.me
+description = A simple html5 theme that includes Twitter Bootstrap, Modernizr, Grunt, and other great tools. http://basethe.me
 core = 7.x
 
-stylesheets[screen][] = css/style.css
+stylesheets[screen][] = assets/css/style.min.css
 
-scripts[] = js/vendor/modernizr-2.6.2.min.js
-#scripts[] = js/vendor/bootstrap/affix.js
-#scripts[] = js/vendor/bootstrap/alert.js
-#scripts[] = js/vendor/bootstrap/button.js
-#scripts[] = js/vendor/bootstrap/carousel.js
-scripts[] = js/vendor/bootstrap/collapse.js
-scripts[] = js/vendor/bootstrap/dropdown.js
-#scripts[] = js/vendor/bootstrap/modal.js
-#scripts[] = js/vendor/bootstrap/scrollspy.js
-scripts[] = js/vendor/bootstrap/tab.js
-scripts[] = js/vendor/bootstrap/tooltip.js
-#scripts[] = js/vendor/bootstrap/transition.js
-#scripts[] = js/vendor/bootstrap/popover.js
-#scripts[] = js/vendor/bootstrap/typeahead.js
-scripts[] = js/plugins.js
-scripts[] = js/main.js
+scripts[] = assets/js/scripts.min.js
 
 regions[navbar] = Navbar
 regions[menu] = Main Menu
