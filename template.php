@@ -74,14 +74,3 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
     '#access' => theme_get_setting('chrome_frame_on_off'),
   );
 }
-
-/**
- * Implimenting hook_permission()
- */
-function BaseBuildingBlocks_permission() {
-  return array(
-    'use admin navbar' => array(
-      'title' => t('Use Administration Navbar'),
-    ),
-  );
-}
