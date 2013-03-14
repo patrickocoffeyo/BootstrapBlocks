@@ -4,6 +4,7 @@ core = 7.x
 
 stylesheets[screen][] = assets/css/style.min.css
 
+scripts[] = assets/js/vendor/modernizr-2.6.2.min.js
 scripts[] = assets/js/scripts.min.js
 
 regions[navbar] = Navbar
