@@ -1,0 +1,28 @@
+{
+  "name": "BaseBuildingBlocks",
+  "version": "3.0.0",
+  "author": "Patrick Coffey <patrickcoffey48@gmail.com>",
+  "homepage": "http://basethe.me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickocoffeyo/BaseBuildingBlocks"
+  },
+  "bugs": {
+    "url" : "https://github.com/patrickocoffeyo/BaseBuildingBlocks/issues"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  }],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-recess": "~0.3.0"
+  }
+}

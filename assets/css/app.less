@@ -1,0 +1,117 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "bootstrap/responsive-utilities.less";
+@import "bootstrap/utilities.less";
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body { }
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+#header {
+  margin-top: 20px;
+}
+#logo {
+  width: 70px;
+  height: 90px;
+  background-image: url('../logo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: block;
+}
+/** Menu System **/
+#navigation {
+  margin-top: 20px;
+}
+/** Administration Menu **/
+.fixed-navbar #wrapper {
+  margin-top: 40px;
+}
+.navbar .nav > li > a {
+  padding: 10px 8px 10px!important;
+}
+/* ==========================================================================
+   Content
+   ========================================================================== */
+#main {
+  margin-top: 20px;
+}
+
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+#main-content { }
+
+
+/* ==========================================================================
+   Blocks
+   ========================================================================== */
+/** All Blocks **/
+#sidebar .block {
+  margin-top: 20px;
+}
+
+/** Search Form Block **/
+#search-block-form input.form-text {
+  width: 110px;
+}
+
+
+/* ==========================================================================
+   Pages
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+#footer { }
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/** Smartphones (portrait and landscape mode) **/
+@media only screen and (min-width: 320px) 
+and (max-width: 480px) { }
+
+/** Smartphones (landscape mode) **/
+@media only screen 
+and (min-width: 321px) { }
+
+/** Smartphones (portrait mode) **/
+@media only screen 
+and (max-width: 320px) { }
+
+/** Tablets (portrait and landscape mode) **/
+@media only screen 
+and (min-width: 768px) 
+and (max-width: 1024px) { }
+
+/** High Resolution Tablets (portrait and landscape mode) **/
+@media only screen 
+and (min-width: 1536px)
+and (max-width: 2048px)
+and (-webkit-min-device-pixel-ratio: 2) { }
+
+/** Standard Computers **/
+@media only screen 
+and (min-width: 1224px) { }
+
+/** Large Computer Screens **/
+@media only screen 
+and (min-width: 1824px) { }
+
+/** High Resolution Computers **/
+@media only screen and (min--moz-device-pixel-ratio: 2), 
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+  #logo {
+    background-image: url('../img/hd/logo@2x.png');
+  }
+}
