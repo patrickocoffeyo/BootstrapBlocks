@@ -25,7 +25,9 @@ function BaseBuildingBlocks_form_element(&$variables) {
   $ignore_ids = theme_get_setting('ignore_element_ids');
   $ignore_array = list_extract_allowed_values($ignore_ids, 'list_text', FALSE);
 
-  if (!in_array($variables['element']['#name'], $ignore_array)) {
+  $name = (isset($variables['element']['#name'])) ? $variables['element']['#name'] : '';
+
+  if (!in_array($name, $ignore_array)) {
     $element = &$variables['element'];
     //This is also used in the installer, pre-database setup.
     $t = get_t();
