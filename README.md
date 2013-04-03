@@ -13,7 +13,7 @@ Bootstrap Blocks is an [Twitter Bootstrap](http://twitter.github.com/bootstrap),
  
 
 ##The Module
-[Base Building Blocks Module](https://github.com/patrickocoffeyo/BaseBuildingBlocksModule) allows you to add custom Bootstrap-ized elements, like configurable Bootstrap menu blocks, navbars (including a nice Administration navbar) carousels from content types, and more. It's pretty much a staple for using this theme.
+[Bootstrap Blocks Module](https://github.com/patrickocoffeyo/BootstrapBlocksModule) allows you to add custom Bootstrap-ized elements, like configurable Bootstrap menu blocks, navbars (including a nice Administration navbar) carousels from content types, and more. It's pretty much a staple for using this theme.
 
 ## Installation
 Pretty easy stuff:
