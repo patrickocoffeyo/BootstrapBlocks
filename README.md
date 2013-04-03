@@ -1,6 +1,6 @@
-#Base Building Blocks Theme
+Bootstrap Blocks
 
-Base Building Blocks is an HTML5 base theme for Drupal 7.x. It has lots of goodies in it, including [Twitter Bootstrap](http://twitter.github.com/bootstrap), [Ico Moon](http://icomoon.io/), [Modernizr](http://modernizr.com/), and [HTML5 BP](http://html5boilerplate.com/). Checkout [the project homepage!](http://basethe.me)
+Bootstrap Blocks is an [Twitter Bootstrap](http://twitter.github.com/bootstrap), HTML5 BP base theme for Drupal 7.x. It has lots of goodies in it, like [Ico Moon](http://icomoon.io/), [Modernizr](http://modernizr.com/). Checkout [the project homepage!](http://basethe.me).
 
 ##Features
  - Bootstrap from Twitter
