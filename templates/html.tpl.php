@@ -7,15 +7,15 @@
   <?php echo $head; ?>
   <title><?php echo $head_title; ?></title>
   <?php echo $styles; ?>
-  <?php echo BaseBuildingBlocks_scripts(); ?>
+  <?php echo BootstrapBlocks_scripts(); ?>
   <?php echo $scripts; ?>
-  <?php echo BaseBuildingBlocks_touch_icons(); ?>
-  <?php echo BaseBuildingBlocks_author(); ?>
+  <?php echo BootstrapBlocks_touch_icons(); ?>
+  <?php echo BootstrapBlocks_author(); ?>
 </head>
 <body class="<?php echo $classes; ?>" <?php echo $attributes;?>>
   <?php echo $page_top; ?>
   <?php echo $page; ?>
   <?php echo $page_bottom; ?>
-  <?php echo BaseBuildingBlocks_footer_scripts(); ?>
+  <?php echo BootstrapBlocks_footer_scripts(); ?>
 </body>
 </html>

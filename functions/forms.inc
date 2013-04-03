@@ -3,7 +3,7 @@
  * Implimenting hook_form_alter()
  * Remove the wrapper from the form actions
  */
-function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
+function BootstrapBlocks_form_alter(&$form, &$form_state, $form_id) {
   // Id's of forms that should be ignored
   $form_ids = array(
     'node_form',
@@ -21,7 +21,7 @@ function BaseBuildingBlocks_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implimenting hook_form_element()
  */
-function BaseBuildingBlocks_form_element(&$variables) {
+function BootstrapBlocks_form_element(&$variables) {
   $ignore_ids = theme_get_setting('ignore_element_ids');
   $ignore_array = list_extract_allowed_values($ignore_ids, 'list_text', FALSE);
 
@@ -107,7 +107,7 @@ function BaseBuildingBlocks_form_element(&$variables) {
 /**
  * Implimenting hook_form_element_label()
  */
-function BaseBuildingBlocks_form_element_label(&$variables) {
+function BootstrapBlocks_form_element_label(&$variables) {
   $element = $variables['element'];
   //This is also used in the installer, pre-database setup.
   $t = get_t();

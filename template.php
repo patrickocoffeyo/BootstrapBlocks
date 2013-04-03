@@ -5,7 +5,7 @@ include('functions/template-functions.php');
  * Implimenting hook_process_page()
  * Allows you to use node-type based page templates.
  */
-function BaseBuildingBlocks_preprocess_page(&$vars) {
+function BootstrapBlocks_preprocess_page(&$vars) {
   global $user;
   //Allows you to use node-type, and node ID base page templates
   //Adds custom 404 error page template
@@ -22,7 +22,7 @@ function BaseBuildingBlocks_preprocess_page(&$vars) {
  * Implimenting hook_preprocess_html()
  * Adds body class for navbar-fixed-top
  */
-function BaseBuildingBlocks_preprocess_html(&$vars) {
+function BootstrapBlocks_preprocess_html(&$vars) {
   global $user;
   if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
     $vars['classes_array'][] = 'fixed-navbar';
@@ -33,7 +33,7 @@ function BaseBuildingBlocks_preprocess_html(&$vars) {
  * Implimenting hook_css_alter()
  * Turning off some system.css files
  */
-function BaseBuildingBlocks_css_alter(&$css) {
+function BootstrapBlocks_css_alter(&$css) {
   // Turn off some styles from the system module
   unset($css[drupal_get_path('module', 'system') . '/system.messages.css']);
   unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
@@ -44,15 +44,15 @@ function BaseBuildingBlocks_css_alter(&$css) {
 /**
  * Implimenting hook_html_head_alter()
  */
-function BaseBuildingBlocks_html_head_alter(&$vars) {
+function BootstrapBlocks_html_head_alter(&$vars) {
   //Change the meta content type to HTML5 content type
   $vars['system_meta_content_type']['#attributes'] = array(
     'charset' => 'utf-8'
   );
-  
+
   //Unsetting the content generator. (Why keep it?)
   unset($vars['system_meta_generator']);
-  
+
   //Adding the mobile viewport
   $vars['viewport'] = array(
     '#type' => 'html_tag',
@@ -62,7 +62,7 @@ function BaseBuildingBlocks_html_head_alter(&$vars) {
       'content' => 'width=device-width, initial-scale=1.0',
     )
   );
-  
+
   //If in IE, and chrome frame is available, and theme option says you can use it, USE IT!
   $vars['chrome_frame_compatability'] = array(
     '#type' => 'html_tag',

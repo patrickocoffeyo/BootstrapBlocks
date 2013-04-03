@@ -20,7 +20,7 @@
  *
  * @ingroup pager
  */
-function BaseBuildingBlocks_pager($variables) {
+function BootstrapBlocks_pager($variables) {
   $output = "";
   $tags = $variables['tags'];
   $element = $variables['element'];

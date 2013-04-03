@@ -1,5 +1,5 @@
-name = Base Building Blocks
-description = A simple html5 theme that includes Twitter Bootstrap, Modernizr, Grunt, and other great tools. http://basethe.me
+name = Bootstrap Blocks
+description = A simple html5 theme that includes Twitter Bootstrap, Modernizr, Grunt, and other great tools for building great, modern Drupal themes. http://basethe.me
 core = 7.x
 
 stylesheets[screen][] = assets/css/style.min.css

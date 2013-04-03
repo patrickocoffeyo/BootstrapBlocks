@@ -3,7 +3,7 @@
  * Implimenting hook_menu_tree()
  * Bootstrapping Main Menu
  */
-function BaseBuildingBlocks_menu_tree($vars) {
+function BootstrapBlocks_menu_tree($vars) {
   return '<ul class="nav nav-pills">' . $vars['tree'] . '</ul>';
 }
 
@@ -11,7 +11,7 @@ function BaseBuildingBlocks_menu_tree($vars) {
  * Implimenting hook_menu_tree()
  * Adding active class to active LIs
  */
-function BaseBuildingBlocks_preprocess_menu_link(&$vars) {
+function BootstrapBlocks_preprocess_menu_link(&$vars) {
   if ($vars['element']['#href'] == $_GET['q'] || (drupal_is_front_page() && $vars['element']['#href'] === '<front>')) {
     $vars['element']['#attributes']['class'][] = 'active';
   }
@@ -21,7 +21,7 @@ function BaseBuildingBlocks_preprocess_menu_link(&$vars) {
  * Implimenting hook_menu_local_tasks()
  * Bootstrapping Tabs 
  */
-function BaseBuildingBlocks_menu_local_tasks(&$vars) {
+function BootstrapBlocks_menu_local_tasks(&$vars) {
   $output = '';
 
   if (!empty($vars['primary'])) {
