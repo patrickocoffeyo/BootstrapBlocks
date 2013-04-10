@@ -2,7 +2,7 @@
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state) {
+function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
   $form['forms'] = array( 
     '#type' => 'fieldset',
     '#title' => t('Forms'),
