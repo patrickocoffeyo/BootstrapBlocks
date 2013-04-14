@@ -2,7 +2,7 @@
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state) {
+function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
   $form['forms'] = array( 
     '#type' => 'fieldset',
     '#title' => t('Forms'),
@@ -38,7 +38,7 @@ function BaseBuildingBlocks_form_system_theme_settings_alter(&$form, $form_state
     '#collapsed' => TRUE,
     '#weight' => -40,
   );
-  $form['buttons']['buttons_classes'] = array(
+  $form['buttons']['button_classes'] = array(
     '#type' => 'textarea',
     '#title' => t('Button Classes'),
     '#description' => t('Determines what bootstrap classes should be added to buttons based off of the button title. (For example: Button Title | btn-class)'),
