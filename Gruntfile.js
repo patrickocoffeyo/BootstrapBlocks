@@ -8,12 +8,12 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'assets/js/*.js',
-        'assets/js/plugins/*.js',
+        '!assets/js/plugins/*.js',
         '!assets/js/scripts.min.js'
       ]
     },
     recess: {
-      dist: {
+      all: {
         options: {
           compile: true,
           compress: true
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-      dist: {
+      all: {
         files: {
           'assets/js/scripts.min.js': [
             'assets/js/plugins/bootstrap/transition.js',
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
         files: [
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint']
+        tasks: ['jshint', 'uglify']
       }
     },
     clean: {
@@ -74,7 +74,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadTasks('tasks');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
