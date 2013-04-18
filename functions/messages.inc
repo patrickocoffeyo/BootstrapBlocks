@@ -1,5 +1,10 @@
 <?php
 /**
+ * @file
+ * Modifies message markup
+ */
+
+/**
  * Bootstrapping the messages
  */
  function BootstrapBlocks_get_status($status) {

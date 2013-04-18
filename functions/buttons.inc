@@ -1,17 +1,15 @@
 <?php
 /**
  * @file
- * Bootstrap Blocks button management file
+ * Modifies button markup
  */
- 
+
 /**
  * Implimenting hook_preprocess_button()
- * Bootstrapping Buttons
  */
 function BootstrapBlocks_preprocess_button(&$vars) {
   $button_title = $vars['element']['#value'];
-  
-  //Grab the bootstrap class from the theme settings
+
   $vars['element']['#attributes']['class'][] = 'btn ' . BootstrapBlocks_get_button_class($button_title);
 }
 
@@ -21,8 +19,7 @@ function BootstrapBlocks_preprocess_button(&$vars) {
  */
 function BootstrapBlocks_preprocess_image_button(&$vars) {
   $button_title = $vars['element']['#value'];
-  
-  //Grab the bootstrap class from the theme settings
+
   $vars['element']['#attributes']['class'][] = 'btn ' . BootstrapBlocks_get_button_class($button_title);
 }
  
@@ -32,9 +29,9 @@ function BootstrapBlocks_preprocess_image_button(&$vars) {
  *   Title of the button to grab the class for
  * @return
  *   String containing class for an element of type <input>, <button>, or <a>
- * 
- * Makes use of theme_get_setting('button_classes');
- * Makes use of list_extract_allowed_values() from the field_list module
+ *
+ * Impliments theme_get_setting('button_classes');
+ * Impliments list_extract_allowed_values() from the field_list module
  */
 function BootstrapBlocks_get_button_class($button_title) {
   $button_classes = theme_get_setting('button_classes');

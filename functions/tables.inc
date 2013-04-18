@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Adds Bootstrap classes to tables, and views grids
+ */
 
 /**
  * Implimenting hook_preprocess_table()
