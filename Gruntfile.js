@@ -1,9 +1,10 @@
-'use strict';
+'use strict';//jshint
+
 module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc'//jshint config file
       },
       all: [
         'Gruntfile.js',
