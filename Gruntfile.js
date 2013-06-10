@@ -9,8 +9,6 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'assets/js/*.js',
-        'assets/js/plugins/bootstrap/*.js',
-        '!assets/js/plugins/*.js',
         '!assets/js/scripts.min.js'
       ]
     },
@@ -44,6 +42,7 @@ module.exports = function(grunt) {
             'assets/js/plugins/bootstrap/tab.js',
             'assets/js/plugins/bootstrap/typehead.js',
             'assets/js/plugins/*.js',
+            '!assets/js/scripts.min.js',
             'assets/js/*.js'
           ]
         }
