@@ -19,17 +19,6 @@ function BootstrapBlocks_preprocess_page(&$vars) {
 }
 
 /**
- * Implimenting hook_preprocess_html()
- * Adds body class for navbar-fixed-top
- */
-function BootstrapBlocks_preprocess_html(&$vars) {
-  global $user;
-  if (theme_get_setting('admin_menu_on_off') == 1 && in_array('administrator', array_values($user->roles))) {
-    $vars['classes_array'][] = 'fixed-navbar';
-  }
-}
-
-/**
  * Implimenting hook_css_alter()
  * Turning off some system.css files
  */
