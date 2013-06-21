@@ -23,7 +23,6 @@ features[] = comment_user_picture
 features[] = favicon
 
 settings[chrome_frame_on_off] = 1
-settings[admin_menu_on_off] = 1
 
 settings[button_classes] = "
 Save|btn-primary
@@ -41,5 +40,7 @@ Delete|btn-danger
 Remove|btn-danger
 Filter|btn-inverse"
 
+settings[touch_icons_on_off] = 1
+settings[windows_color] = "#ffffff"
+settings[windows_title] = ""
 
-settings[ignore_element_ids] = ""
