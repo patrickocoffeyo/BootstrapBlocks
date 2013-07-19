@@ -1,24 +1,12 @@
 <?php
+/**
+ * @file
+ * Overrides the default pager with a bootstrap pager.
+ * Partly borrowed from the Twitter Bootstrap project. Kudos!
+ */
 
 /**
- * Returns HTML for a query pager.
- *
- * NOTE
- * Partly borrowed from the Twitter Bootstrap Drupal project. Kudos!
- * Menu callbacks that display paged query results should call theme('pager') to
- * retrieve a pager control so that users can view other results. Format a list
- * of nearby pages with additional query results.
- *
- * @param $vars
- *   An associative array containing:
- *   - tags: An array of labels for the controls in the pager.
- *   - element: An optional integer to distinguish between multiple pagers on
- *     one page.
- *   - parameters: An associative array of query string parameters to append to
- *     the pager links.
- *   - quantity: The number of pages in the list.
- *
- * @ingroup pager
+ * Overriding theme_pager()
  */
 function BootstrapBlocks_pager($variables) {
   $output = "";

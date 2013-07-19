@@ -1,5 +1,10 @@
 <?php
 /**
+ * @file
+ * Modifies form markup
+ */
+
+/**
  * Implimenting hook_form_alter()
  * Remove the wrapper from the form actions
  */
@@ -148,4 +153,14 @@ function BootstrapBlocks_form_element_label(&$variables) {
 
   //The leading whitespace helps visually separate fields from inline labels.
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
+}
+
+/**
+ * Overriding theme_progress_bar()
+ */
+function BootstrapBlocks_progress_bar($variables) {
+  $variables['attributes']['class'][] = 'progress';
+  $variables['attributes']['class'][] = 'progress-striped';
+
+  return '<div'. drupal_attributes($variables['attributes']) .'><div class="bar" style="width: '. $variables['percent'] .'%;"></div></div>';
 }

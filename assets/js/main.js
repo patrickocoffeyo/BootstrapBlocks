@@ -1,6 +1,6 @@
 (function ($) {
 
-  // iOS orientation change fix  if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+  // iOS orientation
   $(document).ready(function() {
     if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
       var viewportmeta = document.querySelector('meta[name="viewport"]');

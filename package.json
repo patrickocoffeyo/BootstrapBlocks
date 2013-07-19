@@ -1,5 +1,5 @@
 {
-  "name": "BaseBuildingBlocks",
+  "name": "BootstrapBlocks",
   "version": "3.0.0",
   "author": "Patrick Coffey <patrickcoffey48@gmail.com>",
   "homepage": "http://basethe.me",
@@ -19,10 +19,10 @@
   },
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-uglify": "~0.1.1",
-    "grunt-contrib-watch": "~0.2.0",
-    "grunt-recess": "~0.3.0"
+    "grunt-contrib-clean": "x",
+    "grunt-contrib-jshint": "x",
+    "grunt-contrib-uglify": "x",
+    "grunt-contrib-watch": "x",
+    "grunt-contrib-less": "x"
   }
 }

@@ -3,7 +3,7 @@
  * Implements hook_form_FORM_ID_alter().
  */
 function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
-  $form['forms'] = array( 
+  $form['forms'] = array(
     '#type' => 'fieldset',
     '#title' => t('Forms'),
     '#collapsible' => TRUE,
@@ -17,7 +17,7 @@ function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
     '#description' => t('Some form elements do not jive well with being bootstrap-ized. List all form IDs that should not be modified, separated by |. A default list is provided.'),
     '#default_value' => theme_get_setting('ignore_element_ids'),
   );
-  $form['chrome_frame'] = array( 
+  $form['chrome_frame'] = array(
     '#type' => 'fieldset',
     '#title' => t('IE Compatability'),
     '#collapsible' => TRUE,
@@ -44,7 +44,40 @@ function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
     '#description' => t('Determines what bootstrap classes should be added to buttons based off of the button title. (For example: Button Title | btn-class)'),
     '#default_value' => theme_get_setting('button_classes'),
   );
-  $form['seo'] = array( 
+  $form['touch_icons'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Touch Icons',
+    '#collapsible' => TRUE,
+    '#description' => t('Settings for touch icons. All touch icons are located in themedir/assets/img/icons/touch-icon-*device.png.'),
+    '#collapsed' => TRUE,
+    '#required' => TRUE,
+    '#weight' => -20,
+  );
+  $form['touch_icons']['touch_icons_on_off'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Touch Icons'),
+    '#description' => t('If enabled, adds touch icons to your site.'),
+    '#default_value' => theme_get_setting('touch_icons_on_off'),
+  );
+  $form['touch_icons']['windows_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Windows Start Screen Title'),
+    '#description' => t('Your site can be added to the Windows 8 start screen. This title will be used. Defaults to site name.'),
+    '#default_value' => theme_get_setting('windows_title'),
+  );
+  $form['touch_icons']['windows_color'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Windows Start Screen Color'),
+    '#description' => t('This color will be used as the tile color on the Windows 8 start screen. Defaults to white.'),
+    '#default_value' => theme_get_setting('windows_color'),
+  );
+  $form['seo']['footer_scripts'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Footer Scripts'),
+    '#description' => t('Footer scripts for external services, such as Google Analytic tracking scripts, Online Chat Assistance scripts, etc. Do not add any script tags.'),
+    '#default_value' => theme_get_setting('footer_scripts'),
+  );
+  $form['seo'] = array(
     '#type' => 'fieldset',
     '#title' => 'SEO and Social Settings',
     '#collapsible' => TRUE,

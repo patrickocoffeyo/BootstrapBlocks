@@ -1,5 +1,10 @@
 <?php
 /**
+ * @file
+ * Modifies menu markup
+ */
+
+/**
  * Implimenting hook_menu_tree()
  * Bootstrapping Main Menu
  */

@@ -1,23 +1,19 @@
-'use strict';
+'use strict';//jshint
+
 module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc'//jshint config file
       },
       all: [
         'Gruntfile.js',
         'assets/js/*.js',
-        'assets/js/plugins/*.js',
         '!assets/js/scripts.min.js'
       ]
     },
-    recess: {
-      dist: {
-        options: {
-          compile: true,
-          compress: true
-        },
+    less: {
+      all: {
         files: {
           'assets/css/style.min.css': [
             'assets/css/bootstrap/bootstrap.less',
@@ -30,7 +26,7 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-      dist: {
+      all: {
         files: {
           'assets/js/scripts.min.js': [
             'assets/js/plugins/bootstrap/transition.js',
@@ -46,6 +42,7 @@ module.exports = function(grunt) {
             'assets/js/plugins/bootstrap/tab.js',
             'assets/js/plugins/bootstrap/typehead.js',
             'assets/js/plugins/*.js',
+            '!assets/js/scripts.min.js',
             'assets/js/*.js'
           ]
         }
@@ -57,13 +54,13 @@ module.exports = function(grunt) {
           'assets/css/*.less',
           'assets/css/bootstrap/*.less'
         ],
-        tasks: ['recess']
+        tasks: ['less']
       },
       js: {
         files: [
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint']
+        tasks: ['jshint', 'uglify']
       }
     },
     clean: {
@@ -74,16 +71,15 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadTasks('tasks');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('default', [
     'clean',
-    'recess',
+    'less',
     'uglify',
   ]);
 
