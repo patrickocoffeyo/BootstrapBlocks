@@ -176,4 +176,4 @@
     $target.collapse(option)
   })
 
-}(window.jQuery);
+}(window.jQuery2);

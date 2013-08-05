@@ -210,4 +210,4 @@
     })
   })
 
-}(window.jQuery);
+}(window.jQuery2);

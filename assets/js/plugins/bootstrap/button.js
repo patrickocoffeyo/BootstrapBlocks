@@ -104,4 +104,4 @@
     e.preventDefault()
   })
 
-}(window.jQuery);
+}(window.jQuery2);

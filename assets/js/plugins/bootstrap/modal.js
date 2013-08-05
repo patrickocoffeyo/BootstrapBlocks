@@ -240,4 +240,4 @@
       .on('hidden.bs.modal', '.modal', function () { $body.removeClass('modal-open') })
   })
 
-}(window.jQuery);
+}(window.jQuery2);

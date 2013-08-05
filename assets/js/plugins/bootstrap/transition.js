@@ -53,4 +53,4 @@
     $.support.transition = transitionEnd()
   })
 
-}(window.jQuery);
+}(window.jQuery2);

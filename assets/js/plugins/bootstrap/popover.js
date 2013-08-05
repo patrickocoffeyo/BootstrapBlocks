@@ -108,4 +108,4 @@
     return this
   }
 
-}(window.jQuery);
+}(window.jQuery2);
