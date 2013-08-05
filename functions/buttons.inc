@@ -10,7 +10,7 @@
 function BootstrapBlocks_preprocess_button(&$vars) {
   $button_title = $vars['element']['#value'];
 
-  $vars['element']['#attributes']['class'][] = 'btn ' . BootstrapBlocks_get_button_class($button_title);
+  $vars['element']['#attributes']['class'][] = 'btn btn-default ' . BootstrapBlocks_get_button_class($button_title);
 }
 
 /**
@@ -20,7 +20,7 @@ function BootstrapBlocks_preprocess_button(&$vars) {
 function BootstrapBlocks_preprocess_image_button(&$vars) {
   $button_title = $vars['element']['#value'];
 
-  $vars['element']['#attributes']['class'][] = 'btn ' . BootstrapBlocks_get_button_class($button_title);
+  $vars['element']['#attributes']['class'][] = 'btn btn-default ' . BootstrapBlocks_get_button_class($button_title);
 }
  
 /**
