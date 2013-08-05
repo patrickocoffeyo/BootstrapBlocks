@@ -49,7 +49,7 @@ function BootstrapBlocks_form_element(&$variables) {
     }
 
     //Add bootstrap class
-    $attributes['class'] = array('control-group');
+    $attributes['class'] = array('form-group');
 
     //Check for errors and set correct error class
     if (isset($element['#parents']) && form_get_error($element)) {
@@ -59,9 +59,11 @@ function BootstrapBlocks_form_element(&$variables) {
     if (!empty($element['#type'])) {
       $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
     }
+
     if (!empty($element['#name'])) {
       $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
     }
+
     //Add a class for disabled elements to facilitate cross-browser styling.
     if (!empty($element['#attributes']['disabled'])) {
       $attributes['class'][] = 'form-disabled';
@@ -72,20 +74,25 @@ function BootstrapBlocks_form_element(&$variables) {
     if (!isset($element['#title'])) {
       $element['#title_display'] = 'none';
     }
-    
+
     $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
     $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+
+    //Apply bootstrap classes appropriatly.
+    $drupal_classes = array('form-text', 'form-controlarea', 'form-select');
+
+    foreach ($drupal_classes as $class) {
+      $element['#children'] = str_replace($class, $class.' form-control', $element['#children']);
+    }
 
     switch ($element['#title_display']) {
       case 'before':
       case 'invisible':
         $output .= ' ' . theme('form_element_label', $variables);
-        $output .= '<div class="controls">';
         $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
         break;
 
       case 'after':
-        $output .= '<div class="controls">';
         $variables['#children'] = ' ' . $prefix . $element['#children'] . $suffix;
         $output .= ' ' . theme('form_element_label', $variables) . "\n";
         break;
@@ -93,7 +100,6 @@ function BootstrapBlocks_form_element(&$variables) {
       case 'none':
       case 'attribute':
         //Output no label and no required marker, only the children.
-        $output .= '<div class="controls">';
         $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
         break;
     }
@@ -102,7 +108,7 @@ function BootstrapBlocks_form_element(&$variables) {
       $output .= '<p class="help-block">' . $element['#description'] . "</p>\n";
     }
 
-    $output .= "</div></div>\n";
+    $output .= "</div>\n";
 
     return $output;
   }
