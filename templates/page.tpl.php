@@ -6,8 +6,8 @@
   <?php if (!empty($page['menu'])): ?>
     <?php echo render($page['menu']); ?>
   <?php endif; ?>
-  <section class="row-fluid" id="main" role="document">
-    <article class="span9" id="main-content" role="article">
+  <section class="row" id="main" role="document">
+    <article class="col-lg-9" id="main-content" role="article">
       <?php include('includes/page-title.php'); ?>
       <?php include('includes/page-utility.php'); ?>
       <?php echo render($page['content']); ?>
