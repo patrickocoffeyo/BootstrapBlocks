@@ -10,6 +10,8 @@ Bootstrap Blocks is an [Twitter Bootstrap](http://twitter.github.com/bootstrap),
  - Social URL variable settings
  - HTML5 Boilerplate
  - Grunt script to handle all less and js processing
+ - Cleaned up Drupal output
+ - Organized folder structure to support large, scaleable, mantainable themes
  
 
 ##The Module
@@ -29,7 +31,7 @@ Pretty easy stuff:
 For more information on installing themes in Drupal, please visit the official [Theme Installation](http://drupal.org/node/456) documentation on drupal.org.
 
 ## Extension
-This project is meant to be a base theme, meaning it's built for you to take, and build-upon, or use as a parent theme.
+This project is meant to be a base theme. You can take it and build a custom theme on it, or use it as a parent theme to your own theme.
 
 ## Contrubution
 … is welcome and wanted. :) fork and contribute!
