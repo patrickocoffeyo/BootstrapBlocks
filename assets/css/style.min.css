@@ -2162,7 +2162,7 @@ input[type="button"].btn-block {
 }
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-  font-family: 'icons';
+  font-family: "icons";
   content: attr(data-icon);
   speak: none;
   font-weight: normal;
@@ -8485,7 +8485,7 @@ input[type="button"].btn-block {
 }
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-  font-family: 'icons';
+  font-family: "icons";
   content: attr(data-icon);
   speak: none;
   font-weight: normal;
