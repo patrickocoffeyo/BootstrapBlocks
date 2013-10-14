@@ -12,7 +12,7 @@
     return 'alert-success';
   } 
   elseif ($status == 'warning') {
-    return 'alert-block';
+    return 'alert-warning';
   } 
   elseif ($status == 'error') {
     return 'alert-error';
