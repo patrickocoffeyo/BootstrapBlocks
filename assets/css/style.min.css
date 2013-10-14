@@ -2154,7 +2154,7 @@ input[type="button"].btn-block {
   transition: height 0.35s ease;
 }
 @font-face {
-  font-family: 'icons';
+  font-family: "icons";
   src: url('fonts/icons.eot');
   src: url('fonts/icons.eot?#iefix') format('embedded-opentype'), url('fonts/icons.woff') format('woff'), url('fonts/icons.ttf') format('truetype'), url('fonts/icons.svg#icons') format('svg');
   font-weight: normal;
@@ -2426,7 +2426,7 @@ you can use the generic selector below, but it's slower:
 .icon-github-alt:before,
 .icon-folder-close-alt:before,
 .icon-folder-open-alt:before {
-  font-family: 'icons';
+  font-family: "icons";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -6321,201 +6321,6 @@ td.visible-print {
   }
 }
 
-/**
- * Default styling for drupal-specific pages and elements.
- *
- * NOTE FROM PATRICK:
- * You'll notice that I hide a few drupal elements in this file, such as the grippie.
- * If this annoys you, please let me know. It allways annoys me, so I removed it, but this
- * theme is geared towards being a solution for a larger group. :)
- *
- */
-/** Removing the "grippie" from forms. **/
-.grippie {
-  display: none;
-}
-/** Container Styling **/
-.container-inline div,
-.container-inline label,
-.container-inline input {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0px;
-}
-/** Drupal's Inline Links **/
-ul.inline li {
-  display: inline-block;
-  margin: 5px;
-}
-/** Drupal's Pager **/
-.item-list ul li {
-  margin: 0px;
-}
-/** Drupal's Action Links **/
-ul.action-links {
-  margin: 0px;
-}
-ul.action-links li {
-  list-style: none;
-}
-ul.action-links li a {
-  padding-left: 15px;
-  background: transparent url('../img/icons/add.png') no-repeat 0 center;
-  line-height: 30px;
-  color: #0076be;
-}
-/** Drupal Admin **/
-div.admin .right,
-div.admin .left {
-  width: 49%;
-  margin: 0;
-}
-div.admin-panel,
-div.admin-panel .body {
-  padding: 0;
-  clear: left;
-}
-div.admin-panel h3 {
-  text-transform: uppercase;
-  margin-bottom: 9px;
-  font-weight: 800;
-}
-#system-themes-page h2 {
-  font-weight: normal;
-  text-transform: uppercase;
-}
-.theme-selector h3 {
-  font-weight: normal;
-}
-.theme-default h3 {
-  font-weight: bold;
-}
-.system-themes-list-enabled .theme-selector h3 {
-  margin-top: 0;
-}
-div.admin-panel {
-  margin: 0 0 20px;
-  padding: 8px;
-  background: #ffffff;
-  border: 1px solid #ccc;
-}
-/** Admin List **/
-dl.admin-list dt a,
-dl.node-type-list dt a {
-  font-weight: 800;
-}
-.admin-list dd {
-  margin-bottom: 10px;
-}
-/** Drupal's Autocomplete Field **/
-html.js input.form-autocomplete {
-  background-image: url(../img/throbber.gif) !important;
-  background-position: -40px !important;
-  background-repeat: no-repeat !important;
-}
-html.js input.throbbing {
-  background-image: url(../img/throbber.gif) !important;
-  background-position: right center!important;
-  background-repeat: no-repeat !important;
-}
-#autocomplete {
-  z-index: 9999;
-  background-color: #fff;
-  border: 1px solid #333333;
-  border-top: 0px solid;
-}
-.reference-autocomplete {
-  padding: 4px;
-}
-#autocomplete li {
-  margin-left: 0px;
-  padding-left: 20px;
-}
-#autocomplete li:hover {
-  background: #333333;
-  color: #fff;
-  cursor: pointer;
-}
-/** Drupal's Overlay **/
-#overlay-tabs li a,
-#overlay-tabs li a:active,
-#overlay-tabs li a:visited,
-#overlay-tabs li a:hover,
-#overlay-tabs li.active a,
-#overlay-tabs li.active a.active,
-#overlay-tabs li.active a:active,
-#overlay-tabs li.active a:visited {
-  padding: 5px 16px 3px 16px;
-}
-#overlay-titlebar {
-  margin-top: 30px;
-}
-/** Drupal's Exposed Filters **/
-.exposed-filters .filters {
-  padding: 20px;
-}
-/** Drupal's Forms **/
-.form-actions input.btn {
-  margin: 5px;
-}
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-  margin-left: 0px;
-}
-.field-formatter-settings-edit {
-  width: auto;
-}
-.description,
-.help-block {
-  font-size: 80%;
-}
-/** Drupal's Fieldsets **/
-html.js fieldset.collapsed {
-  height: auto;
-}
-/** Drupal's Tables **/
-table.table td.checkbox input[type="checkbox"] {
-  margin-left: 0px;
-}
-table#blocks {
-  width: 100%;
-}
-table#blocks select {
-  margin: 10px 0 0 0;
-}
-/* Drupal's Comment System **/
-#comment-form {
-  padding: 10px;
-  margin-top: 10px;
-}
-.submitted {
-  font-size: 80%;
-}
-/** Remvoving The Annoying Text Format Choice area. Let me know if this annoys you. **/
-#edit-comment-body-und-0-format {
-  display: none;
-}
-.comment-form .form-submit {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  margin: 5px;
-}
-#comments {
-  margin-top: 30px;
-}
-.comment {
-  background: #fff;
-  padding: 10px;
-  margin-top: 10px;
-}
-.comment-unpublished {
-  background-color: #fff4f4;
-}
-.comment-preview {
-  background-color: #ffffea;
-}
-
 /*!
  * Bootstrap v3.0.0
  *
@@ -8672,7 +8477,7 @@ input[type="button"].btn-block {
   transition: height 0.35s ease;
 }
 @font-face {
-  font-family: 'icons';
+  font-family: "icons";
   src: url('fonts/icons.eot');
   src: url('fonts/icons.eot?#iefix') format('embedded-opentype'), url('fonts/icons.woff') format('woff'), url('fonts/icons.ttf') format('truetype'), url('fonts/icons.svg#icons') format('svg');
   font-weight: normal;
@@ -8944,7 +8749,7 @@ you can use the generic selector below, but it's slower:
 .icon-github-alt:before,
 .icon-folder-close-alt:before,
 .icon-folder-open-alt:before {
-  font-family: 'icons';
+  font-family: "icons";
   speak: none;
   font-style: normal;
   font-weight: normal;
