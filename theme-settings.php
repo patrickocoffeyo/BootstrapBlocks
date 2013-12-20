@@ -109,7 +109,7 @@ function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
   $form['seo']['social']['facebook_link'] = array(
     '#type' => 'textfield',
     '#title' => t('Facebook Link'),
-    '#description' => t('Full URL to Fabebook account belonging to site.'),
+    '#description' => t('Full URL to Facebook account belonging to site.'),
     '#default_value' => theme_get_setting('facebook_link'),
   );
   $form['seo']['social']['youtube_link'] = array(
