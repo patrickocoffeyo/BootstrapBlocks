@@ -71,12 +71,6 @@ function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
     '#description' => t('This color will be used as the tile color on the Windows 8 start screen. Defaults to white.'),
     '#default_value' => theme_get_setting('windows_color'),
   );
-  $form['seo']['footer_scripts'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Footer Scripts'),
-    '#description' => t('Footer scripts for external services, such as Google Analytic tracking scripts, Online Chat Assistance scripts, etc. Do not add any script tags.'),
-    '#default_value' => theme_get_setting('footer_scripts'),
-  );
   $form['seo'] = array(
     '#type' => 'fieldset',
     '#title' => 'SEO and Social Settings',
