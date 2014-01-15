@@ -15,14 +15,14 @@
     "url": "http://opensource.org/licenses/MIT"
   }],
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-clean": "x",
-    "grunt-contrib-jshint": "x",
-    "grunt-contrib-uglify": "x",
-    "grunt-contrib-watch": "x",
-    "grunt-contrib-less": "x"
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.8.1"
   }
 }
