@@ -10,7 +10,7 @@ module.exports = (grunt) ->
     less:
       all:
         files:
-          "assets/css/style.min.css": ["assets/css/bootstrap/bootstrap.less", "assets/css/bootstrap/responsive.less", "assets/css/app.less"]
+          "assets/css/style.min.css": ["assets/less/bootstrap/bootstrap.less", "assets/less/bootstrap/responsive.less", "assets/less/app.less"]
 
     uglify:
       all:
