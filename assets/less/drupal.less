@@ -4,11 +4,18 @@
 // Removing the "grippie" from forms.
 .grippie { display: none }
 
-// Styling
+//Inline Container
 .container-inline { div, label, input { display: inline-block; vertical-align: top; margin: 0px; } }
 
 // Inline Links
 ul.inline li { display: inline-block; margin: 5px; }
+
+//More link
+.more-link, .more-help-link { text-align: right; }
+.more-help-link a {
+  padding: 1px 0 1px 20px;
+  &:before { .icomoon-icon; content: "\e6b5"; margin-right: 4px; }
+}
 
 // Pager
 .item-list ul li { margin: 0px; }
@@ -130,6 +137,21 @@ table#blocks select { margin: 10px 0 0 0; }
   *display: inline;
   zoom: 1;
   margin: 5px;
+}
+
+//Table Drag
+tr.drag { background-color: #fffff0; }
+tr.drag-previous { background-color: #ffd; }
+.tabledrag-toggle-weight { font-size: 0.9em; }
+body div.tabledrag-changed-warning { margin-bottom: 0.5em; }
+
+//Table Select
+tr.selected td {
+  background: #ffc;
+}
+td.checkbox,
+th.checkbox {
+  text-align: center;
 }
 
 //Tabs

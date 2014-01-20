@@ -12734,6 +12734,26 @@ ul.inline li {
   display: inline-block;
   margin: 5px;
 }
+.more-link,
+.more-help-link {
+  text-align: right;
+}
+.more-help-link a {
+  padding: 1px 0 1px 20px;
+}
+.more-help-link a:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e6b5";
+  margin-right: 4px;
+}
 .item-list ul li {
   margin: 0px;
 }
@@ -12923,6 +12943,25 @@ table#blocks select {
   *display: inline;
   zoom: 1;
   margin: 5px;
+}
+tr.drag {
+  background-color: #fffff0;
+}
+tr.drag-previous {
+  background-color: #ffd;
+}
+.tabledrag-toggle-weight {
+  font-size: 0.9em;
+}
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+}
+tr.selected td {
+  background: #ffc;
+}
+td.checkbox,
+th.checkbox {
+  text-align: center;
 }
 .nav.nav-tabs {
   margin-bottom: 20px;
