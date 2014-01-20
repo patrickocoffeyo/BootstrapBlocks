@@ -20,7 +20,7 @@ function BootstrapBlocks_preprocess_table(&$variables) {
       if (!empty($row['class'])) {
         if (is_array($row['class'])) {
           $checkbox = array_search('checkbox', $row['class']);
-          if ($checkbox) { unset($row['class'][$checkbox]); }
+          if ($checkbox !== FALSE) { unset($row['class'][$checkbox]); }
         }
         else {
           $row['class'] = str_replace('checkbox', '', $row['class']);
