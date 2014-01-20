@@ -14,23 +14,26 @@ function BootstrapBlocks_preprocess_table(&$variables) {
   $variables['attributes']['class'][] = 'table-striped';
   $variables['attributes']['class'][] = 'table-bordered';
 
-  $variables['rows'] = array_map(function($row) {
-    if (isset($row[0]['class'])) {
-      $row[0]['class'] = str_replace('checkbox', '', $row[0]['class']);
-    }
+  if (!empty($variables['header'])) {
+    $variables['header'] = array_map(function($row) {
+      if (isset($row['class'])) {
+        $checkbox = array_search('checkbox', $row['class']);
+        if ($checkbox !== FALSE) { unset($row['class'][$checkbox]); }
+      }
 
-    return $row;
-  }, $variables['rows']);
+      return $row;
+    }, $variables['header']);
+  }
 
-  $variables['header'] = array_map(function($row) {
-    if (isset($row['class'])) {
-      $checkbox = array_search('checkbox', $row['class']);
-      if ($checkbox !== FALSE) { unset($row['class'][$checkbox]); }
-    }
+  if (!empty($variables['rows'])) {
+    $variables['rows'] = array_map(function($row) {
+      if (isset($row[0]['class'])) {
+        $row[0]['class'] = str_replace('checkbox', '', $row[0]['class']);
+      }
 
-    return $row;
-  }, $variables['header']);
-
+      return $row;
+    }, $variables['rows']);
+  }
 }
 
 /**
