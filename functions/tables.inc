@@ -13,6 +13,24 @@ function BootstrapBlocks_preprocess_table(&$variables) {
   $variables['attributes']['class'][] = 'table';
   $variables['attributes']['class'][] = 'table-striped';
   $variables['attributes']['class'][] = 'table-bordered';
+
+  $variables['rows'] = array_map(function($row) {
+    if (isset($row[0]['class'])) {
+      $row[0]['class'] = str_replace('checkbox', '', $row[0]['class']);
+    }
+
+    return $row;
+  }, $variables['rows']);
+
+  $variables['header'] = array_map(function($row) {
+    if (isset($row['class'])) {
+      $checkbox = array_search('checkbox', $row['class']);
+      if ($checkbox !== FALSE) { unset($row['class'][$checkbox]); }
+    }
+
+    return $row;
+  }, $variables['header']);
+
 }
 
 /**

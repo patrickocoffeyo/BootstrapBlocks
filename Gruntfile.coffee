@@ -10,7 +10,7 @@ module.exports = (grunt) ->
     less:
       all:
         files:
-          "assets/css/style.min.css": ["assets/less/bootstrap/bootstrap.less", "assets/less/bootstrap/responsive.less", "assets/less/app.less"]
+          "assets/css/style.min.css": ["assets/less/bootstrap/bootstrap.less", "assets/less/bootstrap/responsive.less", "assets/less/drupal.less", "assets/less/app.less"]
 
     uglify:
       all:
@@ -19,7 +19,7 @@ module.exports = (grunt) ->
 
     watch:
       less:
-        files: ["assets/css/*.less", "assets/css/bootstrap/*.less"]
+        files: ["assets/less/*.less", "assets/less/bootstrap/*.less"]
         tasks: ["less"]
 
       js:
