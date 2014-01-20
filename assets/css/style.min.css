@@ -12959,10 +12959,6 @@ body div.tabledrag-changed-warning {
 tr.selected td {
   background: #ffc;
 }
-td.checkbox,
-th.checkbox {
-  text-align: center;
-}
 .nav.nav-tabs {
   margin-bottom: 20px;
 }

@@ -10,28 +10,28 @@
 <table id="blocks" class="table table-striped table-bordered sticky-enabled">
   <thead>
     <tr>
-      <th><?php print t('Block'); ?></th>
-      <th><?php print t('Region'); ?></th>
-      <th><?php print t('Weight'); ?></th>
-      <th colspan="2"><?php print t('Operations'); ?></th>
+      <th><?php echo t('Block'); ?></th>
+      <th><?php echo t('Region'); ?></th>
+      <th><?php echo t('Weight'); ?></th>
+      <th colspan="2"><?php echo t('Operations'); ?></th>
     </tr>
   </thead>
   <tbody>
     <?php $row = 0; ?>
     <?php foreach ($block_regions as $region => $title): ?>
-      <tr class="region-title region-title-<?php print $region?>">
-        <td colspan="5"><?php print $title; ?></td>
+      <tr class="region-title region-title-<?php echo $region?>">
+        <td colspan="5"><?php echo $title; ?></td>
       </tr>
-      <tr class="region-message region-<?php print $region?>-message <?php print empty($block_listing[$region]) ? 'region-empty' : 'region-populated'; ?>">
-        <td colspan="5"><em><?php print t('No blocks in this region'); ?></em></td>
+      <tr class="region-message region-<?php echo $region?>-message <?php echo empty($block_listing[$region]) ? 'region-empty' : 'region-populated'; ?>">
+        <td colspan="5"><em><?php echo t('No blocks in this region'); ?></em></td>
       </tr>
       <?php foreach ($block_listing[$region] as $delta => $data): ?>
-      <tr class="draggable <?php print $row % 2 == 0 ? 'odd' : 'even'; ?><?php print $data->row_class ? ' ' . $data->row_class : ''; ?>">
-        <td class="block"><?php print $data->block_title; ?></td>
-        <td><?php print $data->region_select; ?></td>
-        <td><?php print $data->weight_select; ?></td>
-        <td><?php print $data->configure_link; ?></td>
-        <td><?php print $data->delete_link; ?></td>
+      <tr class="draggable <?php echo $row % 2 == 0 ? 'odd' : 'even'; ?><?php echo $data->row_class ? ' ' . $data->row_class : ''; ?>">
+        <td class="block"><h4><?php echo $data->block_title; ?></h4></td>
+        <td><?php echo $data->region_select; ?></td>
+        <td><?php echo $data->weight_select; ?></td>
+        <td><?php echo $data->configure_link; ?></td>
+        <td><?php echo $data->delete_link; ?></td>
       </tr>
       <?php $row++; ?>
       <?php endforeach; ?>
@@ -39,5 +39,5 @@
   </tbody>
 </table>
 
-<?php print $form_submit; ?>
+<?php echo $form_submit; ?>
 
