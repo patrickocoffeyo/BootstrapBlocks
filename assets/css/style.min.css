@@ -12899,6 +12899,9 @@ html.js input.throbbing {
 .help-block {
   font-size: 80%;
 }
+.form-item-operation {
+  margin-bottom: 20px!important;
+}
 #edit-options {
   margin-bottom: 20px;
 }
