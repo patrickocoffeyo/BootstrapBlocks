@@ -41,7 +41,7 @@ function BootstrapBlocks_pager($variables) {
   if ($pager_total[$element] > 1) {
     if ($li_previous) {
       $items[] = array(
-        'class' => array('prev'), 
+        'class' => array('prev'),
         'data' => $li_previous,
       );
     }
@@ -83,15 +83,16 @@ function BootstrapBlocks_pager($variables) {
     // End generation.
     if ($li_next) {
       $items[] = array(
-        'class' => array('next'), 
+        'class' => array('next'),
         'data' => $li_next,
       );
     }
 
-    return '<div class="pagination">'. theme('item_list', array(
-      'items' => $items, 
-    )) . '</div>';
+    return theme('item_list', array(
+      'items' => $items,
+      'attributes' => array('class' => array('pagination'))
+    ));
   }
-  
+
   return $output;
 }
