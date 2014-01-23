@@ -24,11 +24,32 @@ function BootstrapBlocks_preprocess_page(&$vars) {
  */
 function BootstrapBlocks_css_alter(&$css) {
   // Turn off some styles from the system module
-  unset($css[drupal_get_path('module', 'system') . '/system.messages.css']);
+  unset($css[drupal_get_path('module', 'book') . '/book.css']);
+  unset($css[drupal_get_path('module', 'comment') . '/comment.css']);
+  unset($css[drupal_get_path('module', 'dblog') . '/dblog.css']);
+  unset($css[drupal_get_path('module', 'file') . '/file.css']);
+  unset($css[drupal_get_path('module', 'filter') . '/filter.css']);
+  unset($css[drupal_get_path('module', 'forum') . '/forum.css']);
+  unset($css[drupal_get_path('module', 'help') . '/help.css']);
+  unset($css[drupal_get_path('module', 'menu') . '/menu.css']);
+  unset($css[drupal_get_path('module', 'node') . '/node.css']);
+  unset($css[drupal_get_path('module', 'openid') . '/openid.css']);
+  unset($css[drupal_get_path('module', 'poll') . '/poll.css']);
+  unset($css[drupal_get_path('module', 'search') . '/search.css']);
+  unset($css[drupal_get_path('module', 'statistics') . '/statistics.css']);
+  unset($css[drupal_get_path('module', 'syslog') . '/syslog.css']);
+  unset($css[drupal_get_path('module', 'system') . '/system.maintenance.css']);
   unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
-  unset($css[drupal_get_path('module', 'system') . '/system.admin.css']);
+  unset($css[drupal_get_path('module', 'system') . '/system.messages.css']);
   unset($css[drupal_get_path('module', 'system') . '/system.theme.css']);
-
+  unset($css[drupal_get_path('module', 'system') . '/system.admin.css']);
+  unset($css[drupal_get_path('module', 'system') . '/system.base.css']);
+  unset($css[drupal_get_path('module', 'system') . '/system.css']);
+  unset($css[drupal_get_path('module', 'taxonomy') . '/taxonomy.css']);
+  unset($css[drupal_get_path('module', 'tracker') . '/tracker.css']);
+  unset($css[drupal_get_path('module', 'update') . '/update.css']);
+  unset($css[drupal_get_path('module', 'user') . '/user.css']);
+  unset($css[drupal_get_path('module', 'user') . '/user.css']);
 }
 
 
