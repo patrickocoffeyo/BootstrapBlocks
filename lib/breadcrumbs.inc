@@ -1,5 +1,12 @@
 <?php
+/**
+ * @file
+ * Modifies breadcrumb markup
+ */
 
+/**
+ * Implimenting hook_breadcrumb()
+ */
 function BootstrapBlocks_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
 
