@@ -1,26 +1,40 @@
 @import "bootstrap/bootstrap.less";
 @import "app.less";
 
-// Removing the "grippie" from forms.
-.grippie { display: none }
 
+/* =============================================================================
+   Containers/Elements
+   ========================================================================== */
 //Inline Container
 .container-inline { div, label, input { display: inline-block; vertical-align: top; margin: 0px; } }
+
+//Invisible Elements
+.element-invisible { display: none; }
+
+
+
+/* =============================================================================
+   Links/Menus/Pagers/Navigation
+   ========================================================================== */
+//Tabs
+.nav.nav-tabs { margin-bottom: 20px; }
+
+// Vertical Tabs
+.vertical-tabs fieldset.vertical-tabs-pane { padding: 20px 40px; }
+
+//Compact Link
+.compact-link { margin: 0 0 0.5em 0; }
 
 // Inline Links
 ul.inline li { display: inline-block; margin: 5px; }
 
-//More link
-.more-link, .more-help-link { text-align: right; }
-.more-help-link a {
-  padding: 1px 0 1px 20px;
-  &:before { .icomoon-icon; content: "\e6b5"; margin-right: 4px; }
+//Quick inline Admin links
+small .admin-link {
+  &:before { content: '['; }
+  &:after { content: ']'; }
 }
 
-// Pager
-.item-list ul li { margin: 0px; }
-
-// Action Links
+//Action Links
 ul.action-links {
   padding: 0;
   li { list-style: none; }
@@ -32,9 +46,101 @@ ul.action-links {
   }
 }
 
-// Vertical Tabs
-.vertical-tabs fieldset.vertical-tabs-pane { padding: 20px 40px; }
+//More link
+.more-link, .more-help-link { text-align: right; }
+.more-help-link a {
+  padding: 1px 0 1px 20px;
+  &:before { .icomoon-icon; content: "\e6b5"; margin-right: 4px; }
+}
 
+// Pager
+.item-list ul li { margin: 0px; }
+
+
+/* =============================================================================
+   Forms/inputs/operations
+   ========================================================================== */
+// Autocomplete Field
+html.js {
+  input.form-autocomplete, input.throbbing {
+    background-image: url(../img/throbber.gif)!important;
+    background-position: -40px!important;
+    background-repeat: no-repeat!important;
+  }
+}
+#autocomplete {
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #333333;
+  border-top: 0px solid;
+}
+.reference-autocomplete { padding: 4px; }
+#autocomplete li { margin-left: 0px; padding-left: 20px; }
+#autocomplete li:hover {
+  background: #333333;
+  color: #fff;
+  cursor: pointer;
+}
+
+// Exposed Filters
+.exposed-filters .filters { padding: 20px; }
+
+// Forms
+.form-actions input.btn { margin: 5px; }
+.radio input[type="radio"], .checkbox input[type="checkbox"] { margin-left: 0px; }
+.field-formatter-settings-edit { width: auto; }
+.description, .help-block { font-size: 80%; }
+.form-item-operation { margin-bottom: 20px!important; }
+
+// Removing the "grippie" from forms.
+.grippie { display: none }
+
+// Comment Forms
+#comment-form { padding: 10px; margin-top: 10px; }
+.submitted { font-size: 80% }
+#edit-comment-body-und-0-format { display: none } //Removing text format selecter from comment form.
+#comments { margin-top: 30px }
+.comment { background: #fff; padding: 10px; margin-top: 10px; }
+.comment-unpublished { background-color: #fff4f4 }
+.comment-preview { background-color: #ffffea }
+.comment-form .form-submit {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin: 5px;
+}
+
+// Content management interface
+#edit-options { margin-bottom: 20px; }
+
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+// Fieldsets
+html.js fieldset.collapsed { height: auto; }
+
+// Tables
+table.table td.checkbox input[type="checkbox"] { margin-left: 0px; }
+table#blocks { width: 100%; }
+table#blocks select { margin: 10px 0 0 0; }
+
+//Table Drag
+tr.drag { background-color: #fffff0; }
+tr.drag-previous { background-color: #ffd; }
+.tabledrag-toggle-weight { font-size: 0.9em; }
+body div.tabledrag-changed-warning { margin-bottom: 0.5em; }
+//.tabledrag-handle:before { .icomoon-icon; content: "\e6e1"; margin-right: 10px; }
+
+//Table Select
+tr.selected td { background: #ffc; }
+
+
+
+/* =============================================================================
+   Administration
+   ========================================================================== */
 // Admin Panel
 div.admin-panel {
   margin: 0;
@@ -72,28 +178,6 @@ dl.admin-list dt a,
 dl.node-type-list dt a { font-weight: 800; }
 .admin-list dd { margin-bottom: 10px; }
 
-// Autocomplete Field
-html.js {
-  input.form-autocomplete, input.throbbing {
-    background-image: url(../img/throbber.gif)!important;
-    background-position: -40px!important;
-    background-repeat: no-repeat!important;
-  }
-}
-#autocomplete {
-  z-index: 9999;
-  background-color: #fff;
-  border: 1px solid #333333;
-  border-top: 0px solid;
-}
-.reference-autocomplete { padding: 4px; }
-#autocomplete li { margin-left: 0px; padding-left: 20px; }
-#autocomplete li:hover {
-  background: #333333;
-  color: #fff;
-  cursor: pointer;
-}
-
 // Overlay
 #overlay-tabs {
   margin: -35px 0 0 0;
@@ -104,77 +188,21 @@ html.js {
 }
 #overlay-titlebar {margin-top: 30px;}
 
-// Exposed Filters
-.exposed-filters .filters { padding: 20px; }
-
-// Forms
-.form-actions input.btn { margin: 5px; }
-.radio input[type="radio"], .checkbox input[type="checkbox"] { margin-left: 0px; }
-.field-formatter-settings-edit { width: auto; }
-.description, .help-block { font-size: 80%; }
-.form-item-operation { margin-bottom: 20px!important; }
-
-// Content management interface
-#edit-options { margin-bottom: 20px; }
-
-// Fieldsets
-html.js fieldset.collapsed { height: auto; }
-
-// Tables
-table.table td.checkbox input[type="checkbox"] { margin-left: 0px; }
-table#blocks { width: 100%; }
-table#blocks select { margin: 10px 0 0 0; }
-
-// Comment Forms
-#comment-form { padding: 10px; margin-top: 10px; }
-.submitted { font-size: 80% }
-#edit-comment-body-und-0-format { display: none } //Removing text format selecter from comment form.
-#comments { margin-top: 30px }
-.comment { background: #fff; padding: 10px; margin-top: 10px; }
-.comment-unpublished { background-color: #fff4f4 }
-.comment-preview { background-color: #ffffea }
-.comment-form .form-submit {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  margin: 5px;
-}
-
-//Table Drag
-tr.drag { background-color: #fffff0; }
-tr.drag-previous { background-color: #ffd; }
-.tabledrag-toggle-weight { font-size: 0.9em; }
-body div.tabledrag-changed-warning { margin-bottom: 0.5em; }
-//.tabledrag-handle:before { .icomoon-icon; content: "\e6e1"; margin-right: 10px; }
-
-//Table Select
-tr.selected td { background: #ffc; }
-
-
-
-//Tabs
-.nav.nav-tabs { margin-bottom: 20px; }
-
-//Compact Link
-.compact-link { margin: 0 0 0.5em 0; }
-
-//Quick inline Admin links
-small .admin-link {
-  &:before { content: '['; }
-  &:after { content: ']'; }
-}
-
 //Modules Page
-#system-modules div.incompatible { font-weight: bold; }
-div.admin-requirements, div.admin-required { font-size: 0.9em; color: @gray; }
-span.admin-disabled { color: @brand-warning; }
-span.admin-enabled { color: @brand-success; }
-span.admin-missing { color: @brand-danger; }
-a.module-link { display: block; padding: 1px 0 1px 20px; white-space: nowrap; }
-a.module-link-help:before { .icomoon-icon; content: "\e6b5"; margin-right: 4px; }
-a.module-link-permissions:before { .icomoon-icon; content: "\e6ca"; margin-right: 4px; }
-a.module-link-configure:before { .icomoon-icon; content: "\e68b"; margin-right: 4px; }
-.module-help { margin-left: 1em; float: right; }
+#system-modules {
+  table td { vertical-align: middle; }
+  div.incompatible { font-weight: bold; }
+  div.admin-requirements, div.admin-required { font-size: 0.9em; color: @gray; }
+  span.admin-disabled { color: @brand-warning; }
+  span.admin-enabled { color: @brand-success; }
+  span.admin-missing { color: @brand-danger; }
+  a.module-link { display: block; padding: 1px 0 1px 20px; white-space: nowrap; }
+  a.module-link-help:before { .icomoon-icon; content: "\e6b5"; margin-right: 4px; }
+  a.module-link-permissions:before { .icomoon-icon; content: "\e6ca"; margin-right: 4px; }
+  a.module-link-configure:before { .icomoon-icon; content: "\e68b"; margin-right: 4px; }
+  .module-help { margin-left: 1em; float: right; }
+}
+
 
 //Status Report
 table.system-status-report {

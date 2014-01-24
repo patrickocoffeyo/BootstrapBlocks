@@ -12720,9 +12720,9 @@ td.visible-print {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-.grippie {
-  display: none;
-}
+/* =============================================================================
+   Containers/Elements
+   ========================================================================== */
 .container-inline div,
 .container-inline label,
 .container-inline input {
@@ -12730,32 +12730,30 @@ td.visible-print {
   vertical-align: top;
   margin: 0px;
 }
+.element-invisible {
+  display: none;
+}
+/* =============================================================================
+   Links/Menus/Pagers/Navigation
+   ========================================================================== */
+.nav.nav-tabs {
+  margin-bottom: 20px;
+}
+.vertical-tabs fieldset.vertical-tabs-pane {
+  padding: 20px 40px;
+}
+.compact-link {
+  margin: 0 0 0.5em 0;
+}
 ul.inline li {
   display: inline-block;
   margin: 5px;
 }
-.more-link,
-.more-help-link {
-  text-align: right;
+small .admin-link:before {
+  content: '[';
 }
-.more-help-link a {
-  padding: 1px 0 1px 20px;
-}
-.more-help-link a:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\e6b5";
-  margin-right: 4px;
-}
-.item-list ul li {
-  margin: 0px;
+small .admin-link:after {
+  content: ']';
 }
 ul.action-links {
   padding: 0;
@@ -12781,9 +12779,145 @@ ul.action-links li a:before {
   content: "\e675";
   margin-right: 4px;
 }
-.vertical-tabs fieldset.vertical-tabs-pane {
-  padding: 20px 40px;
+.more-link,
+.more-help-link {
+  text-align: right;
 }
+.more-help-link a {
+  padding: 1px 0 1px 20px;
+}
+.more-help-link a:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e6b5";
+  margin-right: 4px;
+}
+.item-list ul li {
+  margin: 0px;
+}
+/* =============================================================================
+   Forms/inputs/operations
+   ========================================================================== */
+html.js input.form-autocomplete,
+html.js input.throbbing {
+  background-image: url(../img/throbber.gif) !important;
+  background-position: -40px !important;
+  background-repeat: no-repeat !important;
+}
+#autocomplete {
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #333333;
+  border-top: 0px solid;
+}
+.reference-autocomplete {
+  padding: 4px;
+}
+#autocomplete li {
+  margin-left: 0px;
+  padding-left: 20px;
+}
+#autocomplete li:hover {
+  background: #333333;
+  color: #fff;
+  cursor: pointer;
+}
+.exposed-filters .filters {
+  padding: 20px;
+}
+.form-actions input.btn {
+  margin: 5px;
+}
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  margin-left: 0px;
+}
+.field-formatter-settings-edit {
+  width: auto;
+}
+.description,
+.help-block {
+  font-size: 80%;
+}
+.form-item-operation {
+  margin-bottom: 20px!important;
+}
+.grippie {
+  display: none;
+}
+#comment-form {
+  padding: 10px;
+  margin-top: 10px;
+}
+.submitted {
+  font-size: 80%;
+}
+#edit-comment-body-und-0-format {
+  display: none;
+}
+#comments {
+  margin-top: 30px;
+}
+.comment {
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+.comment-unpublished {
+  background-color: #fff4f4;
+}
+.comment-preview {
+  background-color: #ffffea;
+}
+.comment-form .form-submit {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin: 5px;
+}
+#edit-options {
+  margin-bottom: 20px;
+}
+/* =============================================================================
+   Tables
+   ========================================================================== */
+html.js fieldset.collapsed {
+  height: auto;
+}
+table.table td.checkbox input[type="checkbox"] {
+  margin-left: 0px;
+}
+table#blocks {
+  width: 100%;
+}
+table#blocks select {
+  margin: 10px 0 0 0;
+}
+tr.drag {
+  background-color: #fffff0;
+}
+tr.drag-previous {
+  background-color: #ffd;
+}
+.tabledrag-toggle-weight {
+  font-size: 0.9em;
+}
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+}
+tr.selected td {
+  background: #ffc;
+}
+/* =============================================================================
+   Administration
+   ========================================================================== */
 div.admin-panel {
   margin: 0;
   padding: 5px 5px 15px 5px;
@@ -12842,30 +12976,6 @@ dl.node-type-list dt a {
 .admin-list dd {
   margin-bottom: 10px;
 }
-html.js input.form-autocomplete,
-html.js input.throbbing {
-  background-image: url(../img/throbber.gif) !important;
-  background-position: -40px !important;
-  background-repeat: no-repeat !important;
-}
-#autocomplete {
-  z-index: 9999;
-  background-color: #fff;
-  border: 1px solid #333333;
-  border-top: 0px solid;
-}
-.reference-autocomplete {
-  padding: 4px;
-}
-#autocomplete li {
-  margin-left: 0px;
-  padding-left: 20px;
-}
-#autocomplete li:hover {
-  background: #333333;
-  color: #fff;
-  cursor: pointer;
-}
 #overlay-tabs {
   margin: -35px 0 0 0;
 }
@@ -12882,121 +12992,32 @@ html.js input.throbbing {
 #overlay-titlebar {
   margin-top: 30px;
 }
-.exposed-filters .filters {
-  padding: 20px;
-}
-.form-actions input.btn {
-  margin: 5px;
-}
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-  margin-left: 0px;
-}
-.field-formatter-settings-edit {
-  width: auto;
-}
-.description,
-.help-block {
-  font-size: 80%;
-}
-.form-item-operation {
-  margin-bottom: 20px!important;
-}
-#edit-options {
-  margin-bottom: 20px;
-}
-html.js fieldset.collapsed {
-  height: auto;
-}
-table.table td.checkbox input[type="checkbox"] {
-  margin-left: 0px;
-}
-table#blocks {
-  width: 100%;
-}
-table#blocks select {
-  margin: 10px 0 0 0;
-}
-#comment-form {
-  padding: 10px;
-  margin-top: 10px;
-}
-.submitted {
-  font-size: 80%;
-}
-#edit-comment-body-und-0-format {
-  display: none;
-}
-#comments {
-  margin-top: 30px;
-}
-.comment {
-  background: #fff;
-  padding: 10px;
-  margin-top: 10px;
-}
-.comment-unpublished {
-  background-color: #fff4f4;
-}
-.comment-preview {
-  background-color: #ffffea;
-}
-.comment-form .form-submit {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  margin: 5px;
-}
-tr.drag {
-  background-color: #fffff0;
-}
-tr.drag-previous {
-  background-color: #ffd;
-}
-.tabledrag-toggle-weight {
-  font-size: 0.9em;
-}
-body div.tabledrag-changed-warning {
-  margin-bottom: 0.5em;
-}
-tr.selected td {
-  background: #ffc;
-}
-.nav.nav-tabs {
-  margin-bottom: 20px;
-}
-.compact-link {
-  margin: 0 0 0.5em 0;
-}
-small .admin-link:before {
-  content: '[';
-}
-small .admin-link:after {
-  content: ']';
+#system-modules table td {
+  vertical-align: middle;
 }
 #system-modules div.incompatible {
   font-weight: bold;
 }
-div.admin-requirements,
-div.admin-required {
+#system-modules div.admin-requirements,
+#system-modules div.admin-required {
   font-size: 0.9em;
   color: #555555;
 }
-span.admin-disabled {
+#system-modules span.admin-disabled {
   color: #f0ad4e;
 }
-span.admin-enabled {
+#system-modules span.admin-enabled {
   color: #5cb85c;
 }
-span.admin-missing {
+#system-modules span.admin-missing {
   color: #d9534f;
 }
-a.module-link {
+#system-modules a.module-link {
   display: block;
   padding: 1px 0 1px 20px;
   white-space: nowrap;
 }
-a.module-link-help:before {
+#system-modules a.module-link-help:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -13009,7 +13030,7 @@ a.module-link-help:before {
   content: "\e6b5";
   margin-right: 4px;
 }
-a.module-link-permissions:before {
+#system-modules a.module-link-permissions:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -13022,7 +13043,7 @@ a.module-link-permissions:before {
   content: "\e6ca";
   margin-right: 4px;
 }
-a.module-link-configure:before {
+#system-modules a.module-link-configure:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -13035,7 +13056,7 @@ a.module-link-configure:before {
   content: "\e68b";
   margin-right: 4px;
 }
-.module-help {
+#system-modules .module-help {
   margin-left: 1em;
   float: right;
 }
