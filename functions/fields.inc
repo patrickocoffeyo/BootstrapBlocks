@@ -24,7 +24,7 @@ function BootstrapBlocks_fieldset($variables) {
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
 
   if (!empty($element['#title'])) {
-    $output .= '<div class="panel-heading"><h4 class="panel-title" data-toggle="collapse" data-target="#' . $element['#attributes']['id'] . ' .panel-body">' . $element['#title'] . '</h4></div>';
+    $output .= '<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#' . $element['#attributes']['id'] . ' .panel-body">' . $element['#title'] . '</a></h4></div>';
   }
 
   $output .= '<div' . drupal_attributes($panel_body) . '>';
@@ -40,5 +40,6 @@ function BootstrapBlocks_fieldset($variables) {
 
   $output .= '</div>';
   $output .= "</fieldset>\n";
+
   return $output;
 }
