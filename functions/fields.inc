@@ -10,6 +10,8 @@
 
 function BootstrapBlocks_fieldset($variables) {
   $element = $variables['element'];
+  $collapsible = in_array('collapsible', $element['#attributes']['class']);
+  $collapsed = in_array('collapsed', $element['#attributes']['class']);
 
   //panel classes
   element_set_attributes($element, array('id'));
@@ -17,16 +19,27 @@ function BootstrapBlocks_fieldset($variables) {
 
   //panel-body classes
   $panel_body = array('class' => array('fieldset-wrapper', 'panel-body'));
-  if (in_array('collapsible', $element['#attributes']['class'])) { $panel_body['class'][] = 'collapse'; }
-  if (!in_array('collapsed', $element['#attributes']['class'])) { $panel_body['class'][] = 'in'; }
+  if ($collapsible) { $panel_body['class'][] = 'collapse'; }
+  if ($collapsed) { $panel_body['class'][] = 'in'; }
 
 
+  //panel
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
 
+  //panel-heading
   if (!empty($element['#title'])) {
-    $output .= '<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#' . $element['#attributes']['id'] . ' .panel-body">' . $element['#title'] . '</a></h4></div>';
+    $output .= '<div class="panel-heading"><h4 class="panel-title">';
+
+    if ($collapsible) {
+      $output .= '<a data-toggle="collapse" href="#' . $element['#attributes']['id'] . ' .panel-body">' . $element['#title'] . '</a>';
+    } else {
+      $output .= $element['#title'];
+    }
+
+    $output .= '</h4></div>';
   }
 
+  //panel-body
   $output .= '<div' . drupal_attributes($panel_body) . '>';
 
   if (!empty($element['#description'])) {
