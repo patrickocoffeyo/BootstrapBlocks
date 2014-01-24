@@ -5,6 +5,7 @@ include('pagers.inc');
 include('forms.inc');
 include('messages.inc');
 include('tables.inc');
+include('fields.inc');
 
 /*
  * Return Header Scripts
