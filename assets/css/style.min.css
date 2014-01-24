@@ -12723,7 +12723,6 @@ td.visible-print {
 /* =============================================================================
    Containers/Elements
    ========================================================================== */
-.container-inline div,
 .container-inline label,
 .container-inline input {
   display: inline-block;

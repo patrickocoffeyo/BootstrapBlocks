@@ -16,10 +16,10 @@ function BootstrapBlocks_form_alter(&$form, &$form_state, $form_id) {
     'user_profile_form',
   );
 
-  // Only wrap in container for certain form
   if (isset($form['#form_id']) && !in_array($form['#form_id'], $form_ids) && !isset($form['#node_edit_form'])) {
     $form['actions']['#theme_wrappers'] = array();
   }
+
 }
 
 
