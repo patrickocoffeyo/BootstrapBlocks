@@ -6,6 +6,7 @@ include('forms.inc');
 include('messages.inc');
 include('tables.inc');
 include('fields.inc');
+include('breadcrumbs.inc');
 
 /*
  * Return Header Scripts

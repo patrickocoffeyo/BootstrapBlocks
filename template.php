@@ -1,6 +1,6 @@
 <?php
 
-include('functions/template-functions.php');
+include('lib/template-functions.php');
 /**
  * Implimenting hook_process_page()
  * Allows you to use node-type based page templates.

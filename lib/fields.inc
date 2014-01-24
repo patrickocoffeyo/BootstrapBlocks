@@ -19,7 +19,7 @@ function BootstrapBlocks_fieldset($variables) {
 
   //panel-body classes
   $panel_body = array('class' => array('fieldset-wrapper', 'panel-body'));
-  if ($collapsible) { $panel_body['class'][] = 'collapse'; }
+  if ($collapsible == TRUE) { $panel_body['class'][] = 'collapse'; }
   if (!$collapsed) { $panel_body['class'][] = 'in'; }
 
 
