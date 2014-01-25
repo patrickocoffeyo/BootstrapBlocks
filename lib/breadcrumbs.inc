@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * Modifies breadcrumb markup
+ * Overrides breadcrumb markup
  */
 
 /**
- * Implimenting hook_breadcrumb()
+ * Overriding theme_breadcrumb()
  */
 function BootstrapBlocks_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];

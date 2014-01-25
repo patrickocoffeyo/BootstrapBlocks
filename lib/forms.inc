@@ -170,3 +170,21 @@ function BootstrapBlocks_progress_bar($variables) {
 
   return '<div'. drupal_attributes($variables['attributes']) .'><div class="bar" style="width: '. $variables['percent'] .'%;"></div></div>';
 }
+
+/**
+ * Overrides theme_date().
+ */
+function BootstrapBlocks_date($variables) {
+  $element = $variables['element'];
+
+  $attributes = array();
+  if (isset($element['#id'])) {
+    $attributes['id'] = $element['#id'];
+  }
+  if (!empty($element['#attributes']['class'])) {
+    $attributes['class'] = (array) $element['#attributes']['class'];
+  }
+  $attributes['class'][] = 'form-inline';
+
+  return '<div' . drupal_attributes($attributes) . '>' . drupal_render_children($element) . '</div>';
+}

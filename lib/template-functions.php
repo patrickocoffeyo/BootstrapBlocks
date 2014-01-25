@@ -7,6 +7,8 @@ include('messages.inc');
 include('tables.inc');
 include('fields.inc');
 include('breadcrumbs.inc');
+include('containers.inc');
+include('lists.inc');
 
 /*
  * Return Header Scripts

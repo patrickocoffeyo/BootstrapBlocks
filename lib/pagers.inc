@@ -2,7 +2,6 @@
 /**
  * @file
  * Overrides the default pager with a bootstrap pager.
- * Partly borrowed from the Twitter Bootstrap project. Kudos!
  */
 
 /**
