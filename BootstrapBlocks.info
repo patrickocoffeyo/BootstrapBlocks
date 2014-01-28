@@ -16,8 +16,8 @@ regions[footer] = Footer
 
 features[] = logo
 features[] = name
-;features[] = slogan
-;features[] = mission
+features[] = slogan
+features[] = mission
 features[] = node_user_picture
 features[] = comment_user_picture
 ;features[] = search
