@@ -12896,9 +12896,6 @@ td.visible-print {
 #navigation {
   margin-top: 20px;
 }
-#wrapper {
-  margin-top: 40px;
-}
 .navbar .nav > li > a {
   padding: 15px 10px!important;
 }
@@ -12907,6 +12904,7 @@ td.visible-print {
    ========================================================================== */
 #main {
   margin-top: 20px;
+  padding-bottom: 40px;
 }
 /* ==========================================================================
    Blocks
@@ -13153,13 +13151,11 @@ div.admin-panel .expert-link {
 }
 .admin .left {
   float: left;
-  width: 47%;
-  margin-left: 1em;
+  width: 49%;
 }
 .admin .right {
   float: right!important;
-  width: 47%;
-  margin-right: 1em;
+  width: 49%;
 }
 #system-themes-page h2 {
   font-weight: normal;
@@ -19880,9 +19876,6 @@ td.visible-print {
 #navigation {
   margin-top: 20px;
 }
-#wrapper {
-  margin-top: 40px;
-}
 .navbar .nav > li > a {
   padding: 15px 10px!important;
 }
@@ -19891,6 +19884,7 @@ td.visible-print {
    ========================================================================== */
 #main {
   margin-top: 20px;
+  padding-bottom: 40px;
 }
 /* ==========================================================================
    Blocks
