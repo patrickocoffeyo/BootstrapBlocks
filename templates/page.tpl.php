@@ -1,11 +1,14 @@
 <?php if (!empty($page['navbar'])): ?>
   <?php echo render($page['navbar']); ?>
 <?php endif; ?>
+
+<?php include('includes/page-head.php'); ?>
+
+<?php if (!empty($page['menu'])): ?>
+  <?php echo render($page['menu']); ?>
+<?php endif; ?>
+
 <section id="wrapper" class="container">
-  <?php include('includes/page-head.php'); ?>
-  <?php if (!empty($page['menu'])): ?>
-    <?php echo render($page['menu']); ?>
-  <?php endif; ?>
   <section class="row" id="main" role="document">
     <article class="col-lg-9" id="main-content" role="article">
       <?php include('includes/page-title.php'); ?>
