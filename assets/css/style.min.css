@@ -12948,9 +12948,12 @@ td.visible-print {
 .compact-link {
   margin: 0 0 0.5em 0;
 }
+ul.inline {
+  padding: 0;
+}
 ul.inline li {
   display: inline-block;
-  margin: 5px;
+  margin-right: 5px;
 }
 small .admin-link:before {
   content: '[';
