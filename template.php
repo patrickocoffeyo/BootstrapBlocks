@@ -7,14 +7,15 @@ include('lib/template-functions.php');
  */
 function BootstrapBlocks_preprocess_page(&$vars) {
   global $user;
-  //Allows you to use node-type, and node ID base page templates
-  //Adds custom 404 error page template
+
+  //Use node-type and node id based page templates
   if (!empty($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->vid;
-  } 
-  elseif (drupal_get_http_header('status')) {
-    $vars['theme_hook_suggestions'][] = 'page__404';
+  }
+
+  if (module_exists('jquery_update') == FALSE) {
+    drupal_set_message(t('You must install the <a href="@url">jQuery Update</a> module for Bootstrap to work properly.', array('@url' => 'https://drupal.org/project/jquery_update')), 'error');
   }
 }
 

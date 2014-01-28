@@ -1,5 +1,6 @@
 name = Bootstrap Blocks
-description = A simple html5 theme that includes Twitter Bootstrap, Modernizr, Grunt, and other great tools for building great, modern Drupal themes. http://basethe.me
+description = Bootstrap/HTML5 boilerpate based starter theme for Drupal 7.x http://basethe.me
+
 core = 7.x
 
 stylesheets[screen][] = assets/css/style.min.css
