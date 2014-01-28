@@ -13,4 +13,4 @@
     }
   });
 
-})(window.jQuery2);
+})(window.jQuery);
