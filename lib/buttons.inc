@@ -22,7 +22,7 @@ function BootstrapBlocks_preprocess_image_button(&$vars) {
 
   $vars['element']['#attributes']['class'][] = 'btn btn-default ' . BootstrapBlocks_get_button_class($button_title);
 }
- 
+
 /**
  * Returns a class from template settings from button title()
  * @param $button_title

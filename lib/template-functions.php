@@ -11,17 +11,6 @@ include('containers.inc');
 include('lists.inc');
 
 /*
- * Return Header Scripts
- * @return
- *   Dom for scripts added. By default, adds jQuery jQuery 1.9.1 in no conflict mode
- */
-function BootstrapBlocks_scripts() {
-  $js = '<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>' . "\n";
-  $js .= '<script>window.jQuery2 = jQuery.noConflict();</script>' . "\n";
-  return $js;
-}
-
-/*
  * Return Footer Scripts
  * @return
  *   Scripts added in the theme setting footer_scripts

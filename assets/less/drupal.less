@@ -121,16 +121,30 @@ html.js {
 html.js fieldset.collapsed { height: auto; }
 
 // Tables
-table.table td.checkbox input[type="checkbox"] { margin-left: 0px; }
-table#blocks { width: 100%; }
-table#blocks select { margin: 10px 0 0 0; }
+table {
+  &.table td.checkbox input[type="checkbox"] { margin-left: 0px; }
+  &#blocks { width: 100%; select { margin: 10px 0 0 0; } }
+}
 
 //Table Drag
 tr.drag { background-color: #fffff0; }
 tr.drag-previous { background-color: #ffd; }
 .tabledrag-toggle-weight { font-size: 0.9em; }
 body div.tabledrag-changed-warning { margin-bottom: 0.5em; }
-//.tabledrag-handle:before { .icomoon-icon; content: "\e6e1"; margin-right: 10px; }
+
+tr.draggable {
+  a.tabledrag-handle {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    &:before { .icomoon-icon; content: "\e6e1"; cursor: all-scroll; }
+    .handle { display: none; }
+  }
+  h4 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
 
 //Table Select
 tr.selected td { background: #ffc; }

@@ -7,15 +7,17 @@
 /**
  * Bootstrapping the messages
  */
- function BootstrapBlocks_get_status($status) {
-  if ($status == 'status') {
-    return 'alert-success';
-  }
-  elseif ($status == 'warning') {
-    return 'alert-warning';
-  }
-  elseif ($status == 'error') {
-    return 'alert-danger';
+function BootstrapBlocks_get_status($status) {
+  switch($status) {
+    case 'status':
+      return 'alert-success';
+      break;
+    case 'warning':
+      return 'alert-warning';
+      break;
+    case 'error':
+      return 'alert-danger';
+      break;
   }
   return NULL;
 }

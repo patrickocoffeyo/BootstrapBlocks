@@ -7,7 +7,6 @@
 /**
  * Process fieldset element.
  */
-
 function BootstrapBlocks_fieldset($variables) {
   $element = $variables['element'];
   $collapsible = in_array('collapsible', $element['#attributes']['class']);

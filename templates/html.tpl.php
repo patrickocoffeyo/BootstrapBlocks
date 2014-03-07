@@ -7,7 +7,6 @@
   <?php echo $head; ?>
   <title><?php echo $head_title; ?></title>
   <?php echo $styles; ?>
-  <?php echo BootstrapBlocks_scripts(); ?>
   <?php echo $scripts; ?>
   <?php echo BootstrapBlocks_touch_icons(); ?>
   <?php echo BootstrapBlocks_author(); ?>

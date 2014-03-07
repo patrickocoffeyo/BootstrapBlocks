@@ -6629,6 +6629,31 @@ tr.drag-previous {
 body div.tabledrag-changed-warning {
   margin-bottom: 0.5em;
 }
+tr.draggable a.tabledrag-handle {
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+tr.draggable a.tabledrag-handle:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e6e1";
+  cursor: all-scroll;
+}
+tr.draggable a.tabledrag-handle .handle {
+  display: none;
+}
+tr.draggable h4 {
+  display: inline-block;
+  vertical-align: middle;
+}
 tr.selected td {
   background: #ffc;
 }
