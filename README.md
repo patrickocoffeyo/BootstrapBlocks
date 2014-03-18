@@ -20,11 +20,10 @@ Bootstrap Blocks is a [Bootstrap-based](http://twitter.github.com/bootstrap), HT
 Pretty easy stuff:
 
 1. **Get the Files** - Download or clone the repository into Drupal's <code>sites/all/themes</code> directory. Or, just use <code>drush make</code> with the [bootstrapblocks.make](https://gist.github.com/patrickocoffeyo/9627418) file.
-2. **Install Grunt Requirements** - <code>cd</code> to the theme root and run <code>npm install</code>. This will install all the npm packages that Grunt needs to properly run.
-3. **Enable and Set Default** - There are a couple ways to enable themes in Drupal:
-  1. **Drush** If you have [Drush](http://drupal.org/project/drush) installed:
-    1. Run <code>drush pm-enable BootstrapBlocks</code>
-    2. … And then <code>drush vset theme_default BootstrapBlocks</code>
+2. **Install jQuery Update** - <code>drush en jquery_update -y</code>, or download and install the [jQuery Update](https://drupal.org/project/jquery_update) module manually.
+3. **Install Grunt Requirements** - <code>cd</code> to the theme root and run <code>npm install</code>. This will install all the npm packages that Grunt needs to properly run.
+4. **Enable and Set Default** - There are a couple ways to enable themes in Drupal:
+  1. **Drush** If you have [Drush](http://drupal.org/project/drush) installed, run <code>drush pm-enable BootstrapBlocks && drush vset theme_default BootstrapBlocks</code>
   2. **Administraion UI** - Navigate to <code>admin/appearance/list</code> and click "Enable and set default"
 
 For more information on installing themes in Drupal, please visit the official [Theme Installation](http://drupal.org/node/456) documentation on drupal.org.
