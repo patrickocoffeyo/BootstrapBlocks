@@ -23,8 +23,8 @@ Pretty easy stuff:
 2. **Install Grunt Requirements** - <code>cd</code> to the theme root and run <code>npm install</code>. This will install all the npm packages that Grunt needs to properly run.
 3. **Enable and Set Default** - There are a couple ways to enable themes in Drupal:
   1. **Drush** If you have [Drush](http://drupal.org/project/drush) installed:
-    1. Run <code>drush pm-enable BaseBuildingBlocks</code>
-    2. … And then <code>drush vset theme_default BaseBuildingBlocks</code>
+    1. Run <code>drush pm-enable BootstrapBlocks</code>
+    2. … And then <code>drush vset theme_default BootstrapBlocks</code>
   2. **Administraion UI** - Navigate to <code>admin/appearance/list</code> and click "Enable and set default"
 
 For more information on installing themes in Drupal, please visit the official [Theme Installation](http://drupal.org/node/456) documentation on drupal.org.
