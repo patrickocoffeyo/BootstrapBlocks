@@ -75,15 +75,4 @@ function BootstrapBlocks_html_head_alter(&$vars) {
       'content' => 'width=device-width, initial-scale=1.0',
     )
   );
-
-  //If in IE, and chrome frame is available, and theme option says you can use it, USE IT!
-  $vars['chrome_frame_compatability'] = array(
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'http-equiv' => 'X-UA-Compatible',
-      'content' => 'IE=edge,chrome=1',
-    ),
-    '#access' => theme_get_setting('chrome_frame_on_off'),
-  );
 }

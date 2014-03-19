@@ -17,20 +17,6 @@ function BootstrapBlocks_form_system_theme_settings_alter(&$form, $form_state) {
     '#description' => t('Some form elements do not jive well with being bootstrap-ized. List all form IDs that should not be modified, separated by |. A default list is provided.'),
     '#default_value' => theme_get_setting('ignore_element_ids'),
   );
-  $form['chrome_frame'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('IE Compatability'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-    '#required' => TRUE,
-    '#weight' => -20,
-  );
-  $form['chrome_frame']['chrome_frame_on_off'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Edge and Chrome Frame Meta Tag'),
-    '#description' => t('Forces Edge and Chrome Frame on IE if enabled.'),
-    '#default_value' => theme_get_setting('chrome_frame_on_off'),
-  );
   $form['buttons'] = array(
     '#type' => 'fieldset',
     '#title' => t('Button Settings'),

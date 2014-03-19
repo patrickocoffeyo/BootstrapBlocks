@@ -23,8 +23,6 @@ features[] = comment_user_picture
 ;features[] = search
 features[] = favicon
 
-settings[chrome_frame_on_off] = 1
-
 settings[button_classes] = "
 Save|btn-primary
 Create|btn-primary
