@@ -6484,13 +6484,13 @@ ul.action-links li a {
   text-decoration: none;
 }
 ul.action-links li a:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e675";
@@ -6504,13 +6504,13 @@ ul.action-links li a:before {
   padding: 1px 0 1px 20px;
 }
 .more-help-link a:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e6b5";
@@ -6635,13 +6635,13 @@ tr.draggable a.tabledrag-handle {
   vertical-align: middle;
 }
 tr.draggable a.tabledrag-handle:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e6e1";
@@ -6758,39 +6758,39 @@ dl.node-type-list dt a {
   white-space: nowrap;
 }
 #system-modules a.module-link-help:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e6b5";
   margin-right: 4px;
 }
 #system-modules a.module-link-permissions:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e6ca";
   margin-right: 4px;
 }
 #system-modules a.module-link-configure:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e68b";
@@ -6817,13 +6817,13 @@ table.system-status-report td.status-icon div {
   width: 16px;
 }
 table.system-status-report tr.error td.status-icon div {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e6bd";
@@ -6831,13 +6831,13 @@ table.system-status-report tr.error td.status-icon div {
   color: #d9534f;
 }
 table.system-status-report tr.warning td.status-icon div {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\e657";
@@ -6958,13 +6958,13 @@ table.screenshot {
    Base
    ========================================================================== */
 .icomoon-icon {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'icomoon';
   line-height: 1;
+  speak: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
