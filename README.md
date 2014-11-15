@@ -1,4 +1,5 @@
 #Bootstrap Blocks
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/patrickocoffeyo/BootstrapBlocks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Bootstrap Blocks is a [Bootstrap-based](http://twitter.github.com/bootstrap), HTML5 BP base theme for Drupal 7.x. Includes lots of goodies, like [Icomoon](http://icomoon.io/), and [Modernizr](http://modernizr.com/).
 
